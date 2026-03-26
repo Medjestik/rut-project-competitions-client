@@ -1,0 +1,13 @@
+.text {
+	display: inline-block;
+  background: linear-gradient(
+    90deg,
+		#6323A2 11%,
+		#C109D7 73%,
+		#BA6ECD 97%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}

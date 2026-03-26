@@ -1,0 +1,150 @@
+.container {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	width: 100%;
+	z-index: 1;
+	position: relative;
+}
+
+.invite {
+	margin: 0;
+	padding: 80px;
+	box-sizing: border-box;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 1;
+}
+
+.row {
+	margin: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+
+.title {
+	margin: 0;
+	font-weight: 500;
+	font-size: 64px;
+	font-style: normal;
+	line-height: 1.12;
+	color: var(--main-white-color);
+	text-transform: uppercase;
+}
+
+.cards {
+	margin: 80px 0 0 0;
+	padding: 0;
+	width: 100%;
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 20px;
+}
+
+.card {
+	margin: 0;
+	padding: 54px 32px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-height: 280px;
+	border-radius: 24px;
+	box-sizing: border-box;
+	background-color: #201A23;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	&__title {
+		margin: 0;
+		font-weight: 400;
+		font-size: 40px;
+		font-style: normal;
+		line-height: 1.1;
+		color: var(--main-white-color);
+		text-align: left;
+	}
+	&__text {
+		margin: 0;
+		font-weight: 400;
+		font-size: 16px;
+		font-style: normal;
+		line-height: 1.2;
+		color: var(--main-white-color);
+		text-align: left;
+	}
+}
+
+@media (max-width: 1600px) {
+	.invite {
+		padding: 80px 32px;
+	}
+	.title {
+		font-size: 56px;
+	}
+}
+
+@media (max-width: 1536px) {
+	.invite {
+		padding: 60px 24px 80px;
+	}
+	.cards {
+		margin: 60px 0 0 0;
+	}
+	.card {
+		padding: 44px 24px;
+		min-height: 260px;
+		&__title {
+			font-size: 32px;
+		}
+		&__text {
+			font-size: 14px;
+		}
+	}
+}
+
+@media (max-width: 1366px) {
+	.invite {
+		padding: 60px 20px 80px;
+	}
+	.title {
+		font-size: 48px;
+	}
+	.cards {
+		margin: 40px 0 0 0;
+	}
+	.card {
+		padding: 32px 20px;
+		min-height: 240px;
+		&__title {
+			font-size: 28px;
+		}
+	}
+}
+
+@media (max-width: 1279px) {
+	.invite {
+		padding: 40px 20px 60px;
+	}
+	.title {
+		font-size: 40px;
+	}
+	.cards {
+		margin: 40px 0 0 0;
+	}
+	.card {
+		min-height: 220px;
+		&__title {
+			font-size: 24px;
+		}
+		&__text {
+			font-size: 12px;
+		}
+	}
+}

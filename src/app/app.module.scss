@@ -1,0 +1,13 @@
+.page {
+	margin: 0 auto;
+	max-width: 1920px;
+	width: 100%;
+	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh) * 100);
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	scroll-behavior: smooth;
+	background-color: var(--main-black-color);
+}

@@ -1,0 +1,353 @@
+{
+	"timer-text": "d.",
+	"join-button": "Join now",
+	"download-button": "Download",
+	"support-button": "Contact Support",
+
+
+	"nav": {
+		"0": "About",
+		"1": "Stages",
+		"2": "Problems",
+		"3": "Prizes",
+		"4": "Participants",
+		"5": "FAQ",
+		"6": "Documents"
+	},
+	"main-registration": "Registration",
+	"main-title-caption": "From problem to implementation",
+	"main-reg-caption": "Registration open!",
+	"main-text": "A platform for\u00A0students and\u00A0young professionals where solutions for\u00A0the future of\u00A0transportation are created: digitalization, infrastructure, logistics, and\u00A0engineering innovation",
+	"main-title": {
+		"0": "International",
+		"1": "Transport Project",
+		"2": "Competitions"
+	},
+	"main-cards": {
+		"0": {
+			"count": "8+",
+			"caption": "challenges",
+			"text": "Practical tasks from\u00A0industry partners"
+		},
+		"1": {
+			"count": "3000+",
+			"caption": "participants",
+			"text": "Students and young professionals from\u00A0different countries"
+		},
+		"2": {
+			"count": "2 mln ₽",
+			"caption": "prize pool",
+			"text": "Support for\u00A0top solutions and\u00A0expert evaluation of\u00A0projects"
+		},
+		"3": {
+			"count": "2026-08-01T12:00:00",
+			"caption": "registration ends in",
+			"text": "Join\u00A0us and\u00A0showcase your best solutions!"
+		}
+	},
+
+
+	"description-title": {
+		"0": "What are",
+		"1": "Project",
+		"2": "Competitions?"
+	},
+	"description-caption": "About competitions",
+	"description-cards": {
+		"0": {
+			"title": {
+				"0": "This is a",
+				"1": "new",
+				"2": "competition format"
+			},
+			"text": "You will receive a\u00A0real transportation company problem and\u00A0go through the\u00A0entire process from\u00A0analyzing the\u00A0situation to\u00A0developing a\u00A0full solution. It's like a\u00A0startup, but in\u00A0an intensive team immersion format."
+		},
+		"1": {
+			"title": {
+				"0": "How does",
+				"1": "it work?"
+			},
+			"text": "You will work in\u00A0a\u00A0team, conduct interviews with\u00A0real clients, investigate causes, generate ideas, create prototypes, consult with\u00A0experts, and present your project."
+		},
+		"2": {
+			"title": "",
+			"text": "This is\u00A0real project-based work no\u00A0textbooks or rote formulas, just real challenges, intelligence, creativity, and collaborative effort."
+		}
+	},
+	"description-card-btn": "Learn More",
+
+	"stages-title": "Competition stages",
+	"stages-caption": "How the competition works",
+	"stages-cards": {
+		"0": {
+			"title": "Registration",
+			"duration": "September 1 - September 15",
+			"content": "Register on\u00A0the\u00A0website to\u00A0become a\u00A0participant in\u00A0the\u00A0project competition."
+		},
+		"1": {
+			"title": "Work",
+			"duration": "September 15 - October 1",
+			"content": "Over two weeks, participants analyze the situation, conduct interviews, develop a\u00A0solution idea, and prepare a\u00A0basic prototype."
+		},
+		"2": {
+			"title": "Support",
+			"duration": "September 15 - October 1",
+			"content": "Communicate with\u00A0experts and other teams in\u00A0the\u00A0case’s Telegram chat. Upload your stage results to\u00A0your personal account."
+		},
+		"3": {
+			"title": "Results",
+			"duration": "October 1 - October 7",
+			"content": "Wait for the\u00A0selection results."
+		},
+		"4": {
+			"title": "Final in Moscow",
+			"duration": "October 28 - October 30",
+			"content": "Come to\u00A0the\u00A0three-day final for\u00A0the\u00A0best of\u00A0the\u00A0best."
+		}
+	},
+	"stages-stub": {
+		"0": "Form a\u00A0team and\u00A0apply — become part of\u00A0the\u00A0transportation industry!",
+		"1": {
+			"0": "It doesn’t matter what experience you already have — what matters is",
+			"1": "the\u00A0desire to\u00A0learn",
+			"2": "in\u00A0challenging situations."
+		}
+	},
+
+	"problems-title": {
+		"0": "Real",
+		"1": "problems"
+	},
+	"problems-caption": "Situation&Problem",
+	"problems-text": "Ready to\u00A0take on\u00A0the\u00A0challenge and\u00A0show your skills? Choose a\u00A0company and\u00A0join now.",
+	"problems-cards": [
+		{
+			"card-id": "1",
+			"card-title": "Company Name",
+			"card-situation-title": "Situation",
+			"card-situation-text": "There is no effective metro cooling system, and the temperature rises every year due to increased passenger flow and the average air temperature.",
+			"card-problem-title": "Problem",
+			"card-problem-text": "For testing, it is necessary to temporarily close a track branch, since the trolley is slower than regular and high-speed trains."
+		},
+		{
+			"card-id": "2",
+			"card-title": "Company Name",
+			"card-situation-title": "Situation",
+			"card-situation-text": "There is no effective metro cooling system, and the temperature rises every year due to increased passenger flow and the average air temperature.",
+			"card-problem-title": "Problem",
+			"card-problem-text": "For testing, it is necessary to temporarily close a track branch, since the trolley is slower than regular and high-speed trains."
+		},
+		{
+			"card-id": "3",
+			"card-title": "Company Name",
+			"card-situation-title": "Situation",
+			"card-situation-text": "There is no effective metro cooling system, and the temperature rises every year due to increased passenger flow and the average air temperature.",
+			"card-problem-title": "Problem",
+			"card-problem-text": "For testing, it is necessary to temporarily close a track branch, since the trolley is slower than regular and high-speed trains."
+		},
+		{
+			"card-id": "4",
+			"card-title": "Company Name",
+			"card-situation-title": "Situation",
+			"card-situation-text": "There is no effective metro cooling system, and the temperature rises every year due to increased passenger flow and the average air temperature.",
+			"card-problem-title": "Problem",
+			"card-problem-text": "For testing, it is necessary to temporarily close a track branch, since the trolley is slower than regular and high-speed trains."
+		},
+		{
+			"card-id": "5",
+			"card-title": "Company Name",
+			"card-situation-title": "Situation",
+			"card-situation-text": "There is no effective metro cooling system, and the temperature rises every year due to increased passenger flow and the average air temperature.",
+			"card-problem-title": "Problem",
+			"card-problem-text": "For testing, it is necessary to temporarily close a track branch, since the trolley is slower than regular and high-speed trains."
+		},
+		{
+			"card-id": "6",
+			"card-title": "Company Name",
+			"card-situation-title": "Situation",
+			"card-situation-text": "There is no effective metro cooling system, and the temperature rises every year due to increased passenger flow and the average air temperature.",
+			"card-problem-title": "Problem",
+			"card-problem-text": "For testing, it is necessary to temporarily close a track branch, since the trolley is slower than regular and high-speed trains."
+		},
+		{
+			"card-id": "7",
+			"card-title": "Company Name",
+			"card-situation-title": "Situation",
+			"card-situation-text": "There is no effective metro cooling system, and the temperature rises every year due to increased passenger flow and the average air temperature.",
+			"card-problem-title": "Problem",
+			"card-problem-text": "For testing, it is necessary to temporarily close a track branch, since the trolley is slower than regular and high-speed trains."
+		},
+		{
+			"card-id": "8",
+			"card-title": "Company Name",
+			"card-situation-title": "Situation",
+			"card-situation-text": "There is no effective metro cooling system, and the temperature rises every year due to increased passenger flow and the average air temperature.",
+			"card-problem-title": "Problem",
+			"card-problem-text": "For testing, it is necessary to temporarily close a track branch, since the trolley is slower than regular and high-speed trains."
+		}
+	],
+
+	"prize-title": {
+		"0": "Win",
+		"1": "the Grand Prix"
+	},
+	"prize-caption": "For the\u00A0best team of\u00A0the\u00A0season",
+	"prize-text": "Prize fund of\u00A0the\u00A0International Transport Project Competition",
+	"prize-cards": {
+		"0": {
+			"text": {
+				"0": "For solving the\u00A0problem",
+				"1": "Company name"
+			}
+		},
+		"1": {
+			"text": {
+				"0": "For solving the\u00A0problem",
+				"1": "Company name"
+			}
+		},
+		"2": {
+			"text": {
+				"0": "For solving the\u00A0problem",
+				"1": "Company name"
+			}
+		},
+		"3": {
+			"text": {
+				"0": "For solving the\u00A0problem",
+				"1": "Company name"
+			}
+		},
+		"4": {
+			"text": {
+				"0": "For solving the\u00A0problem",
+				"1": "Company name"
+			}
+		},
+		"5": {
+			"text": {
+				"0": "For solving the\u00A0problem",
+				"1": "Company name"
+			}
+		},
+		"grand-prix": {
+			"text": {
+				"0": "The Grand Prix",
+				"1": "best team of\u00A0the\u00A0season"
+			}
+		}
+	},
+
+
+  "reasons-title": {
+    "0": "Why",
+    "1": "participate?"
+  },
+  "reasons-caption": "Reasons",
+  "reasons-cards": {
+    "0": "Solve a\u00A0real problem of\u00A0a\u00A0real company",
+    "1": "Gain real team experience",
+    "2": "Build a\u00A0portfolio you can show to\u00A0employers",
+    "3": "Develop project and engineering thinking",
+    "4": "Reach the\u00A0international competition final",
+    "5": "Win up to\u00A01\u00A0000\u00A0000\u00A0₽ per\u00A0team",
+		"stub-1": "Opportunities that work for\u00A0your future.",
+		"stub-2": "Less theory\u00A0— more real challenges."
+  },
+
+
+	"invite-title": {
+		"0": "Who",
+		"1": "are we waiting for?"
+	},
+	"invite-caption": "We invite you to\u00A0participate",
+	"invite-cards": {
+		"0": {
+			"title": "Who We Invite",
+			"text": "We invite students from transport universities and other technical universities who are interested in\u00A0solving real industry problems."
+		},
+		"1": {
+			"title": "Who This Is For",
+			"text": "If you want to\u00A0test yourself in\u00A0conditions close to\u00A0real industry work, apply your engineering skills, and learn something new — this is\u00A0definitely for\u00A0you. It doesn’t matter what experience you already have — what matters is the\u00A0desire to\u00A0understand complex situations, offer unconventional solutions, and do it with\u00A0reasoning."
+		},
+		"2": {
+			"title": {
+				"0": "Form a\u00A0Team and Register\u00A0—",
+				"1": "Become Part of\u00A0the",
+				"2": "Transportation Industry!"
+			}
+		}
+	},
+
+
+	"faq-caption": "FAQ",
+  "faq-title": "Frequently Asked Questions",
+  "faq-items": [
+    {
+      "id": "1",
+      "title": "Who can participate?",
+      "content": "Students of\u00A0any year enrolled in\u00A0higher education programs at\u00A0transport and technical universities and obtaining their first degree can participate. Teams with diverse skills — from analytics and engineering to\u00A0design and IT — are\u00A0encouraged."
+    },
+    {
+      "id": "2",
+      "title": "Do I need a\u00A0ready project to\u00A0participate?",
+      "content": "No. All teams start from the\u00A0same point — a\u00A0problem description. You will develop your solution step by step during the\u00A0competition."
+    },
+    {
+      "id": "3",
+      "title": "What will participants do?",
+      "content": "You will investigate a\u00A0real problem of\u00A0a\u00A0transport company, propose a\u00A0solution, build a\u00A0prototype, and present it to\u00A0experts. The process follows a\u00A0classic project flow: analysis → idea → validation → result."
+    },
+    {
+      "id": "4",
+      "title": "Can I participate individually?",
+      "content": "No, participation is\u00A0only possible as\u00A0part of\u00A0a\u00A0team. Each team represents one educational institution and may include students from different groups and years."
+    },
+    {
+      "id": "5",
+      "title": "How long does participation take?",
+      "content": "The full track lasts about 2 months: selection and registration take one month, followed by about a\u00A0month to\u00A0refine your solution, and a\u00A0three-day final."
+    },
+    {
+      "id": "6",
+      "title": "What has changed this season?",
+      "content": "This year, the\u00A0final format has been updated and a\u00A0project expo has been introduced — teams present solutions in\u00A0an\u00A0engineering fair format. More real industry challenges have been added, along with technical support and new tools. The\u00A0international track has been expanded with\u00A0teams from\u00A0other countries. Previous winners cannot participate again but may\u00A0be invited to\u00A0the\u00A0international track."
+    },
+    {
+      "id": "7",
+      "title": "How many problems can a\u00A0team solve?",
+      "content": "Each team can work on\u00A0only one problem, and each participant can be part of\u00A0only one team. The\u00A0top 3 teams for\u00A0each of\u00A0the\u00A07 challenges advance to\u00A0the\u00A0final."
+    },
+    {
+      "id": "8",
+      "title": "What do winners receive?",
+      "content": "The prize pool is\u00A02 million rubles, along with\u00A0gifts, diplomas, and most importantly — experience, connections, and new opportunities. Top teams may also be invited to\u00A0future seasons and industry events."
+    }
+  ],
+
+
+	"document-title": "Documents",
+	"document-caption": "For Reference",
+	"document-cards": {
+		"0": {
+			"title": "Regulations",
+			"text": "Main goals, objectives, participation conditions, and\u00A0general rules of\u00A0the\u00A0competition."
+		},
+		"1": {
+			"title": "Rules",
+			"text": "Detailed description of\u00A0stages, deadlines, team requirements, and\u00A0evaluation criteria."
+		},
+		"2": {
+			"title": "Protocol",
+			"text": "Official results, commission decisions, and\u00A0final competition documents."
+		}
+	},
+
+
+
+	"footer-title": {
+		"0": "Still have questions?",
+		"1": "contact us!"
+	},
+	"footer-copy": "RUT (MIIT), All rights reserved"
+}

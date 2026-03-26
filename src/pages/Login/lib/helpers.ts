@@ -1,0 +1,50 @@
+import type { ILoginForm } from '../types/types';
+import type { TFormValidationErrors } from '../../../shared/components/Form/types/types';
+import { EROUTES } from '../../../shared/utils/routes';
+
+import {
+	required,
+	minLength,
+	emailFormat,
+} from '../../../shared/lib/validationRules';
+
+export const links = [
+	{
+		label: 'Забыли пароль?',
+		text: 'Восстановить',
+		url: EROUTES.FORGOT_PASSWORD,
+	},
+	{
+		label: 'Новый пользователь?',
+		text: 'Регистрация',
+		url: EROUTES.REGISTRATION,
+	},
+	{
+		label: 'Вы не сотрудник РУТ (МИИТ)?',
+		text: 'Подать заявку',
+		url: EROUTES.APPLY,
+	},
+];
+
+export const validationSchema = {
+	email: [
+		required('Введите электронную почту'),
+		emailFormat('Неверный формат электронной почты'),
+	],
+	password: [
+		required('Введите пароль'),
+		minLength(8, 'Пароль должен быть не менее 8 символов'),
+	],
+};
+
+export const shouldBlockSubmit = (
+	values: ILoginForm,
+	errors: TFormValidationErrors
+): boolean => {
+	return (
+		!values.email.trim() ||
+		!!errors.email ||
+		!values.password.trim() ||
+		!!errors.password
+	);
+};

@@ -1,0 +1,15 @@
+.h-slider { 
+  width: 600px;
+  height: 400px;
+  border-radius: 12px;
+}
+
+.slider__item {
+  user-select: none;
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.slider__img {
+  border-radius: 12px;
+}

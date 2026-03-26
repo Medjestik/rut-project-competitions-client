@@ -1,0 +1,150 @@
+.container {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	position: relative;
+	background:
+		linear-gradient(
+			to bottom,
+			#070707 0%,
+			rgba(7, 7, 7, 0) 15%,
+			rgba(7, 7, 7, 0) 85%,
+			#070707 100%
+		),
+		url('../../../../shared/images/stages-background.png');
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.stages {
+	margin: 0;
+	padding: 80px;
+	box-sizing: border-box;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 1;
+}
+
+.title {
+	margin: 40px 0 0 0;
+	font-weight: 500;
+	font-size: 64px;
+	font-style: normal;
+	line-height: 1.12;
+	color: var(--main-white-color);
+	text-transform: uppercase;
+}
+
+.row {
+	width: 100%;
+	margin: 0;
+	display: grid;
+	gap: 20px;
+	&_top {
+		margin: 80px 0 0 0;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+	&_bottom {
+		margin: 20px 0 0 0;
+		grid-template-columns: 2fr 1fr 1fr;
+	}
+}
+
+.stage__stub {
+	margin: 0;
+	width: 100%;
+  height: 100%;
+  padding: 100px 40px;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 400;
+	font-size: 16px;
+	font-style: normal;
+	line-height: 1.2;
+	color: var(--main-white-color);
+	text-align: left;
+}
+
+.caption {
+	margin: auto 0 0 0;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	&__text {
+		margin: 0;
+		max-width: 425px;
+		font-weight: 400;
+		font-size: 24px;
+		font-style: normal;
+		line-height: 1.15;
+		color: var(--main-white-color);
+	}
+}
+
+@media (max-width: 1600px) {
+	.stages {
+		padding: 80px 32px 96px;
+	}
+	.title {
+		font-size: 56px;
+	}
+}
+
+@media (max-width: 1536px) {
+	.stages {
+		padding: 60px 24px 80px;
+	}
+}
+
+@media (max-width: 1366px) {
+	.stages {
+		padding: 60px 20px 80px;
+	}
+	.title {
+		margin: 20px 0 0 0;
+		font-size: 48px;
+	}
+	.row {
+		width: 100%;
+		margin: 0;
+		display: grid;
+		gap: 20px;
+		&_top {
+			margin: 40px 0 0 0;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		&_bottom {
+			margin: 20px 0 0 0;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+	.stage__stub {
+		display: none;
+	}
+	.caption {
+		gap: 20px;
+		&__text {
+			max-width: 325px;
+			font-size: 20px;
+		}
+	}
+}
+
+
+@media (max-width: 1279px) {
+	.stages {
+		margin: 12px 0 0 0;
+		padding: 40px 20px 60px;
+	}
+	.title {
+		font-size: 40px;
+	}
+}
