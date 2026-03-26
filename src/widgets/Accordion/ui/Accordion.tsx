@@ -7,10 +7,10 @@ import styles from '../styles/accordion.module.scss';
 
 export const Accordion: FC<IAccordion> = ({ items }) => {
 	return (
-		<ul className={styles.accordion}>
+		<div className={styles.accordion}>
 			{items.map((item) => (
 				<AccordionItem key={item.id} item={item} />
 			))}
-		</ul>
+		</div>
 	);
 };

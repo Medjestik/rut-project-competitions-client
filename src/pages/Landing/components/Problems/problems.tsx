@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useKeenSlider } from 'keen-slider/react';
 import { useWindowWidth } from '../../../../hooks/useWindowWidth';
+import { useInView } from '../../../../hooks/useInView';
 
 import { Caption } from '../../shared/Caption/caption';
 import { GradientText } from '../../shared/GradientText/gradient-text';
@@ -26,6 +27,7 @@ export const Problems: FC = () => {
 	const { t } = useTranslation();
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const width = useWindowWidth();
+	const { ref, isVisible } = useInView({ threshold: 0.2 });
 
 	const problemsCards = t('problems-cards', {
 		returnObjects: true,
@@ -51,7 +53,11 @@ export const Problems: FC = () => {
 
 	return (
 		<div id={ESECTION.PROBLEMS} className={styles.container}>
-			<section className={styles.problems}>
+			<section
+				ref={ref}
+				className={`${styles.problems} ${styles.fadeUp} ${
+					isVisible ? styles.visible : ''
+				}`}>
 				<Caption text={t('problems-caption')} />
 				<h2 className={styles.title}>
 					<GradientText text={t('problems-title.0')} /> {t('problems-title.1')}
@@ -102,7 +108,11 @@ export const Problems: FC = () => {
 								<div
 									key={elem['card-id']}
 									className={`keen-slider__slide ${styles.item}`}>
-									<div className={styles.item__container}>
+									<div
+										className={`${styles.item__container} ${styles.fadeCard} ${
+											isVisible ? styles.visibleCard : ''
+										}`}
+										style={{ transitionDelay: `${index * 0.2}s` }}>
 										<div className={styles.item__main}>
 											<span className={styles.item__count}>0{index + 1}</span>
 											<h3 className={styles.item__title}>

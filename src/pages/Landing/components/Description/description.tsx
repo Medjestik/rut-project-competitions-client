@@ -1,7 +1,9 @@
 import type { FC } from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { useInView } from '../../../../hooks/useInView';
 
+import { Link } from 'react-scroll';
 import { Caption } from '../../shared/Caption/caption';
 import { GradientText } from '../../shared/GradientText/gradient-text';
 import { Button } from '../../../../shared/components/Button/ui/button';
@@ -12,9 +14,15 @@ import styles from './description.module.scss';
 
 export const Description: FC = () => {
 	const { t } = useTranslation();
+	const { ref, isVisible } = useInView({ threshold: 0.2 });
 
 	return (
-		<section id={ESECTION.DESCRIPTION} className={styles.description}>
+		<section
+			id={ESECTION.DESCRIPTION}
+			ref={ref}
+			className={`${styles.description} ${styles.fadeUp} ${
+				isVisible ? styles.visible : ''
+			}`}>
 			<div className={styles.row}>
 				<Caption text={t('description-caption')} />
 				<h2 className={styles.title}>
@@ -24,7 +32,11 @@ export const Description: FC = () => {
 				</h2>
 			</div>
 			<ul className={styles.list}>
-				<li className={styles.item}>
+				<li
+					className={`${styles.item} ${styles.fadeUp} ${
+						isVisible ? styles.visible : ''
+					}`}
+					style={{ transitionDelay: '0.2s' }}>
 					<h4 className={styles.item__title}>
 						{t('description-cards.0.title.0')}{' '}
 						<GradientText text={t('description-cards.0.title.1')} />{' '}
@@ -32,7 +44,11 @@ export const Description: FC = () => {
 					</h4>
 					<p className={styles.item__text}>{t('description-cards.0.text')}</p>
 				</li>
-				<li className={styles.item}>
+				<li
+					className={`${styles.item} ${styles.fadeUp} ${
+						isVisible ? styles.visible : ''
+					}`}
+					style={{ transitionDelay: '0.4s' }}>
 					<h4 className={styles.item__title}>
 						{t('description-cards.1.title.0')}
 						<br></br>
@@ -40,12 +56,23 @@ export const Description: FC = () => {
 					</h4>
 					<p className={styles.item__text}>{t('description-cards.1.text')}</p>
 				</li>
-				<li className={styles.item}>
+				<li
+					className={`${styles.item} ${styles.fadeUp} ${
+						isVisible ? styles.visible : ''
+					}`}
+					style={{ transitionDelay: '0.6s' }}>
 					<h4 className={styles.item__title}>
 						{t('description-cards.2.title')}
 					</h4>
 					<p className={styles.item__text}>{t('description-cards.2.text')}</p>
-					<Button text={t('description-card-btn')} color='gradient' />
+					<Link
+						to={ESECTION.STAGES}
+						smooth={true}
+						offset={0}
+						duration={500}
+						spy={true}>
+						<Button text={t('description-card-btn')} color='gradient' />
+					</Link>
 				</li>
 			</ul>
 		</section>

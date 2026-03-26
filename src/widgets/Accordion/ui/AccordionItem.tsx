@@ -23,7 +23,7 @@ export const AccordionItem: FC<IAccordionItemProps> = ({ item }) => {
 	};
 
 	return (
-		<li
+		<div
 			className={`${styles.accordion__item} ${
 				isOpenAccordion ? styles.accordion__item_state_open : ''
 			}`}>
@@ -56,6 +56,6 @@ export const AccordionItem: FC<IAccordionItemProps> = ({ item }) => {
 				className={styles.accordion__children}>
 				<p className={styles.accordion__text}>{item.content}</p>
 			</div>
-		</li>
+		</div>
 	);
 };

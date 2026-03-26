@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { useInView } from '../../../../hooks/useInView';
 
 import { Caption } from '../../shared/Caption/caption';
 import { GradientText } from '../../shared/GradientText/gradient-text';
@@ -12,37 +13,67 @@ import styles from './reasons.module.scss';
 export const Reasons: FC = () => {
 	const { t } = useTranslation();
 
+	const { ref, isVisible } = useInView({ threshold: 0.2 });
+
 	return (
 		<div id={ESECTION.REASONS} className={styles.container}>
-			<section className={styles.reasons}>
+			<section
+				ref={ref}
+				className={`${styles.reasons} ${styles.fadeUp} ${
+					isVisible ? styles.visible : ''
+				}`}>
 				<Caption text={t('reasons-caption')} />
 				<h2 className={styles.title}>
 					<GradientText text={t('reasons-title.0')} /> {t('reasons-title.1')}
 				</h2>
 				<div className={styles.cards}>
-					<div className={`${styles.card} ${styles.card_type_1}`}>
+					<div
+						className={`${styles.card} ${styles.card_type_1} ${styles.fadeUp} ${
+							isVisible ? styles.visible : ''
+						}`}
+						style={{ transitionDelay: '0.2s' }}>
 						<span className={styles.card__number}>01</span>
 						<h4 className={styles.card__title}>{t('reasons-cards.0')}</h4>
 					</div>
 					<div className={styles.card__stub}>{t('reasons-cards.stub-1')}</div>
-					<div className={`${styles.card} ${styles.card_type_2}`}>
+					<div
+						className={`${styles.card} ${styles.card_type_2} ${styles.fadeUp} ${
+							isVisible ? styles.visible : ''
+						}`}
+						style={{ transitionDelay: '0.4s' }}>
 						<span className={styles.card__number}>02</span>
 						<h4 className={styles.card__title}>{t('reasons-cards.1')}</h4>
 					</div>
-					<div className={`${styles.card} ${styles.card_type_3}`}>
+					<div
+						className={`${styles.card} ${styles.card_type_3} ${styles.fadeUp} ${
+							isVisible ? styles.visible : ''
+						}`}
+						style={{ transitionDelay: '0.6s' }}>
 						<span className={styles.card__number}>03</span>
 						<h4 className={styles.card__title}>{t('reasons-cards.2')}</h4>
 					</div>
 					<div className={styles.card__stub}>{t('reasons-cards.stub-2')}</div>
-					<div className={`${styles.card} ${styles.card_type_4}`}>
+					<div
+						className={`${styles.card} ${styles.card_type_1} ${styles.fadeUp} ${
+							isVisible ? styles.visible : ''
+						}`}
+						style={{ transitionDelay: '0.8s' }}>
 						<span className={styles.card__number}>04</span>
 						<h4 className={styles.card__title}>{t('reasons-cards.3')}</h4>
 					</div>
-					<div className={`${styles.card} ${styles.card_type_5}`}>
+					<div
+						className={`${styles.card} ${styles.card_type_1} ${styles.fadeUp} ${
+							isVisible ? styles.visible : ''
+						}`}
+						style={{ transitionDelay: '1s' }}>
 						<span className={styles.card__number}>05</span>
 						<h4 className={styles.card__title}>{t('reasons-cards.4')}</h4>
 					</div>
-					<div className={`${styles.card} ${styles.card_type_6}`}>
+					<div
+						className={`${styles.card} ${styles.card_type_1} ${styles.fadeUp} ${
+							isVisible ? styles.visible : ''
+						}`}
+						style={{ transitionDelay: '1.2s' }}>
 						<span className={styles.card__number}>06</span>
 						<h4 className={styles.card__title}>{t('reasons-cards.5')}</h4>
 					</div>

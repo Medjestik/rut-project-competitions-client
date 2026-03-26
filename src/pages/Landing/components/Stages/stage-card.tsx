@@ -9,11 +9,24 @@ interface IStageCard {
 	title: string;
 	duration: string;
 	content: string;
+	isVisible: boolean;
+	transitionDelay: string;
 }
 
-export const StageCard: FC<IStageCard> = ({ id, title, duration, content }) => {
+export const StageCard: FC<IStageCard> = ({
+	id,
+	title,
+	duration,
+	content,
+	isVisible,
+	transitionDelay,
+}) => {
 	return (
-		<div className={`${styles.card}  ${styles[`card_type_${id}`]}`}>
+		<div
+			className={`${styles.card} ${styles[`card_type_${id}`]} ${
+				styles.fadeUp
+			} ${isVisible ? styles.visible : ''}`}
+			style={{ transitionDelay: `${transitionDelay}s` }}>
 			<div className={styles.main}>
 				<span className={styles.main__number}>0{id}</span>
 				<h4 className={styles.main__title}>{title}</h4>

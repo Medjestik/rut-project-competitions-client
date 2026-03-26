@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { useInView } from '../../../../hooks/useInView';
 
 import { Caption } from '../../shared/Caption/caption';
 import { GradientText } from '../../shared/GradientText/gradient-text';
@@ -11,10 +12,15 @@ import styles from './invite.module.scss';
 
 export const Invite: FC = () => {
 	const { t } = useTranslation();
+	const { ref, isVisible } = useInView({ threshold: 0.2 });
 
 	return (
 		<div id={ESECTION.INVITE} className={styles.container}>
-			<section className={styles.invite}>
+			<section
+				ref={ref}
+				className={`${styles.invite} ${styles.fadeUp} ${
+					isVisible ? styles.visible : ''
+				}`}>
 				<div className={styles.row}>
 					<Caption text={t('invite-caption')} />
 					<h2 className={styles.title}>
@@ -22,15 +28,27 @@ export const Invite: FC = () => {
 					</h2>
 				</div>
 				<ul className={styles.cards}>
-					<li className={styles.card}>
+					<li
+						className={`${styles.card} ${styles.fadeUp} ${
+							isVisible ? styles.visible : ''
+						}`}
+						style={{ transitionDelay: '0.2s' }}>
 						<h4 className={styles.card__title}>{t('invite-cards.0.title')}</h4>
 						<p className={styles.card__text}>{t('invite-cards.0.text')}</p>
 					</li>
-					<li className={styles.card}>
+					<li
+						className={`${styles.card} ${styles.fadeUp} ${
+							isVisible ? styles.visible : ''
+						}`}
+						style={{ transitionDelay: '0.4s' }}>
 						<h4 className={styles.card__title}>{t('invite-cards.1.title')}</h4>
 						<p className={styles.card__text}>{t('invite-cards.1.text')}</p>
 					</li>
-					<li className={styles.card}>
+					<li
+						className={`${styles.card} ${styles.fadeUp} ${
+							isVisible ? styles.visible : ''
+						}`}
+						style={{ transitionDelay: '0.6s' }}>
 						<h4 className={styles.card__title}>
 							{t('invite-cards.2.title.0')}{' '}
 							<GradientText text={t('invite-cards.2.title.1')} /> <br></br>

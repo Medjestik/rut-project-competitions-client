@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { useInView } from '../../../../hooks/useInView';
 
 import { Link } from 'react-scroll';
 import { Button } from '../../../../shared/components/Button/ui/button';
@@ -15,15 +16,29 @@ import styles from './footer.module.scss';
 export const Footer: FC = () => {
 	const { t } = useTranslation();
 
+	const { ref, isVisible } = useInView({ threshold: 0.2 });
+
 	return (
 		<div id={ESECTION.FOOTER} className={styles.container}>
-			<section className={styles.footer}>
+			<section
+				ref={ref}
+				className={`${styles.footer} ${styles.fadeUp} ${
+					isVisible ? styles.visible : ''
+				}`}>
 				<div className={styles.row}>
-					<div className={styles.logos}>
+					<div
+						className={`${styles.logos} ${styles.fadeUp} ${
+							isVisible ? styles.visible : ''
+						}`}
+						style={{ transitionDelay: '0.2s' }}>
 						<div className={`${styles.logo} ${styles.logo_min}`}></div>
 						<div className={`${styles.logo} ${styles.logo_rut}`}></div>
 					</div>
-					<nav className={styles.nav}>
+					<nav
+						className={`${styles.nav} ${styles.fadeUp} ${
+							isVisible ? styles.visible : ''
+						}`}
+						style={{ transitionDelay: '0.3s' }}>
 						<div className={styles.nav__column}>
 							{navLinks.slice(0, 4).map((item) => (
 								<Link
@@ -53,7 +68,11 @@ export const Footer: FC = () => {
 							))}
 						</div>
 					</nav>
-					<div className={styles.contacts}>
+					<div
+						className={`${styles.contacts} ${styles.fadeUp} ${
+							isVisible ? styles.visible : ''
+						}`}
+						style={{ transitionDelay: '0.6s' }}>
 						<h2 className={styles.title}>
 							{t('footer-title.0')} <br />
 							<GradientText text={t('footer-title.1')} />
@@ -67,7 +86,11 @@ export const Footer: FC = () => {
 						</div>
 					</div>
 				</div>
-				<p className={styles.copy}>
+				<p
+					className={`${styles.copy} ${styles.fadeUp} ${
+						isVisible ? styles.visible : ''
+					}`}
+					style={{ transitionDelay: '0.8s' }}>
 					&copy; {getCurrentYear()} {t('footer-copy')}
 				</p>
 			</section>

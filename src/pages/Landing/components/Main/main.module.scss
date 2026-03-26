@@ -137,6 +137,17 @@
 	margin: 8px 0 8px auto;
 }
 
+.fadeUp {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: all 0.6s ease;
+}
+
+.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
 @media (max-width: 1600px) {
 	.main {
 		padding: 20px 32px 40px;

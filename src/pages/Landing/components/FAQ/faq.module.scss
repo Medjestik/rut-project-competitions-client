@@ -45,6 +45,20 @@
 	margin: 80px 0 0 auto;
 	width: 100%;
 	max-width: 1160px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.fadeUp {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: all 0.6s ease;
+}
+
+.visible {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 @media (max-width: 1600px) {
@@ -67,6 +81,7 @@
 	}
 	.accordion {
 		margin: 60px 0 0 auto;
+		gap: 12px;
 		max-width: 980px;
 	}
 }
