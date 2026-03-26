@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { Caption } from '../../shared/Caption/caption';
 import { Button } from '../../../../shared/components/Button/ui/button';
 
+import { ESECTION } from '../../lib/sections';
+
 import styles from './document.module.scss';
 
 const btnStyle = {
@@ -15,7 +17,7 @@ export const Document: FC = () => {
 	const { t } = useTranslation();
 
 	return (
-		<div id='documents' className={styles.container}>
+		<div id={ESECTION.DOCUMENT} className={styles.container}>
 			<section className={styles.document}>
 				<Caption text={t('document-caption')} />
 				<h2 className={styles.title}>{t('document-title')}</h2>

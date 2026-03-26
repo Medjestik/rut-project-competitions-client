@@ -80,26 +80,31 @@
 	"stages-caption": "How the competition works",
 	"stages-cards": {
 		"0": {
+			"id": "1",
 			"title": "Registration",
 			"duration": "September 1 - September 15",
 			"content": "Register on\u00A0the\u00A0website to\u00A0become a\u00A0participant in\u00A0the\u00A0project competition."
 		},
 		"1": {
+			"id": "2",
 			"title": "Work",
 			"duration": "September 15 - October 1",
 			"content": "Over two weeks, participants analyze the situation, conduct interviews, develop a\u00A0solution idea, and prepare a\u00A0basic prototype."
 		},
 		"2": {
+			"id": "3",
 			"title": "Support",
 			"duration": "September 15 - October 1",
 			"content": "Communicate with\u00A0experts and other teams in\u00A0the\u00A0case’s Telegram chat. Upload your stage results to\u00A0your personal account."
 		},
 		"3": {
+			"id": "4",
 			"title": "Results",
 			"duration": "October 1 - October 7",
 			"content": "Wait for the\u00A0selection results."
 		},
 		"4": {
+			"id": "5",
 			"title": "Final in Moscow",
 			"duration": "October 28 - October 30",
 			"content": "Come to\u00A0the\u00A0three-day final for\u00A0the\u00A0best of\u00A0the\u00A0best."

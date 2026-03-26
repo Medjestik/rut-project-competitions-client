@@ -6,6 +6,8 @@ import { useTranslation } from 'react-i18next';
 import { Caption } from '../../shared/Caption/caption';
 import { Accordion } from '../../../../widgets/Accordion/ui/Accordion';
 
+import { ESECTION } from '../../lib/sections';
+
 import styles from './faq.module.scss';
 
 export const FAQ: FC = () => {
@@ -13,7 +15,7 @@ export const FAQ: FC = () => {
 	const faqItems = t('faq-items', { returnObjects: true }) as IAccordionItem[];
 
 	return (
-		<div id='faq' className={styles.container}>
+		<div id={ESECTION.FAQ} className={styles.container}>
 			<section className={styles.faq}>
 				<Caption text={t('faq-caption')} />
 				<h2 className={styles.title}>{t('faq-title')}</h2>

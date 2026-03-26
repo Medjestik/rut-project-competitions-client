@@ -6,13 +6,15 @@ import { Caption } from '../../shared/Caption/caption';
 import { GradientText } from '../../shared/GradientText/gradient-text';
 import { Button } from '../../../../shared/components/Button/ui/button';
 
+import { ESECTION } from '../../lib/sections';
+
 import styles from './description.module.scss';
 
 export const Description: FC = () => {
 	const { t } = useTranslation();
 
 	return (
-		<section id='description' className={styles.description}>
+		<section id={ESECTION.DESCRIPTION} className={styles.description}>
 			<div className={styles.row}>
 				<Caption text={t('description-caption')} />
 				<h2 className={styles.title}>

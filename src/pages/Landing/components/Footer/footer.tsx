@@ -8,6 +8,7 @@ import { GradientText } from '../../shared/GradientText/gradient-text';
 
 import { navLinks } from './data';
 import { getCurrentYear } from '../../../../shared/utils/getCurrentYear';
+import { ESECTION } from '../../lib/sections';
 
 import styles from './footer.module.scss';
 
@@ -15,7 +16,7 @@ export const Footer: FC = () => {
 	const { t } = useTranslation();
 
 	return (
-		<div id='footer' className={styles.container}>
+		<div id={ESECTION.FOOTER} className={styles.container}>
 			<section className={styles.footer}>
 				<div className={styles.row}>
 					<div className={styles.logos}>

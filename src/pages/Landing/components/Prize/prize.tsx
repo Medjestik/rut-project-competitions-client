@@ -6,6 +6,8 @@ import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 import { Caption } from '../../shared/Caption/caption';
 import { GradientText } from '../../shared/GradientText/gradient-text';
 
+import { ESECTION } from '../../lib/sections';
+
 import styles from './prize.module.scss';
 
 export const Prize: FC = () => {
@@ -13,7 +15,7 @@ export const Prize: FC = () => {
 	const width = useWindowWidth();
 
 	return (
-		<div id='prize' className={styles.container}>
+		<div id={ESECTION.PRIZE} className={styles.container}>
 			<section className={styles.prize}>
 				<div className={styles.row}>
 					<Caption text={t('prize-caption')} />

@@ -5,13 +5,15 @@ import { useTranslation } from 'react-i18next';
 import { Caption } from '../../shared/Caption/caption';
 import { GradientText } from '../../shared/GradientText/gradient-text';
 
+import { ESECTION } from '../../lib/sections';
+
 import styles from './invite.module.scss';
 
 export const Invite: FC = () => {
 	const { t } = useTranslation();
 
 	return (
-		<div id='req' className={styles.container}>
+		<div id={ESECTION.INVITE} className={styles.container}>
 			<section className={styles.invite}>
 				<div className={styles.row}>
 					<Caption text={t('invite-caption')} />

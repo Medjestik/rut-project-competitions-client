@@ -5,13 +5,15 @@ import { useTranslation } from 'react-i18next';
 import { Caption } from '../../shared/Caption/caption';
 import { GradientText } from '../../shared/GradientText/gradient-text';
 
+import { ESECTION } from '../../lib/sections';
+
 import styles from './reasons.module.scss';
 
 export const Reasons: FC = () => {
 	const { t } = useTranslation();
 
 	return (
-		<div id='reasons' className={styles.container}>
+		<div id={ESECTION.REASONS} className={styles.container}>
 			<section className={styles.reasons}>
 				<Caption text={t('reasons-caption')} />
 				<h2 className={styles.title}>

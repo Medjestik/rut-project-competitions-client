@@ -7,13 +7,15 @@ import { Caption } from '../../shared/Caption/caption';
 import { GradientText } from '../../shared/GradientText/gradient-text';
 import { Button } from '../../../../shared/components/Button/ui/button';
 
+import { ESECTION } from '../../lib/sections';
+
 import styles from './stages.module.scss';
 
 export const Stages: FC = () => {
 	const { t } = useTranslation();
 
 	return (
-		<div id='stages' className={styles.container}>
+		<div id={ESECTION.STAGES} className={styles.container}>
 			<section className={styles.stages}>
 				<Caption text={t('stages-caption')} />
 				<h2 className={styles.title}>{t('stages-title')}</h2>

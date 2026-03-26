@@ -10,18 +10,16 @@ i18n
 	.use(LanguageDetector)
 	.use(initReactI18next)
 	.init({
-		fallbackLng: 'ru',
-		supportedLngs: ['en', 'ru', 'cn', 'fr'],
+		fallbackLng: 'en',
+		supportedLngs: ['en', 'ru'],
+		load: 'languageOnly',
 		debug: false,
 		detection: {
-			order: ['querystring', 'localStorage', 'navigator'],
+			order: ['localStorage', 'navigator'],
 			caches: ['localStorage'],
 		},
 		interpolation: {
 			escapeValue: false,
-		},
-		backend: {
-			loadPath: '/locales/{{lng}}-translation.json',
 		},
 		resources: {
 			en: { translation: en },

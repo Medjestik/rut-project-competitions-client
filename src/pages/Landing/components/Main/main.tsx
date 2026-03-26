@@ -9,6 +9,8 @@ import { Button } from '../../../../shared/components/Button/ui/button';
 import { CountdownTimer } from '../../../../widgets/CountdownTimer/ui/CountdownTimer';
 import backgroundImg from '../../../../shared/images/main-background.png';
 
+import { ESECTION } from '../../lib/sections';
+
 import styles from './main.module.scss';
 
 export const Main: FC = () => {
@@ -22,7 +24,7 @@ export const Main: FC = () => {
 				className={styles.background}
 				aria-hidden='true'
 			/>
-			<section className={styles.main}>
+			<section id={ESECTION.MAIN} className={styles.main}>
 				<Header />
 				<div className={styles.title}>
 					<div className={styles.row}>

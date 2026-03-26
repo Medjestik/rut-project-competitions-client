@@ -8,6 +8,8 @@ import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 import { Caption } from '../../shared/Caption/caption';
 import { GradientText } from '../../shared/GradientText/gradient-text';
 
+import { ESECTION } from '../../lib/sections';
+
 import 'keen-slider/keen-slider.min.css';
 import styles from './problems.module.scss';
 
@@ -48,7 +50,7 @@ export const Problems: FC = () => {
 	const handleNext = () => instanceRef.current?.next();
 
 	return (
-		<div id='problems' className={styles.container}>
+		<div id={ESECTION.PROBLEMS} className={styles.container}>
 			<section className={styles.problems}>
 				<Caption text={t('problems-caption')} />
 				<h2 className={styles.title}>
