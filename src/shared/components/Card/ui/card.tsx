@@ -5,17 +5,19 @@ import styles from '../styles/card.module.scss';
 
 export const Card: FC<ICardProps> = ({
 	title,
+	titleSize = 'default',
 	subtitle,
-	withHeightStretch,
+	id,
 	width = 'full',
 	children,
 }) => {
 	return (
-		<div
-			className={`${styles.card}  ${styles[`card_width_${width}`]} ${
-				withHeightStretch ? styles.card_height_stretch : ''
-			}`}>
-			{title && <h2 className={styles.title}>{title}</h2>}
+		<div id={id} className={`${styles.card} ${styles[`card_width_${width}`]}`}>
+			{title && (
+				<h2 className={`${styles.title} ${styles[`title_size_${titleSize}`]}`}>
+					{title}
+				</h2>
+			)}
 			{subtitle && <p className={styles.subtitle}>{subtitle}</p>}
 			{children}
 		</div>

@@ -1,29 +1,27 @@
 export interface ICatalogStore {
-	institutes: IInstitute[];
-	departments: IDepartment[];
-	roles: IRole[];
-	tags: ITag[];
+	universities: IUniversity[];
+	problems: IProblem[];
 	isLoadingCatalog: boolean;
 	error: string | null;
 }
 
-export interface IInstitute {
-	code: string;
-	name: string;
-}
-
-export interface IDepartment {
+export interface IUniversity {
 	id: number;
 	name: string;
-	short_name: string;
+	address?: string;
+	name_full?: string;
+	name_search?: string;
+	name_short_csv?: string;
+	short_name?: string;
+	country?: string;
 }
 
-export interface IRole {
-	code: string;
-	name: string;
-}
-
-export interface ITag {
-	id: number;
-	name: string;
+export interface IProblem {
+	id: string;
+	title: string;
+	company?: string;
+	description?: string;
+	icon?: string;
+	problem?: string;
+	situation?: string;
 }

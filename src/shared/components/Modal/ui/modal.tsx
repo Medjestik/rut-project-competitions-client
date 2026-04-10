@@ -44,7 +44,7 @@ export const Modal: FC<IModalProps> = ({
 				{description && (
 					<p className={styles.description}>{description || ''}</p>
 				)}
-				{children}
+				<div className={styles.main}>{children}</div>
 			</div>
 		</div>
 	);

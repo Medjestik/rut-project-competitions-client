@@ -1,10 +1,36 @@
-.container {
-	margin: 0 auto;
+.registration {
+	margin: 0;
+	padding: 20px 80px 40px;
+	box-sizing: border-box;
 	width: 100%;
-	max-width: 435px;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
-	align-items: center;
+	align-items: flex-start;
 	position: relative;
+	z-index: 1;
+}
+
+.background {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	object-fit: contain;
+	z-index: -1;
+	pointer-events: none;
+	user-select: none;
+	will-change: transform;
+	transform: translateX(-50%) translateZ(0);
+}
+
+.container {
+	margin: 0;
+	padding: 40px 0;
+	box-sizing: border-box;
+	width: 100%;
+	display: flex;
+	gap: 20px;
 }

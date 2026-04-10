@@ -8,10 +8,10 @@ import { Description } from '../Description/description';
 import { Caption } from '../../shared/Caption/caption';
 import { Button } from '../../../../shared/components/Button/ui/button';
 import { CountdownTimer } from '../../../../widgets/CountdownTimer/ui/CountdownTimer';
-import backgroundImg from '../../../../shared/images/main-background.png';
 
 import { ESECTION } from '../../lib/sections';
 
+import backgroundImg from '../../../../shared/images/main-background.png';
 import styles from './main.module.scss';
 
 export const Main: FC = () => {

@@ -20,12 +20,12 @@
 	"main-text": "A platform for\u00A0students and\u00A0young professionals where solutions for\u00A0the future of\u00A0transportation are created: digitalization, infrastructure, logistics, and\u00A0engineering innovation",
 	"main-title": {
 		"0": "International",
-		"1": "Transport Project",
-		"2": "Competitions"
+		"1": "transport project",
+		"2": "competitions"
 	},
 	"main-cards": {
 		"0": {
-			"count": "8+",
+			"count": "6",
 			"caption": "challenges",
 			"text": "Practical tasks from\u00A0industry partners"
 		},
@@ -88,13 +88,13 @@
 		"1": {
 			"id": "2",
 			"title": "Work",
-			"duration": "September 15 - October 1",
+			"duration": "September 7 - October 1",
 			"content": "Over two weeks, participants analyze the situation, conduct interviews, develop a\u00A0solution idea, and prepare a\u00A0basic prototype."
 		},
 		"2": {
 			"id": "3",
 			"title": "Support",
-			"duration": "September 15 - October 1",
+			"duration": "September 7 - October 1",
 			"content": "Communicate with\u00A0experts and other teams in\u00A0the\u00A0case’s Telegram chat. Upload your stage results to\u00A0your personal account."
 		},
 		"3": {
@@ -111,7 +111,7 @@
 		}
 	},
 	"stages-stub": {
-		"0": "Form a\u00A0team and\u00A0apply — become part of\u00A0the\u00A0transportation industry!",
+		"0": "Form a\u00A0team and\u00A0register — become part of\u00A0the\u00A0transportation industry!",
 		"1": {
 			"0": "It doesn’t matter what experience you already have — what matters is",
 			"1": "the\u00A0desire to\u00A0learn",
@@ -316,12 +316,12 @@
     {
       "id": "6",
       "title": "What has changed this season?",
-      "content": "This year, the\u00A0final format has been updated and a\u00A0project expo has been introduced — teams present solutions in\u00A0an\u00A0engineering fair format. More real industry challenges have been added, along with technical support and new tools. The\u00A0international track has been expanded with\u00A0teams from\u00A0other countries. Previous winners cannot participate again but may\u00A0be invited to\u00A0the\u00A0international track."
+      "content": "This year, the\u00A0final format has been updated and a\u00A0project expo has been introduced — teams present solutions in\u00A0an\u00A0engineering fair format. More real industry challenges have been added, along with technical support and new tools. The\u00A0international track has been expanded with\u00A0teams from\u00A0other countries."
     },
     {
       "id": "7",
       "title": "How many problems can a\u00A0team solve?",
-      "content": "Each team can work on\u00A0only one problem, and each participant can be part of\u00A0only one team. The\u00A0top 3 teams for\u00A0each of\u00A0the\u00A07 challenges advance to\u00A0the\u00A0final."
+      "content": "Each team can work on\u00A0only one problem, and each participant can be part of\u00A0only one team. The\u00A0top 3 Russian teams and several international teams for\u00A0each of\u00A0the\u00A06 problems will advance to\u00A0the\u00A0final."
     },
     {
       "id": "8",
@@ -333,6 +333,7 @@
 
 	"document-title": "Documents",
 	"document-caption": "For Reference",
+	"document-card-caption": "*The protocol will be available after the results are finalized.",
 	"document-cards": {
 		"0": {
 			"title": "Regulations",
@@ -348,11 +349,23 @@
 		}
 	},
 
-
-
 	"footer-title": {
 		"0": "Still have questions?",
 		"1": "contact us!"
 	},
-	"footer-copy": "RUT (MIIT), All rights reserved"
+	"footer-copy": "RUT (MIIT), All rights reserved",
+
+
+	"registration-btn-back": "Home",
+  "registration-main-subtitle": "International transport project competitions",
+  "registration-main-title": "Team registration",
+  "registration-main-text": "Form a\u00A0team, choose a\u00A0case, and submit your application to\u00A0participate in\u00A0the\u00A0project competitions.",
+  "registration-main-tags": {
+    "0": "Registration takes 3 minutes",
+    "1": "3 team members",
+    "2": "Start registration"
+  },
+	"registration-stages-title": "Registration stages",
+	"registration-footer-text": "If you experience issues with\u00A0registration, please contact",
+	"registration-footer-support": "technical support"
 }

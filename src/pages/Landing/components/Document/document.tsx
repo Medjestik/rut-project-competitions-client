@@ -44,11 +44,17 @@ export const Document: FC = () => {
 							<p className={styles.card__text}>
 								{t(`document-cards.${i}.text`)}
 							</p>
-							<Button
-								text={t('download-button')}
-								color='arrow'
-								style={btnStyle}
-							/>
+							{i === 2 ? (
+								<span className={styles.card__caption}>
+									{t('document-card-caption')}
+								</span>
+							) : (
+								<Button
+									text={t('download-button')}
+									color='arrow'
+									style={btnStyle}
+								/>
+							)}
 						</li>
 					))}
 				</ul>

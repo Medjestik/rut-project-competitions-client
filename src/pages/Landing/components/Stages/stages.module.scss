@@ -86,6 +86,9 @@
 		font-style: normal;
 		line-height: 1.15;
 		color: var(--main-white-color);
+		&_color{
+			color: #C109D7;
+		}
 	}
 }
 

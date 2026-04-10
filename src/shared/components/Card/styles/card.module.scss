@@ -1,10 +1,9 @@
 .card {
 	margin: 0;
-	padding: 28px 36px;
+	padding: 32px;
 	box-sizing: border-box;
-	border-radius: var(--border-radius);
-	border: 1px solid var(--main-grey-light-color);
-	background-color: var(--main-white-color);
+	border-radius: 24px;
+	background-color: #201A23;
 	display: flex;
 	flex-direction: column;
 	&_width_full {
@@ -13,41 +12,33 @@
 	&_width_content {
 		width: fit-content;
 	}
-	&_height_stretch {
-		flex: 1;
-		min-height: 0;
-	}
 }
 
 .title {
 	margin: 0;
-	font-size: 18px;
-	line-height: 24px;
 	font-style: normal;
-	font-weight: bold;
-	color: var(--main-black-color);
+	font-weight: 500;
+	color: var(--main-white-color);
 	text-align: left;
+	&_size_default {
+		font-size: 24px;
+		line-height: 1.15;
+	}
+	&_size_large {
+		font-size: 64px;
+		line-height: 1.15;
+		text-transform: uppercase;
+	}
 }
 
 .subtitle  {
-	margin: 8px 0 0 0;
-	font-size: 14px;
-	line-height: 18px;
+	margin: 12px 0 20px 0;
+	font-size: 16px;
+	line-height: 1.2;
 	font-style: normal;
 	font-weight: normal;
-	color: var(--main-black-color);
+	color: #9E9E9E;
 	text-align: left;
-}
-
-.control {
-	margin: 0;
-	padding-top: 16px;
-	box-sizing: border-box;
-	border-top: 1px solid var(--main-grey-light-color);
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	gap: 8px;
 }
 
 @media (max-width: 1600px) {

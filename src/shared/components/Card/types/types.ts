@@ -2,8 +2,9 @@ import type { ReactNode } from 'react';
 
 export interface ICardProps {
 	title?: string;
+	titleSize?: 'default' | 'large';
 	subtitle?: string;
-	withHeightStretch?: boolean;
+	id?: string;
 	width?: 'default' | 'content' | 'full';
 	children?: ReactNode;
 }

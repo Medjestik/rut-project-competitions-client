@@ -15,6 +15,7 @@ export interface IFormProps {
 
 export interface IFormFieldProps {
 	title?: string;
+	caption?: string;
 	withInfo?: boolean;
 	withMarginBottom?: boolean;
 	onInfo?: () => void;

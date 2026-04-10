@@ -7,6 +7,7 @@ import styles from './form-field.module.scss';
 
 export const FormField: FC<IFormFieldProps> = ({
 	title,
+	caption = '',
 	fieldError,
 	withInfo = false,
 	withMarginBottom = false,
@@ -27,13 +28,15 @@ export const FormField: FC<IFormFieldProps> = ({
 				)}
 			</div>
 			{children}
-			{fieldError && (
+			{fieldError && fieldError.isShow ? (
 				<span
 					className={`${styles.error} ${
 						fieldError.isShow ? styles['error_status_show'] : ''
 					}`}>
 					{fieldError.text}
 				</span>
+			) : (
+				<span className={styles.caption}>{caption}</span>
 			)}
 		</div>
 	);

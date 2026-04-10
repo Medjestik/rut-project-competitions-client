@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { Link } from 'react-scroll';
@@ -7,11 +8,13 @@ import { Button } from '../../../../shared/components/Button/ui/button';
 import { LanguageSwitcher } from '../../../../widgets/LanguageSwitcher/ui/language-switcher';
 
 import { navLinks } from './data';
+import { EROUTES } from '../../../../shared/utils/routes';
 import { ESECTION } from '../../lib/sections';
 
 import styles from './header.module.scss';
 
 export const Header: FC = () => {
+	const navigate = useNavigate();
 	const { t } = useTranslation();
 
 	return (
@@ -36,7 +39,11 @@ export const Header: FC = () => {
 			</nav>
 			<div className={styles.control}>
 				<LanguageSwitcher />
-				<Button text={t('main-registration')} color='gradient' />
+				<Button
+					text={t('main-registration')}
+					color='gradient'
+					onClick={() => navigate(EROUTES.REGISTRATION)}
+				/>
 			</div>
 		</header>
 	);

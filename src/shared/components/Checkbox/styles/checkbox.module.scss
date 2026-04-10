@@ -8,10 +8,11 @@
 
 .checkbox {
   appearance: none;
-  width: 16px;
-  height: 16px;
-  border: 1px solid var(--slider-color);
-  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #F1F1F1;
+	background-color: rgb(241, 241, 241, 0.04);
+  border-radius: 6px;
   margin-right: 8px;
   position: relative;
   flex-shrink: 0;
@@ -19,19 +20,19 @@
 	cursor: pointer;
 
   &:checked {
-    background-color: var(--main-blue-color);
-    border-color: var(--main-blue-color);
+    background-color: #C109D7;
 
     &::after {
       content: '';
       position: absolute;
-      top: 2px;
-      left: 5px;
-      width: 3px;
-      height: 5px;
-      border: solid var(--main-white-color);
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg);
+      top: 3px;
+      left: 8px;
+      width: 8px;
+      height: 16px;
+			background-image: url('../../../../shared/images/icons/check.svg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
     }
   }
 }
@@ -39,8 +40,8 @@
 .text {
 	margin: 0;
   font-size: 14px;
-  line-height: 16px;
-  color: var(--main-black-color);
+  line-height: 1.1;
+  color: #9E9E9E;
 
   &_empty {
     color: var(--main-grey-color);

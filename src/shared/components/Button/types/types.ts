@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react';
+import type { CSSProperties, MouseEvent } from 'react';
 
 export interface IButtonProps {
 	text: string;
@@ -15,7 +15,8 @@ export interface IButtonProps {
 		| 'green'
 		| 'red'
 		| 'gradient'
-		| 'arrow';
+		| 'arrow'
+		| 'arrow-white';
 	withIcon?: {
 		type:
 			| 'add'
@@ -33,5 +34,5 @@ export interface IButtonProps {
 	};
 	width?: 'default' | 'full' | 'auto';
 	isBlock?: boolean;
-	onClick?: () => void;
+	onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }

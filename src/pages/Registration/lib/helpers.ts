@@ -1,63 +1,112 @@
-import type { IRegistrationForm } from '../types/types';
+import type { IRegisterForm, IParticipantForm } from '../types/types';
 import type { TFormValidationErrors } from '../../../shared/components/Form/types/types';
-import type { IDepartment } from '../../../store/catalog/types';
 
-import {
-	required,
-	phoneFormat,
-	emailFormat,
-} from '../../../shared/lib/validationRules';
-import { EROUTES } from '../../../shared/utils/routes';
+import { required, emailFormat } from '../../../shared/lib/validationRules';
+import { PARTICIPANTS_COUNT } from './lib';
 
-export const links = [
-	{ label: 'Уже есть аккаунт?', text: 'Войти', url: EROUTES.LOGIN },
-	{
-		label: 'Вы не сотрудник РУТ (МИИТ)?',
-		text: 'Подать заявку',
-		url: EROUTES.APPLY,
-	},
-];
-
-export const validationSchema = {
-	lastName: [required('Введите фамилию')],
-	firstName: [required('Введите имя')],
-	middleName: [required('Введите отчество')],
-	email: [
-		required('Введите электронную почту'),
-		emailFormat('Неверный формат электронной почты'),
-	],
-	phone: [
-		required('Введите номер телефона'),
-		phoneFormat('Неверный формат номера телефона'),
-	],
-	comment: [],
+export const validationRegistrationSchema = {
+	name: [required('Поле не может быть пустым')],
+	login: [required('Поле не может быть пустым')],
+	password: [required('Поле не может быть пустым')],
+	code: [required('Поле не может быть пустым')],
 };
 
-export const initialRegistrationValues: IRegistrationForm = {
-	lastName: '',
-	firstName: '',
-	middleName: '',
+export const validationParticipantSchema = {
+	last_name: [required('Поле не может быть пустым')],
+	first_name: [required('Поле не может быть пустым')],
+	level: [required('Поле не может быть пустым')],
+	group_name: [required('Поле не может быть пустым')],
+	email: [
+		required('Поле не может быть пустым'),
+		emailFormat('Неправильный формат почты'),
+	],
+	phone: [required('Поле не может быть пустым')],
+};
+
+export const initialParticipantValues: IParticipantForm = {
+	last_name: '',
+	first_name: '',
+	middle_name: '',
+	level: null,
+	group_name: '',
 	email: '',
 	phone: '',
-	comment: '',
 };
 
-export const shouldBlockSubmit = (
-	values: IRegistrationForm,
-	errors: TFormValidationErrors,
-	department: IDepartment | null
+export const initialRegistrationValues: IRegisterForm = {
+	name: '',
+	login: '',
+	password: '',
+	university: null,
+	case: null,
+	participants: [],
+	code: '',
+	isConfirmOne: false,
+	isConfirmTwo: false,
+	isConfirmThree: false,
+	isConfirmFour: false,
+};
+
+export const shouldBlockParticipantSubmit = (
+	values: IParticipantForm,
+	errors: TFormValidationErrors
 ): boolean => {
 	return (
-		!values.lastName.trim() ||
-		!!errors.lastName ||
-		!values.firstName.trim() ||
-		!!errors.firstName ||
-		!values.middleName.trim() ||
-		!!errors.middleName ||
+		!values.last_name.trim() ||
+		!!errors.last_name ||
+		!values.first_name.trim() ||
+		!!errors.first_name ||
+		!values.level ||
+		!!errors.level ||
+		!values.group_name.trim() ||
+		!!errors.group_name ||
 		!values.email.trim() ||
 		!!errors.email ||
 		!values.phone.trim() ||
-		!!errors.phone ||
-		!department
+		!!errors.phone
 	);
+};
+
+export const shouldBlockRegistrationSubmit = (
+	values: IRegisterForm,
+	errors: TFormValidationErrors
+): boolean => {
+	return (
+		!values.name.trim() ||
+		!!errors.name ||
+		!values.login.trim() ||
+		!!errors.login ||
+		!values.password.trim() ||
+		!!errors.password ||
+		!values.code.trim() ||
+		!!errors.code ||
+		values.university === null ||
+		values.case === null ||
+		values.participants.length !== PARTICIPANTS_COUNT ||
+		!values.isConfirmOne ||
+		!values.isConfirmTwo ||
+		!values.isConfirmThree ||
+		!values.isConfirmFour
+	);
+};
+
+export const getStagesValidation = (values: IRegisterForm) => {
+	return {
+		team:
+			!!values.name &&
+			!!values.login &&
+			!!values.password &&
+			!!values.university,
+
+		problem: !!values.case,
+
+		participant: values.participants.length === PARTICIPANTS_COUNT,
+
+		personData:
+			!!values.code &&
+			values.isConfirmOne &&
+			values.isConfirmTwo &&
+			values.isConfirmThree &&
+			values.isConfirmFour,
+	};
 };

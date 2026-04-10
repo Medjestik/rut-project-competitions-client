@@ -5,10 +5,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import * as actions from './actions';
 
 const initialState: ICatalogStore = {
-	institutes: [],
-	departments: [],
-	roles: [],
-	tags: [],
+	universities: [],
+	problems: [],
 	isLoadingCatalog: false,
 	error: null,
 };
@@ -19,63 +17,27 @@ export const catalogSlice = createSlice({
 	reducers: {},
 	extraReducers: (builder) => {
 		builder
-			.addCase(actions.getInstitutesAction.pending, (state) => {
+			.addCase(actions.getUniversitiesAction.pending, (state) => {
 				state.isLoadingCatalog = true;
 				state.error = null;
 			})
-			.addCase(actions.getInstitutesAction.fulfilled, (state, action) => {
+			.addCase(actions.getUniversitiesAction.fulfilled, (state, action) => {
 				state.isLoadingCatalog = false;
-				state.institutes = action.payload;
+				state.universities = action.payload;
 			})
-			.addCase(actions.getInstitutesAction.rejected, (state, action) => {
+			.addCase(actions.getUniversitiesAction.rejected, (state, action) => {
 				state.isLoadingCatalog = false;
 				state.error = action.error?.message || 'Не удалось загрузить каталог';
 			})
-			.addCase(actions.getDepartmentsAction.pending, (state) => {
+			.addCase(actions.getProblemsAction.pending, (state) => {
 				state.isLoadingCatalog = true;
 				state.error = null;
 			})
-			.addCase(actions.getDepartmentsAction.fulfilled, (state, action) => {
+			.addCase(actions.getProblemsAction.fulfilled, (state, action) => {
 				state.isLoadingCatalog = false;
-				state.departments = action.payload;
+				state.problems = action.payload;
 			})
-			.addCase(actions.getDepartmentsAction.rejected, (state, action) => {
-				state.isLoadingCatalog = false;
-				state.error = action.error?.message || 'Не удалось загрузить каталог';
-			})
-			.addCase(actions.getRolesAction.pending, (state) => {
-				state.isLoadingCatalog = true;
-				state.error = null;
-			})
-			.addCase(actions.getRolesAction.fulfilled, (state, action) => {
-				state.isLoadingCatalog = false;
-				state.roles = action.payload;
-			})
-			.addCase(actions.getRolesAction.rejected, (state, action) => {
-				state.isLoadingCatalog = false;
-				state.error = action.error?.message || 'Не удалось загрузить каталог';
-			})
-			.addCase(actions.getTagsAction.pending, (state) => {
-				state.isLoadingCatalog = true;
-				state.error = null;
-			})
-			.addCase(actions.getTagsAction.fulfilled, (state, action) => {
-				state.isLoadingCatalog = false;
-				state.tags = action.payload;
-			})
-			.addCase(actions.getTagsAction.rejected, (state, action) => {
-				state.isLoadingCatalog = false;
-				state.error = action.error?.message || 'Не удалось загрузить каталог';
-			})
-			.addCase(actions.getExternalTagsAction.pending, (state) => {
-				state.isLoadingCatalog = true;
-				state.error = null;
-			})
-			.addCase(actions.getExternalTagsAction.fulfilled, (state, action) => {
-				state.isLoadingCatalog = false;
-				state.tags = action.payload;
-			})
-			.addCase(actions.getExternalTagsAction.rejected, (state, action) => {
+			.addCase(actions.getProblemsAction.rejected, (state, action) => {
 				state.isLoadingCatalog = false;
 				state.error = action.error?.message || 'Не удалось загрузить каталог';
 			});

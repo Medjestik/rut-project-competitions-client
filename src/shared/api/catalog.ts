@@ -1,7 +1,7 @@
 import { request } from './utils';
 
-export const getInstitutesCatalog = () => {
-	return request('/showcase/institutes/', {
+export const getUniversitiesCatalog = (scope: string) => {
+	return request(`/universities/?scope=${scope}`, {
 		method: 'GET',
 		headers: {
 			Accept: 'application/json',
@@ -10,40 +10,8 @@ export const getInstitutesCatalog = () => {
 	});
 };
 
-export const getDepartmentsCatalog = () => {
-	return request('/accounts/departments/', {
-		method: 'GET',
-		headers: {
-			Accept: 'application/json',
-			'Content-Type': 'application/json',
-		},
-	});
-};
-
-export const getRolesCatalog = () => {
-	return request('/accounts/roles/', {
-		method: 'GET',
-		headers: {
-			Accept: 'application/json',
-			'Content-Type': 'application/json',
-			Authorization: `Bearer ${localStorage.getItem('accessToken') || ''}`,
-		},
-	});
-};
-
-export const getTagsCatalog = () => {
-	return request('/showcase/tags/', {
-		method: 'GET',
-		headers: {
-			Accept: 'application/json',
-			'Content-Type': 'application/json',
-			Authorization: `Bearer ${localStorage.getItem('accessToken') || ''}`,
-		},
-	});
-};
-
-export const getExternalTagsCatalog = () => {
-	return request('/showcase/tags/', {
+export const getProblemsCatalog = () => {
+	return request('/cases', {
 		method: 'GET',
 		headers: {
 			Accept: 'application/json',

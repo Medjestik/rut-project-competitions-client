@@ -5,7 +5,6 @@ import { useInView } from '../../../../hooks/useInView';
 
 import { StageCard } from './stage-card';
 import { Caption } from '../../shared/Caption/caption';
-import { GradientText } from '../../shared/GradientText/gradient-text';
 import { Button } from '../../../../shared/components/Button/ui/button';
 
 import { ESECTION } from '../../lib/sections';
@@ -55,8 +54,10 @@ export const Stages: FC = () => {
 				<div className={`${styles.row} ${styles.row_bottom}`}>
 					<div className={styles.caption}>
 						<p className={styles.caption__text}>
-							{t('stages-stub.1.0')}
-							<GradientText text={t('stages-stub.1.1')} />{' '}
+							{t('stages-stub.1.0')}{' '}
+							<span className={styles.caption__text_color}>
+								{t('stages-stub.1.1')}
+							</span>{' '}
 							{t('stages-stub.1.2')}
 						</p>
 						<Button text={t('join-button')} color='arrow' />
