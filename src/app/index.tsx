@@ -2,6 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 
 import { Landing } from '../pages/Landing/ui/landing';
 import { Registration } from '../pages/Registration/ui/registration';
+import { Consent } from '../pages/Consent/ui/consent';
+import { Privacy } from '../pages/Privacy/ui/privacy';
 import { NotFound } from '../pages/NotFound/ui/not-found';
 
 import { ToastProvider } from '../shared/components/ToastProvider/ui/ToastProvider';
@@ -18,6 +20,8 @@ export const App = () => {
 				<Routes>
 					<Route path={EROUTES.LANDING} element={<Landing />} />
 					<Route path={EROUTES.REGISTRATION} element={<Registration />} />
+					<Route path={EROUTES.CONSENT} element={<Consent />} />
+					<Route path={EROUTES.PRIVACY} element={<Privacy />} />
 
 					<Route path='*' element={<NotFound />} />
 				</Routes>

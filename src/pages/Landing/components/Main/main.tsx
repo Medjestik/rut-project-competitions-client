@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useInView } from '../../../../hooks/useInView';
 
@@ -9,12 +10,14 @@ import { Caption } from '../../shared/Caption/caption';
 import { Button } from '../../../../shared/components/Button/ui/button';
 import { CountdownTimer } from '../../../../widgets/CountdownTimer/ui/CountdownTimer';
 
+import { EROUTES } from '../../../../shared/utils/routes';
 import { ESECTION } from '../../lib/sections';
 
 import backgroundImg from '../../../../shared/images/main-background.png';
 import styles from './main.module.scss';
 
 export const Main: FC = () => {
+	const navigate = useNavigate();
 	const { t } = useTranslation();
 	const { ref, isVisible } = useInView({ threshold: 0.2 });
 
@@ -42,7 +45,11 @@ export const Main: FC = () => {
 				</div>
 				<p className={styles.subtitle}>{t('main-text')}</p>
 				<div className={styles.button}>
-					<Button text={t('join-button')} color='arrow' />
+					<Button
+						text={t('join-button')}
+						color='arrow'
+						onClick={() => navigate(EROUTES.REGISTRATION)}
+					/>
 					<Caption text={t('main-reg-caption')} />
 				</div>
 				<ul className={styles.cards}>

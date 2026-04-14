@@ -15,18 +15,17 @@
 .circle {
 	width:  74px;
 	height: 74px;
-	border: 1px solid var(--main-blue-background-color);
-	border-bottom-color: var(--main-blue-color);
+	border: 1px solid #BA6ECD;
+	border-bottom-color: #6323A2;
 	border-radius: 50%;
   animation: spin .75s infinite linear;
   margin-bottom: 24px;
 }
 .caption {
-	font-family: 'Roboto', 'Avenir', 'Helvetica', 'Arial', sans-serif;
   text-align: center;
 	font-style: 500;
 	font-size: 16px;
 	line-height: 20px;
   letter-spacing: 1.2px;
-	color: var(--main-blue-color);
+	color: var(--main-white-color);
 }

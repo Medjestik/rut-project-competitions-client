@@ -112,3 +112,27 @@
 	background: var(--background-color);
 	cursor: default;
 }
+
+@media (max-width: 1600px) {
+}
+
+@media (max-width: 1536px) {
+}
+
+@media (max-width: 1366px) {
+	.input {
+		height: 40px;
+		font-size: 14px;
+		line-height: 1.1;
+		&::placeholder {
+			font-style: normal;
+			font-weight: normal;
+			font-size: 12px;
+			line-height: 1.1;
+			color: #9E9E9E;
+		}
+	}
+}
+
+@media (max-width: 1279px) {
+}

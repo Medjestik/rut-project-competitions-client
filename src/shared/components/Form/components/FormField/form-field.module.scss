@@ -81,3 +81,24 @@
   height: 12px;
   display: block;
 }
+
+@media (max-width: 1600px) {
+}
+
+@media (max-width: 1536px) {
+}
+
+@media (max-width: 1366px) {
+	.container {
+		padding: 0 0 14px 0;
+	}
+	.title {
+		font-size: 14px;
+	}
+	.tooltip__text {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 1279px) {
+}

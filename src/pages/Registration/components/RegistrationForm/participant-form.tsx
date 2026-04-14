@@ -7,6 +7,7 @@ import type {
 
 import { useState, useEffect } from 'react';
 import { useForm } from '../../../../hooks/useForm';
+import { useTranslation } from 'react-i18next';
 
 import { Form } from '../../../../shared/components/Form/ui/form';
 import {
@@ -31,8 +32,8 @@ export const ParticipantForm: FC<IParticipantFormProps> = ({
 		initialParticipantValues,
 		validationParticipantSchema
 	);
-
 	const [isBlockSubmit, setIsBlockSubmit] = useState<boolean>(true);
+	const { t } = useTranslation();
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -72,87 +73,89 @@ export const ParticipantForm: FC<IParticipantFormProps> = ({
 	return (
 		<Form name='form-participant' onSubmit={handleSubmit}>
 			<FormField
-				title='Фамилия'
+				title={t('participant-form-input-title-lastname')}
 				fieldError={{
-					text: errors.last_name || '',
+					text: errors.last_name ? t(errors.last_name) : '',
 					isShow: !!errors.last_name,
 				}}>
 				<FormInput
 					name='last_name'
-					placeholder='Введите фамилию'
+					placeholder={t('participant-form-input-placeholder-lastname')}
 					value={values.last_name}
 					onChange={handleChange}
 				/>
 			</FormField>
 			<FormField
-				title='Имя'
+				title={t('participant-form-input-title-firstname')}
 				fieldError={{
-					text: errors.first_name || '',
+					text: errors.first_name ? t(errors.first_name) : '',
 					isShow: !!errors.first_name,
 				}}>
 				<FormInput
 					name='first_name'
-					placeholder='Введите имя'
+					placeholder={t('participant-form-input-placeholder-firstname')}
 					value={values.first_name}
 					onChange={handleChange}
 				/>
 			</FormField>
-			<FormField title='Отчество (при наличии)'>
+			<FormField title={t('participant-form-input-title-middlename')}>
 				<FormInput
 					name='middle_name'
-					placeholder='Введите отчество'
+					placeholder={t('participant-form-input-placeholder-middlename')}
 					value={values.middle_name}
 					onChange={handleChange}
 				/>
 			</FormField>
 			<FormField
-				title='Курс'
+				title={t('participant-form-input-title-level')}
+				caption={t('participant-form-input-caption-level')}
 				fieldError={{
-					text: errors.level || '',
+					text: errors.level ? t(errors.level) : '',
 					isShow: !!errors.level,
 				}}>
 				<FormInputNumber
 					name='level'
-					placeholder='Введите курс'
+					placeholder={t('participant-form-input-placeholder-level')}
 					value={values.level}
 					onChange={handleChange}
 				/>
 			</FormField>
 			<FormField
-				title='Учебная группа'
+				title={t('participant-form-input-title-group-name')}
+				caption={t('participant-form-input-caption-group-name')}
 				fieldError={{
-					text: errors.group_name || '',
+					text: errors.group_name ? t(errors.group_name) : '',
 					isShow: !!errors.group_name,
 				}}>
 				<FormInput
 					name='group_name'
-					placeholder='Введите учебную группу'
+					placeholder={t('participant-form-input-placeholder-group-name')}
 					value={values.group_name}
 					onChange={handleChange}
 				/>
 			</FormField>
 			<FormField
-				title='Электронная почта'
+				title={t('participant-form-input-title-group-email')}
 				fieldError={{
-					text: errors.email || '',
+					text: errors.email ? t(errors.email) : '',
 					isShow: !!errors.email,
 				}}>
 				<FormInput
 					name='email'
-					placeholder='Введите электронную почту'
+					placeholder={t('participant-form-input-placeholder-group-email')}
 					value={values.email}
 					onChange={handleChange}
 				/>
 			</FormField>
 			<FormField
-				title='Телефон'
+				title={t('participant-form-input-title-group-phone')}
 				fieldError={{
-					text: errors.phone || '',
+					text: errors.phone ? t(errors.phone) : '',
 					isShow: !!errors.phone,
 				}}>
 				<FormInput
 					name='phone'
-					placeholder='Введите номер телефона'
+					placeholder={t('participant-form-input-placeholder-group-phone')}
 					value={values.phone}
 					onChange={handleChange}
 				/>
@@ -160,7 +163,7 @@ export const ParticipantForm: FC<IParticipantFormProps> = ({
 			<FormButtons>
 				<Button
 					type='submit'
-					text='Сохранить'
+					text={t('save-button')}
 					color='gradient'
 					isBlock={isBlockSubmit}
 				/>

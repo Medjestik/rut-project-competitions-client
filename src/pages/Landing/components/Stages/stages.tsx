@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useInView } from '../../../../hooks/useInView';
 
@@ -7,11 +8,13 @@ import { StageCard } from './stage-card';
 import { Caption } from '../../shared/Caption/caption';
 import { Button } from '../../../../shared/components/Button/ui/button';
 
+import { EROUTES } from '../../../../shared/utils/routes';
 import { ESECTION } from '../../lib/sections';
 
 import styles from './stages.module.scss';
 
 export const Stages: FC = () => {
+	const navigate = useNavigate();
 	const { t } = useTranslation();
 	const { ref, isVisible } = useInView({ threshold: 0.2 });
 
@@ -60,7 +63,11 @@ export const Stages: FC = () => {
 							</span>{' '}
 							{t('stages-stub.1.2')}
 						</p>
-						<Button text={t('join-button')} color='arrow' />
+						<Button
+							text={t('join-button')}
+							color='arrow'
+							onClick={() => navigate(EROUTES.REGISTRATION)}
+						/>
 					</div>
 					<StageCard
 						id={t('stages-cards.3.id')}

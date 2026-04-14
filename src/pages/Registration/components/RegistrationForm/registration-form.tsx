@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from '../../../../store/store';
 import { useForm } from '../../../../hooks/useForm';
 import { useToast } from '../../../../shared/components/ToastProvider/ui/ToastProvider';
+import { useTranslation, Trans } from 'react-i18next';
 
 import { Form } from '../../../../shared/components/Form/ui/form';
 import {
@@ -22,7 +23,6 @@ import { Checkbox } from '../../../../shared/components/Checkbox/ui/checkbox';
 import { Button } from '../../../../shared/components/Button/ui/button';
 import { Card } from '../../../../shared/components/Card/ui';
 import { Link } from '../../../../shared/components/Link/ui/link';
-import { Preloader } from '../../../../shared/components/Preloader/ui/preloader';
 import { Modal } from '../../../../shared/components/Modal/ui/modal';
 import { ParticipantForm } from './participant-form';
 
@@ -36,12 +36,8 @@ import { ESECTION } from '../../lib/sections';
 import { EROUTES } from '../../../../shared/utils/routes';
 import { getErrorMessage } from '../../../../shared/lib/getErrorMessage';
 import { getUniversityLabel } from '../../../../store/catalog/helper';
-import { PARTICIPANTS_COUNT } from '../../lib/lib';
+import { PARTICIPANTS_COUNT, CONFIRM_LINKS } from '../../lib/lib';
 
-import {
-	getUniversitiesAction,
-	getProblemsAction,
-} from '../../../../store/catalog/actions';
 import { registrationAction } from '../../../../store/team/actions';
 import { setRegistrationStages } from '../../../../store/team/reducer';
 
@@ -55,10 +51,9 @@ export const RegistrationForm: FC = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const { showToast } = useToast();
-	const { isLoadingCatalog, universities, problems } = useSelector(
-		(state) => state.catalog
-	);
+	const { universities, problems } = useSelector((state) => state.catalog);
 	const { isLoading } = useSelector((state) => state.team);
+	const { t } = useTranslation();
 
 	const [currentParticipant, setCurrentParticipant] =
 		useState<IParticipantData | null>(null);
@@ -134,15 +129,15 @@ export const RegistrationForm: FC = () => {
 			try {
 				await dispatch(registrationAction(registrationData)).unwrap();
 				showToast({
-					title: 'Вы успешно завершили регистрацию!',
-					text: 'Ожидайте начала соревнований, вы получите данные для входа в личный кабинет на электронную почту.',
+					title: t('toasts.success-registration.title'),
+					text: t('toasts.success-registration.text'),
 					type: 'success',
 				});
 				navigate(EROUTES.LANDING);
 			} catch (err) {
 				console.error(err);
 				showToast({
-					title: 'Ошибка при регистрации!',
+					title: t('toasts.error-registration.title'),
 					text: getErrorMessage(err),
 					type: 'error',
 				});
@@ -155,73 +150,76 @@ export const RegistrationForm: FC = () => {
 	}, [values, errors]);
 
 	useEffect(() => {
-		dispatch(getUniversitiesAction('foreign'));
-		dispatch(getProblemsAction());
-	}, [dispatch]);
-
-	useEffect(() => {
-		dispatch(setRegistrationStages(getStagesValidation(values)));
-	}, [values, dispatch]);
-
-	if (isLoadingCatalog) {
-		return <Preloader />;
-	}
+		dispatch(setRegistrationStages(getStagesValidation(values, errors)));
+	}, [values, errors, dispatch]);
 
 	return (
 		<section className={styles.form}>
 			<Form name='form-registration' onSubmit={handleSubmit}>
 				<div className={styles.container}>
 					<Card
-						title='Создание команды'
+						title={t('registration-form-section-team-title')}
 						titleSize='large'
-						subtitle='Придумайте название команды, информацию об образовательной организации, которую представляет команда и данные для входа.'
+						subtitle={t('registration-form-section-team-subtitle')}
 						id={ESECTION.TEAM}>
 						<div className={styles.form__column}>
 							<FormField
-								title='Название команды'
-								caption='Например: Транспортный импульс'
+								title={t('registration-form-section-team-input-title-name')}
+								caption={t('registration-form-section-team-input-caption-name')}
 								fieldError={{
-									text: errors.name || '',
+									text: errors.name ? t(errors.name) : '',
 									isShow: !!errors.name,
 								}}>
 								<FormInput
 									name='name'
-									placeholder='Введите название команды'
+									placeholder={t(
+										'registration-form-section-team-input-placeholder-name'
+									)}
 									value={values.name}
 									onChange={handleChange}
 								/>
 							</FormField>
 							<div className={styles.form__row}>
 								<FormField
-									title='Логин команды'
+									title={t('registration-form-section-team-input-title-login')}
 									fieldError={{
-										text: errors.login || '',
+										text: errors.login ? t(errors.login) : '',
 										isShow: !!errors.login,
 									}}>
 									<FormInput
 										name='login'
-										placeholder='Введите логин команды'
+										placeholder={t(
+											'registration-form-section-team-input-placeholder-login'
+										)}
 										value={values.login}
 										onChange={handleChange}
 									/>
 								</FormField>
 								<FormField
-									title='Пароль команды'
+									title={t(
+										'registration-form-section-team-input-title-password'
+									)}
 									fieldError={{
-										text: errors.password || '',
+										text: errors.password ? t(errors.password) : '',
 										isShow: !!errors.password,
 									}}>
 									<FormInput
 										name='password'
-										placeholder='Введите пароль команды'
+										placeholder={t(
+											'registration-form-section-team-input-placeholder-password'
+										)}
 										value={values.password}
 										onChange={handleChange}
 									/>
 								</FormField>
 							</div>
 							<FormField
-								title='Информация о вузе'
-								caption='Например: РУТ (МИИТ)'>
+								title={t(
+									'registration-form-section-team-input-title-university'
+								)}
+								caption={t(
+									'registration-form-section-team-input-caption-university'
+								)}>
 								<SelectWithSearch
 									options={universities.map((elem) => ({
 										...elem,
@@ -231,15 +229,17 @@ export const RegistrationForm: FC = () => {
 									onChooseOption={(option) =>
 										handleSelectChange('university', option)
 									}
-									placeholder='Выберите вашу образовательную организацию'
+									placeholder={t(
+										'registration-form-section-team-input-placeholder-university'
+									)}
 								/>
 							</FormField>
 						</div>
 					</Card>
 					<Card
-						title='Выбор проблемы'
+						title={t('registration-form-section-problem-title')}
 						titleSize='large'
-						subtitle='Выберите проблему, с которой будет работать команда.'
+						subtitle={t('registration-form-section-problem-subtitle')}
 						id={ESECTION.PROBLEM}>
 						<ul className={styles.problem__list}>
 							{problems.map((elem, i) => (
@@ -254,13 +254,15 @@ export const RegistrationForm: FC = () => {
 									<div className={styles.problem__header}>
 										<span className={styles.problem__count}>0{i + 1}</span>
 										{elem.id === values.case?.id && (
-											<div className={styles.problem__tag}>Выбрана</div>
+											<div className={styles.problem__tag}>
+												{t('registration-form-section-problem-active')}
+											</div>
 										)}
 									</div>
 									<div className={styles.problem__main}>
 										<h6 className={styles.problem__title}>{elem.title}</h6>
 										<Button
-											text='Подробнее'
+											text={t('detail-button')}
 											color={
 												elem.id === values.case?.id ? 'arrow-white' : 'arrow'
 											}
@@ -272,9 +274,9 @@ export const RegistrationForm: FC = () => {
 						</ul>
 					</Card>
 					<Card
-						title='Участники команды'
+						title={t('registration-form-section-participant-title')}
 						titleSize='large'
-						subtitle='Сформируйте вашу команду. Добавьте участников команды.'
+						subtitle={t('registration-form-section-participant-subtitle')}
 						id={ESECTION.PARTICIPANT}>
 						<ul className={styles.participant__list}>
 							{values.participants.length < PARTICIPANTS_COUNT && (
@@ -284,11 +286,11 @@ export const RegistrationForm: FC = () => {
 											className={styles.participant__plus}
 											onClick={() => openAddParticipantModal()}></div>
 										<h6 className={styles.participant__title}>
-											Добавить участника
+											{t('registration-form-section-participant-add-btn')}
 										</h6>
 									</div>
 									<p className={styles.participant__subtitle}>
-										Откроется модальное окно с персональными данными участника.
+										{t('registration-form-section-participant-add-text')}
 									</p>
 								</li>
 							)}
@@ -302,12 +304,12 @@ export const RegistrationForm: FC = () => {
 									</p>
 									<div className={styles.participant__control}>
 										<Button
-											text='Удалить'
+											text={t('delete-button')}
 											color='cancel'
 											onClick={() => handleDeleteParticipant(elem.id)}
 										/>
 										<Button
-											text='Редактировать'
+											text={t('edit-button')}
 											color='arrow'
 											onClick={() => openEditParticipantModal(elem)}
 										/>
@@ -317,19 +319,21 @@ export const RegistrationForm: FC = () => {
 						</ul>
 					</Card>
 					<Card
-						title='Подтверждение данных'
+						title={t('registration-form-section-data-title')}
 						titleSize='large'
-						subtitle='Введите промо-код подтверждения регистрации международных команд и ознакомьтесь с согласиями о персональных данных.'
+						subtitle={t('registration-form-section-data-subtitle')}
 						id={ESECTION.PERSON_DATA}>
 						<FormField
-							title='Промо-код регистрации'
+							title={t('registration-form-section-data-input-title-promo')}
 							fieldError={{
-								text: errors.code || '',
+								text: errors.code ? t(errors.code) : '',
 								isShow: !!errors.code,
 							}}>
 							<FormInput
 								name='code'
-								placeholder='Введите промо-код'
+								placeholder={t(
+									'registration-form-section-data-input-placeholder-promo'
+								)}
 								value={values.code}
 								onChange={handleChange}
 							/>
@@ -339,51 +343,89 @@ export const RegistrationForm: FC = () => {
 							onChange={() =>
 								handleSelectChange('isConfirmOne', !values.isConfirmOne)
 							}>
-							<>
-								Выражаю <Link text='согласие на обработку' path='' />{' '}
-								персональных данных и подтверждаю получение согласия на передачу
-								персональных данных третьих лиц на обработку.
-							</>
+							<Trans
+								i18nKey='registration-form-section-data-checkbox-one-text'
+								components={{
+									link: (
+										<Link
+											text={t(
+												'registration-form-section-data-checkbox-one-link'
+											)}
+											path={CONFIRM_LINKS[0]}
+										/>
+									),
+								}}
+							/>
 						</Checkbox>
 						<Checkbox
 							checked={values.isConfirmTwo}
 							onChange={() =>
 								handleSelectChange('isConfirmTwo', !values.isConfirmTwo)
 							}>
-							<>
-								Подтверждаю, что участники команды ознакомились с{' '}
-								<Link
-									text='Положением об обработке персональных данных РУТ (МИИТ)'
-									path='https://rut-miit.ru/org/privacy'
-								/>{' '}
-								и принимают его условия.
-							</>
+							<Trans
+								i18nKey='registration-form-section-data-checkbox-two-text'
+								components={{
+									link: (
+										<Link
+											text={t(
+												'registration-form-section-data-checkbox-two-link'
+											)}
+											path={CONFIRM_LINKS[1]}
+										/>
+									),
+								}}
+							/>
 						</Checkbox>
 						<Checkbox
 							checked={values.isConfirmThree}
 							onChange={() =>
 								handleSelectChange('isConfirmThree', !values.isConfirmThree)
 							}>
-							<>
-								Выражаю <Link text='согласие на распространение' path='' />{' '}
-								персональных данных в целях освещения соревнований.
-							</>
+							<Trans
+								i18nKey='registration-form-section-data-checkbox-three-text'
+								components={{
+									link: (
+										<Link
+											text={t(
+												'registration-form-section-data-checkbox-three-link'
+											)}
+											path={CONFIRM_LINKS[2]}
+										/>
+									),
+								}}
+							/>
 						</Checkbox>
 						<Checkbox
 							checked={values.isConfirmFour}
 							onChange={() =>
 								handleSelectChange('isConfirmFour', !values.isConfirmFour)
 							}>
-							<>
-								Подтверждаю, что участники команды ознакомились с{' '}
-								<Link text='Положением' path='' /> и{' '}
-								<Link text='Регламентом соревнований.' path='' />
-							</>
+							<Trans
+								i18nKey='registration-form-section-data-checkbox-four-text'
+								components={{
+									link1: (
+										<Link
+											text={t(
+												'registration-form-section-data-checkbox-four-link1'
+											)}
+											path={CONFIRM_LINKS[3]}
+										/>
+									),
+									link2: (
+										<Link
+											text={t(
+												'registration-form-section-data-checkbox-four-link2'
+											)}
+											path={CONFIRM_LINKS[4]}
+										/>
+									),
+								}}
+							/>
 						</Checkbox>
 
 						<Button
 							type='submit'
-							text='Отправить анкету'
+							text={t('send-form-button')}
 							color='gradient'
 							isBlock={isBlockSubmit || isLoading}
 							style={submitStyle}
@@ -393,11 +435,15 @@ export const RegistrationForm: FC = () => {
 			</Form>
 			{isOpenModal && (
 				<Modal
-					title={currentParticipant ? 'Редактирование' : 'Новый участник'}
+					title={
+						currentParticipant
+							? t('participant-form-edit-title')
+							: t('participant-form-title')
+					}
 					description={
 						currentParticipant
-							? 'Отредактируйте данные участника'
-							: 'Добавьте данные по новому участнику'
+							? t('participant-form-edit-subtitle')
+							: t('participant-form-subtitle')
 					}
 					isOpen={isOpenModal}
 					onClose={closeModal}>

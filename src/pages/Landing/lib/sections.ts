@@ -8,6 +8,7 @@ export enum ESECTION {
 	REASONS = 'reasons',
 	INVITE = 'invite',
 	FAQ = 'faq',
+	PARTNERS = 'partners',
 	DOCUMENT = 'document',
 	FOOTER = 'footer',
 }

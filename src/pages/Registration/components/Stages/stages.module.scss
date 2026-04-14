@@ -92,3 +92,63 @@
 .stage_active .stage__title {
 	color: #C109D7;
 }
+
+@media (max-width: 1600px) {
+	.stages {
+		padding: 24px;
+		width: 277px;
+	}
+}
+
+@media (max-width: 1536px) {
+	.stages {
+		width: 246px;
+	}
+}
+
+@media (max-width: 1366px) {
+	.title {
+		font-size: 24px;
+	}
+	.stage {
+		gap: 6px;
+		&__number {
+			width: 32px;
+			height: 32px;
+			font-size: 16px;
+		}
+		&__title {
+			margin: 0;
+			font-weight: 500;
+			font-size: 16px;
+			font-style: normal;
+			line-height: 1;
+			color: var(--main-white-color);
+			transition: all .3s ease-in-out;
+		}
+		&__subtitle {
+			margin: 0;
+			font-weight: 400;
+			font-size: 12px;
+			font-style: normal;
+			line-height: 1;
+			color: #9E9E9E;
+		}
+	}
+}
+
+@media (max-width: 1279px) {
+	.stages {
+		padding: 20px;
+		width: 220px;
+	}
+	.list {
+		margin: 16px 0 0 0;
+		gap: 16px;
+	}
+	.stage {
+		&__title {
+			font-size: 14px;
+		}
+	}
+}

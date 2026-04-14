@@ -22,7 +22,7 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
 
 			const toast: IToast = {
 				id,
-				duration: options.duration || 5000,
+				duration: options.duration || 10000,
 				...options,
 			};
 

@@ -255,5 +255,20 @@
 					);
 			}
 		}
+			&_color_arrow-white {
+			padding: 16px 64px 16px 20px;
+			&::after {
+				width: 48px;
+				height: 30px;
+				background:
+					url('../../../../shared/images/btn-arrow.svg') center / 16px no-repeat,
+					linear-gradient(
+						120deg,
+						#6323A2 11%,
+						#C109D7 73%,
+						#BA6ECD 97%
+					);
+			}
+		}
 	}
 }

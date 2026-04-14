@@ -7,6 +7,7 @@ import { Prize } from '../components/Prize/prize';
 import { Reasons } from '../components/Reasons/reasons';
 import { Invite } from '../components/Invite/invite';
 import { FAQ } from '../components/FAQ/faq';
+import { Partners } from '../components/Partners/partners';
 import { Document } from '../components/Document/document';
 import { Footer } from '../components/Footer/footer';
 
@@ -22,6 +23,7 @@ export const Landing: FC = () => {
 			<Reasons />
 			<Invite />
 			<FAQ />
+			<Partners />
 			<Document />
 			<Footer />
 		</div>

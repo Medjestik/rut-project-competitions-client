@@ -34,3 +34,30 @@
 	display: flex;
 	gap: 20px;
 }
+
+@media (max-width: 1600px) {
+	.registration {
+		padding: 20px 32px 40px;
+	}
+}
+
+@media (max-width: 1536px) {
+	.registration {
+		padding: 20px 24px 40px;
+	}
+}
+
+@media (max-width: 1366px) {
+	.registration {
+		padding: 20px 20px 40px;
+	}
+	.container {
+		padding: 20px 0;
+	}
+}
+
+@media (max-width: 1279px) {
+	.registration {
+		padding: 20px 20px 32px;
+	}
+}

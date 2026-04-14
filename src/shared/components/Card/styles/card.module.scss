@@ -45,4 +45,47 @@
 	.card {
 		padding: 24px;
 	}
+	.title {
+		&_size_default {
+			font-size: 24px;
+		}
+		&_size_large {
+			font-size: 48px;
+		}
+	}
+}
+
+@media (max-width: 1536px) {
+	.title {
+		&_size_default {
+			font-size: 20px;
+		}
+		&_size_large {
+			font-size: 40px;
+		}
+	}
+}
+
+@media (max-width: 1366px) {
+
+}
+
+@media (max-width: 1279px) {
+	.card {
+		padding: 20px;
+	}
+	.title {
+		&_size_large {
+			font-size: 32px;
+		}
+	}
+	.subtitle  {
+		margin: 8px 0 16px 0;
+		font-size: 16px;
+		line-height: 1.2;
+		font-style: normal;
+		font-weight: normal;
+		color: #9E9E9E;
+		text-align: left;
+	}
 }

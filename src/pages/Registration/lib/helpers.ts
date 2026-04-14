@@ -1,26 +1,40 @@
 import type { IRegisterForm, IParticipantForm } from '../types/types';
 import type { TFormValidationErrors } from '../../../shared/components/Form/types/types';
 
-import { required, emailFormat } from '../../../shared/lib/validationRules';
+import {
+	required,
+	emailFormat,
+	minLength,
+	maxLength,
+} from '../../../shared/lib/validationRules';
 import { PARTICIPANTS_COUNT } from './lib';
 
 export const validationRegistrationSchema = {
-	name: [required('Поле не может быть пустым')],
-	login: [required('Поле не может быть пустым')],
-	password: [required('Поле не может быть пустым')],
-	code: [required('Поле не может быть пустым')],
+	name: [
+		required('validation.required'),
+		minLength(3, 'validation.min.length.3'),
+		maxLength(25, 'validation.max.length.25'),
+	],
+	login: [
+		required('validation.required'),
+		minLength(6, 'validation.min.length.6'),
+		maxLength(16, 'validation.max.length.16'),
+	],
+	password: [
+		required('validation.required'),
+		minLength(6, 'validation.min.length.6'),
+		maxLength(16, 'validation.max.length.16'),
+	],
+	code: [required('validation.required')],
 };
 
 export const validationParticipantSchema = {
-	last_name: [required('Поле не может быть пустым')],
-	first_name: [required('Поле не может быть пустым')],
-	level: [required('Поле не может быть пустым')],
-	group_name: [required('Поле не может быть пустым')],
-	email: [
-		required('Поле не может быть пустым'),
-		emailFormat('Неправильный формат почты'),
-	],
-	phone: [required('Поле не может быть пустым')],
+	last_name: [required('validation.required')],
+	first_name: [required('validation.required')],
+	level: [required('validation.required')],
+	group_name: [required('validation.required')],
+	email: [required('validation.required'), emailFormat('validation.email')],
+	phone: [required('validation.required')],
 };
 
 export const initialParticipantValues: IParticipantForm = {
@@ -90,23 +104,31 @@ export const shouldBlockRegistrationSubmit = (
 	);
 };
 
-export const getStagesValidation = (values: IRegisterForm) => {
+export const getStagesValidation = (
+	values: IRegisterForm,
+	errors: TFormValidationErrors
+) => {
 	return {
 		team:
-			!!values.name &&
-			!!values.login &&
-			!!values.password &&
-			!!values.university,
+			values.name.trim().length > 0 &&
+			values.login.trim().length > 0 &&
+			values.password.trim().length > 0 &&
+			!!values.university &&
+			!errors.name &&
+			!errors.login &&
+			!errors.password,
 
-		problem: !!values.case,
+		problem: !!values.case && !errors.case,
 
-		participant: values.participants.length === PARTICIPANTS_COUNT,
+		participant:
+			values.participants.length === PARTICIPANTS_COUNT && !errors.participants,
 
 		personData:
-			!!values.code &&
+			values.code.trim().length > 0 &&
 			values.isConfirmOne &&
 			values.isConfirmTwo &&
 			values.isConfirmThree &&
-			values.isConfirmFour,
+			values.isConfirmFour &&
+			!errors.code,
 	};
 };
