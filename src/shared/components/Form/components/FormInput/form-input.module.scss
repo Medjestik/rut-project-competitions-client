@@ -134,5 +134,9 @@
 	}
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
+	.input {
+		padding: 8px 11px;
+		font-size: 14px;
+	}
 }

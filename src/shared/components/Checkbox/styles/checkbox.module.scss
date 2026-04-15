@@ -21,7 +21,6 @@
 
   &:checked {
     background-color: #C109D7;
-
     &::after {
       content: '';
       position: absolute;
@@ -46,4 +45,23 @@
   &_empty {
     color: var(--main-grey-color);
   }
+}
+
+@media (max-width: 768px) {
+	.wrapper {
+		padding: 8px 0;
+	}
+	.text {
+		font-size: 12px;
+	}
+	.checkbox {
+		width: 20px;
+		height: 20px;
+		&:checked {
+			&::after {
+				top: 1px;
+				left: 5px;
+			}
+		}
+	}
 }

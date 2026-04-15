@@ -256,5 +256,43 @@
 	}
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
+	.form {
+		&__column {
+			margin: 0;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+		&__row {
+			display: flex;
+			flex-direction: column;
+			gap: 0;
+		}
+	}
+	.problem {
+		&__list {
+			grid-template-columns: 1fr;
+			gap: 16px;
+		}
+		&__item {
+			padding: 16px;
+		}
+		&__title {
+			font-size: 20px;
+		}
+	}
+	.participant {
+		&__list {
+			grid-template-columns: 1fr;
+			gap: 16px;
+		}
+		&__item {
+			padding: 16px;
+		}
+		&__title {
+			font-size: 20px;
+		}
+	}
 }
+

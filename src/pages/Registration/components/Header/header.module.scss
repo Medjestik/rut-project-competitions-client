@@ -48,6 +48,9 @@
 }
 
 @media (max-width: 1536px) {
+	.header {
+		height: 40px;
+	}
 	.logo {
 		margin: 0;
 		width: 128px;
@@ -63,3 +66,20 @@
 		font-size: 12px;
 	}
 }
+
+@media (max-width: 768px) {
+	.header {
+		height: 32px;
+	}
+	.control {
+		gap: 8px;
+	}
+	.logos {
+		gap: 8px;
+	}
+	.logo {
+		width: 72px;
+		height: 32px;
+	}
+}
+

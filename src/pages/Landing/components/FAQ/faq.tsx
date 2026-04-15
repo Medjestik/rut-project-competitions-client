@@ -15,7 +15,6 @@ export const FAQ: FC = () => {
 	const { t } = useTranslation();
 	const faqItems = t('faq-items', { returnObjects: true }) as IAccordionItem[];
 
-	// Хук для скролл-анимации
 	const { ref, isVisible } = useInView({ threshold: 0.2 });
 
 	return (
@@ -32,9 +31,7 @@ export const FAQ: FC = () => {
 					{faqItems.map((item, i) => (
 						<div
 							key={i}
-							className={`${styles.accordionItem} ${styles.fadeUp} ${
-								isVisible ? styles.visible : ''
-							}`}
+							className={`${styles.fadeUp} ${isVisible ? styles.visible : ''}`}
 							style={{ transitionDelay: `${i * 0.2}s` }}>
 							<Accordion items={[item]} />
 						</div>

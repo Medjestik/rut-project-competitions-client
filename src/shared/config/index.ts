@@ -2,7 +2,7 @@ export const getApiUrl = (): string => {
 	const { hostname } = window.location;
 
 	if (hostname === 'localhost') {
-		return 'http://10.242.221.0:8888/api';
+		return 'https://contest-api.emiit.ru/api';
 	} else {
 		return 'https://contest-api.emiit.ru/api';
 	}

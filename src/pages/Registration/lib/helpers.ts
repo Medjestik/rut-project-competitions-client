@@ -53,6 +53,8 @@ export const initialRegistrationValues: IRegisterForm = {
 	password: '',
 	university: null,
 	case: null,
+	tutor_fullname: '',
+	tutor_email: '',
 	participants: [],
 	code: '',
 	isConfirmOne: false,

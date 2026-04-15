@@ -19,6 +19,7 @@ export const Footer: FC = () => {
 					className={`${styles.social__icon} ${styles.social__icon_type_vk}`}></div>
 				<div
 					className={`${styles.social__icon} ${styles.social__icon_type_max}`}></div>
+				<div className={`${styles.social__icon}`}></div>
 				<Button text={t('support-button')} color='arrow' />
 			</div>
 			<p className={styles.support}>

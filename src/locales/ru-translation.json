@@ -7,7 +7,7 @@
 	"download-button": "Скачать",
   "support-button": "Связаться с поддержкой",
 	"detail-button": "Подробнее",
-	"send-form-button": "Отправить анкету",
+	"registration-button": "Зарегистрироваться",
 	"preloader": "Идёт загрузка..",
 
 	"toasts": {
@@ -73,8 +73,8 @@
 			"text": "Поддержка лучших решений и\u00A0экспертная оценка проектов"
 		},
 		"3": {
-			"count": "2026-08-01T12:00:00",
-			"caption": "до конца регистрации",
+			"count": "2026-06-01T12:00:00",
+			"caption": "до\u00A0конца отборочного этапа",
 			"text": "Присоединяйтесь к\u00A0нам и\u00A0покажите лучшие решения!"
 		}
 	},
@@ -114,30 +114,30 @@
 		"0": {
 			"id": "1",
 			"title": "Регистрация",
-			"duration": "1 сентября - 15 сентября",
+			"duration": "1 мая – 31 мая",
 			"content": "Зарегистрируйтесь на\u00A0сайте, чтобы стать участником проектных соревнований."
 		},
 		"1": {
 			"id": "2",
 			"title": "Работа",
-			"duration": "7 сентября - 1 октября",
+			"duration": "1 мая – 31 мая",
 			"content": "В течение двух недель участники анализируют ситуацию, проводят интервью, разрабатывают идею решения и\u00A0готовят базовый прототип."
 		},
 		"2": {
 			"id": "3",
 			"title": "Поддержка",
-			"duration": "7 сентября - 1 октября",
-			"content": "Общайтесь с\u00A0экспертами и\u00A0другими командами в Телеграм-чате кейса. Подгружайте результаты этапов в\u00A0личный кабинет."
+			"duration": "1 мая – 31 мая",
+			"content": "Подгружайте результаты этапов в\u00A0личный кабинет."
 		},
 		"3": {
 			"id": "4",
 			"title": "Результаты",
-			"duration": "1 октября - 7 октября",
+			"duration": "1 июня – 14 июня",
 			"content": "Дождитесь результатов отбора."
 		},
 		"4": {
 			"id": "5",
-			"title": "Финал в Москве",
+			"title": "Финал в\u00A0Москве",
 			"duration": "28 октября - 30 октября",
 			"content": "Приезжайте на\u00A0трёхдневный финал для\u00A0лучших из\u00A0лучших."
 		}
@@ -440,8 +440,12 @@
 	"registration-form-section-problem-subtitle": "Выберите проблему, с\u00A0которой будет работать команда.",
 	"registration-form-section-problem-active": "Выбрана",
 
+	"registration-form-section-participant-input-placeholder-tutor-fullname": "Введите ФИО наставника",
+	"registration-form-section-participant-input-title-tutor-fullname": "ФИО наставника (при наличии)",
+	"registration-form-section-participant-input-placeholder-tutor-email": "Введите почту наставника",
+	"registration-form-section-participant-input-title-tutor-email": "Почта наставника (при наличии)",
 	"registration-form-section-participant-title": "Участники команды",
-	"registration-form-section-participant-subtitle": "Сформируйте вашу команду. Добавьте участников команды.",
+	"registration-form-section-participant-subtitle": "Сформируйте вашу команду. Добавьте 3 участников команды.",
 	"registration-form-section-participant-add-btn": "Добавить участника",
 	"registration-form-section-participant-add-text": "Откроется модальное окно с\u00A0персональными данными участника.",
 

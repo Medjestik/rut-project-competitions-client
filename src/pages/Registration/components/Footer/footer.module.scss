@@ -94,3 +94,34 @@
 		}
 	}
 }
+
+@media (max-width: 768px) {
+	.footer {
+		padding: 40px 0 0 0;
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 20px;
+	}
+	.social {
+		gap: 8px;
+		&__icon {
+			width: 32px;
+			height: 32px;
+			&:last-of-type {
+				margin: 0 auto 0 0;
+			}
+			&_type_vk {
+				&::after {
+					height: 12px;
+					top: 12px;
+				}
+			}
+			&_type_max {
+				&::after {
+					height: 12px;
+					top: 12px;
+				}
+			}
+		}
+	}
+}

@@ -89,3 +89,19 @@
 		text-align: left;
 	}
 }
+
+@media (max-width: 768px) {
+	.card {
+		padding: 16px;
+	}
+	.title {
+		&_size_large {
+			font-size: 20px;
+		}
+	}
+	.subtitle  {
+		margin: 8px 0 16px 0;
+		font-size: 14px;
+		line-height: 1.1;
+	}
+}

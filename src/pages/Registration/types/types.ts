@@ -28,6 +28,8 @@ export interface IRegisterForm {
 	university: IUniversity | null;
 	case: IProblem | null;
 	code: string;
+	tutor_fullname: string;
+	tutor_email: string;
 	participants: IParticipantData[];
 	isConfirmOne: boolean;
 	isConfirmTwo: boolean;
@@ -42,6 +44,8 @@ export interface IRegisterData {
 	university: number;
 	case: string;
 	promocode: string;
+	tutor_fullname: string;
+	tutor_email: string;
 	participants: IParticipantData[];
 }
 

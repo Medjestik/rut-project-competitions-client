@@ -179,3 +179,28 @@
 		color: var(--main-grey-color);
 	}
 }
+
+@media (max-width: 1366px) {
+	.select {
+		min-height: 40px;
+	}
+	.title {
+		font-size: 14px;
+	}
+	.options {
+		top: 40px;
+	}
+}
+
+@media (max-width: 768px) {
+	.select {
+		padding: 8px 11px;
+	}
+	.item {
+		margin: 0 12px;
+		padding: 8px 0;
+	}
+	.search {
+		font-size: 14px;
+	}
+}

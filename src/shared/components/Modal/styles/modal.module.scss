@@ -160,6 +160,13 @@
 	}
 }
 
-@media (max-width: 1279px) {
-
+@media (max-width: 768px) {
+	.container {
+		margin: 4vh auto 0;
+		padding: 20px 16px;
+		max-height: 90vh;
+	}
+	.title {
+		font-size: 20px;
+	}
 }

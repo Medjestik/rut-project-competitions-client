@@ -1,3 +1,19 @@
+@keyframes hintReveal {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.hint .hover {
+  animation: hintReveal 1.6s ease-in-out;
+}
+
 .card {
 	margin: 0;
 	width: 100%;
@@ -68,6 +84,7 @@
 		font-size: 40px;
 		font-style: normal;
 		line-height: 1;
+		text-align: center;
 		color: var(--main-white-color);
 	}
 	&__duration {
