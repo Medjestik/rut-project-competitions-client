@@ -1,54 +1,66 @@
-import type {
-	ILoginRequest,
-	IRegistrationRequest,
-	IAuthResponse,
-} from '../../store/user/types';
+import type { ILoginData } from '../../pages/Login/types/types';
+
+import type { IAuthResponse } from '../../store/user/types';
 
 import { request } from './utils';
 
 const setTokens = (accessToken: string) => {
-	localStorage.setItem('accessToken', accessToken);
+	localStorage.setItem('token', accessToken);
 };
 
-export const login = (data: ILoginRequest) => {
+function handleResponse(res: Response) {
+	if (res.ok) {
+		return res.json();
+	} else {
+		return Promise.reject(res);
+	}
+}
+
+export const getTeam = (token: string) => {
+	return fetch('https://contest-api.emiit.ru/api/current-team', {
+		method: 'GET',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+			Authorization: `Token ${token}`,
+		},
+	}).then((res) => handleResponse(res));
+};
+
+function checkResponse(res: Response) {
+	if (res.status === 201) {
+		return res;
+	} else {
+		return Promise.reject(res);
+	}
+}
+
+export const login = (data: ILoginData) => {
 	return request('/auth/login/', {
 		method: 'POST',
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify(data),
+		body: JSON.stringify({
+			username: data.login,
+			password: data.password,
+		}),
 	}).then((res: IAuthResponse) => {
-		if (res.access) {
-			setTokens(res.access);
+		if (res.key) {
+			setTokens(res.key);
 		}
 		return res;
 	});
 };
 
-export const registration = (data: IRegistrationRequest) => {
-	return request('/accounts/registration-requests/', {
-		method: 'POST',
-		headers: {
-			Accept: 'application/json',
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify(data),
-	}).then((res: IAuthResponse) => {
-		if (res.access) {
-			setTokens(res.access);
-		}
-		return res;
-	});
-};
-
-export const getUser = () => {
-	return request('/auth/user', {
+export const getUser = (token: string) => {
+	return request('/current-team', {
 		method: 'GET',
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
-			Authorization: `Bearer ${localStorage.getItem('accessToken') || ''}`,
+			Authorization: `Token ${token}`,
 		},
 	});
 };

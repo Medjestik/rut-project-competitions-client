@@ -1,7 +1,6 @@
 import type { FC } from 'react';
 import type { IPublicLayoutProps } from '../types/types';
 
-import { PublicLayoutFooter } from './public-layout-footer';
 import { Button } from '../../../Button/ui/button';
 
 import styles from '../styles/public-layout.module.scss';
@@ -20,7 +19,6 @@ export const PublicLayout: FC<IPublicLayoutProps> = ({ children }) => {
 					</p>
 					<Button text='Подробнее' color='blue' />
 				</div>
-				<PublicLayoutFooter />
 			</div>
 			<div className={styles.wrapper}>
 				<div className={styles.content}>{children}</div>

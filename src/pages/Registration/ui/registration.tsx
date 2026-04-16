@@ -3,11 +3,13 @@ import type { FC } from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from '../../../store/store';
 
-import { Header } from '../components/Header/header';
+import {
+	PublicHeader,
+	PublicFooter,
+} from '../../../shared/components/Layout/PublicLayout/ui';
 import { Main } from '../components/Main/main';
 import { Stages } from '../components/Stages/stages';
 import { RegistrationForm } from '../components/RegistrationForm/registration-form';
-import { Footer } from '../components/Footer/footer';
 import { Preloader } from '../../../shared/components/Preloader/ui/preloader';
 
 import {
@@ -40,13 +42,13 @@ export const Registration: FC = () => {
 				className={styles.background}
 				aria-hidden='true'
 			/>
-			<Header />
+			<PublicHeader />
 			<Main />
 			<div className={styles.container}>
 				<Stages />
 				<RegistrationForm />
 			</div>
-			<Footer />
+			<PublicFooter />
 		</div>
 	);
 };

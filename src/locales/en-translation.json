@@ -7,6 +7,7 @@
 	"download-button": "Download",
 	"support-button": "Contact Support",
 	"detail-button": "Detail",
+		"login-button": "Log in\u00A0to\u00A0your account",
 	"registration-button": "Register",
 	"preloader": "Loading..",
 
@@ -392,6 +393,15 @@
 	},
 	"footer-copy": "RUT (MIIT), All rights reserved",
 
+	"login-main-subtitle": "International Transport Engineering Competition",
+	"login-main-title": "Participant Account Login",
+	"login-main-text": "Access to\u00A0competition materials, problem statements, stages, and solution submissions within a\u00A0unified competition platform.",
+	"login-form-title": "Login",
+	"login-form-subtitle": "Log in\u00A0to\u00A0your account to start participating in the\u00A0competition",
+	"login-form-input-title-login": "Team Login",
+	"login-form-input-placeholder-login": "Enter team login",
+	"login-form-input-title-password": "Team Password",
+	"login-form-input-placeholder-password": "Enter team password",
 
 	"registration-btn-back": "Home",
   "registration-main-subtitle": "International transport project competitions",

@@ -13,16 +13,16 @@ const Protected: FC<IProtectedProps> = ({ onlyUnAuth = false, component }) => {
 	const isAuthChecked = useSelector(getIsAuthChecked);
 	const user = useSelector(getUser);
 
+	console.log('Auth checked:', isAuthChecked, 'User:', user);
+
 	if (!isAuthChecked) return <Preloader />;
 
-	// Неавторизован → пускаем только на страницы onlyUnAuth
 	if (!user && !onlyUnAuth) {
 		return <Navigate to='/login' replace />;
 	}
 
-	// Авторизован → не пускать на login/registration
 	if (onlyUnAuth && user) {
-		return <Navigate to='/home' replace />;
+		return <Navigate to='/main' replace />;
 	}
 
 	return component;

@@ -1,15 +1,10 @@
-import type {
-	ILoginRequest,
-	IRegistrationRequest,
-	IAuthResponse,
-	IUser,
-	IMessageResponse,
-} from './types';
+import type { ILoginData } from '../../pages/Login/types/types';
+
+import type { IAuthResponse, IUser, IMessageResponse } from './types';
 
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import {
 	login,
-	registration,
 	getUser,
 	changePassword,
 	forgotPassword,
@@ -18,26 +13,23 @@ import {
 
 import { setIsAuthChecked } from './reducer';
 
-export const loginUser = createAsyncThunk<IAuthResponse, ILoginRequest>(
+export const loginUser = createAsyncThunk<IAuthResponse, ILoginData>(
 	'user/login',
 	login
 );
-
-export const registerUser = createAsyncThunk<
-	IAuthResponse,
-	IRegistrationRequest
->('user/registration', registration);
 
 export const setUser = createAction<IUser | null>('auth/setUser');
 
 export const checkUserAuth = createAsyncThunk(
 	'user/checkUser',
 	async (_, { dispatch }) => {
-		if (localStorage.getItem('accessToken')) {
+		const token = localStorage.getItem('token');
+		if (token) {
 			try {
-				const user = await getUser();
+				const user = await getUser(token);
 				dispatch(setUser(user || null));
 			} catch (error) {
+				console.error('GET USER ERROR:', error);
 				dispatch(setUser(null));
 			} finally {
 				dispatch(setIsAuthChecked(true));
@@ -84,7 +76,7 @@ export const resetPasswordAction = createAsyncThunk<
 export const logoutUser = createAsyncThunk<IMessageResponse>(
 	'auth/logout',
 	async () => {
-		localStorage.removeItem('accessToken');
+		localStorage.removeItem('token');
 		return { message: 'Logged out' };
 	}
 );

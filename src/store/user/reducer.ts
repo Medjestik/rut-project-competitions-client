@@ -33,23 +33,11 @@ export const userSlice = createSlice({
 				state.isLoading = true;
 				state.error = null;
 			})
-			.addCase(actions.loginUser.fulfilled, (state, action) => {
+			.addCase(actions.loginUser.fulfilled, (state) => {
 				state.isLoading = false;
-				state.user = action.payload.user;
 				state.isAuthChecked = true;
 			})
 			.addCase(actions.loginUser.rejected, (state, action) => {
-				state.isLoading = false;
-				state.error = action.error?.message || 'Произошла ошибка';
-			})
-			.addCase(actions.registerUser.pending, (state) => {
-				state.isLoading = true;
-				state.error = null;
-			})
-			.addCase(actions.registerUser.fulfilled, (state) => {
-				state.isLoading = false;
-			})
-			.addCase(actions.registerUser.rejected, (state, action) => {
 				state.isLoading = false;
 				state.error = action.error?.message || 'Произошла ошибка';
 			})

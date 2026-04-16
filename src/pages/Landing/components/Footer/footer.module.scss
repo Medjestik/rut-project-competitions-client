@@ -145,6 +145,20 @@
 				background-size: contain;
 			}
 		}
+		&_type_tg {
+			&::after {
+				content: '';
+				position: absolute;
+				top: 14px;
+				left: 0;
+				width: 100%;
+				height: 20px;
+				background: url('../../../../shared/images/tg.svg');
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+		}
 	}
 }
 
@@ -209,6 +223,12 @@
 				}
 			}
 			&_type_max {
+				&::after {
+					top: 12px;
+					height: 16px;
+				}
+			}
+			&_type_tg {
 				&::after {
 					top: 12px;
 					height: 16px;

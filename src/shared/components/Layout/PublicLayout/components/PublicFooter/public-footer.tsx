@@ -2,24 +2,23 @@ import type { FC } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { Button } from '../../../../shared/components/Button/ui/button';
-import { Link } from '../../../../shared/components/Link/ui/link';
+import { Button } from '../../../../Button/ui/button';
+import { Link } from '../../../../Link/ui/link';
 
-import { ESECTION } from '../../lib/sections';
+import styles from './public-footer.module.scss';
 
-import styles from './footer.module.scss';
-
-export const Footer: FC = () => {
+export const PublicFooter: FC = () => {
 	const { t } = useTranslation();
 
 	return (
-		<section id={ESECTION.FOOTER} className={styles.footer}>
+		<section id='footer' className={styles.footer}>
 			<div className={styles.social}>
 				<div
 					className={`${styles.social__icon} ${styles.social__icon_type_vk}`}></div>
 				<div
 					className={`${styles.social__icon} ${styles.social__icon_type_max}`}></div>
-				<div className={`${styles.social__icon}`}></div>
+				<div
+					className={`${styles.social__icon} ${styles.social__icon_type_tg}`}></div>
 				<Button text={t('support-button')} color='arrow' />
 			</div>
 			<p className={styles.support}>

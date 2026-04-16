@@ -19,13 +19,13 @@
 	width: 160px;
 	height: 48px;
 	&_min {
-		background-image: url('../../../../shared/images/logo-min.svg');
+		background-image: url('../../../../../images/logo-min.svg');
 		background-position: left;
 		background-repeat: no-repeat;
 		background-size: contain;
 	}
 	&_rut {
-		background-image: url('../../../../shared/images/logo-rut.svg');
+		background-image: url('../../../../../images/logo-rut.svg');
 		background-position: left;
 		background-repeat: no-repeat;
 		background-size: contain;
@@ -82,4 +82,3 @@
 		height: 32px;
 	}
 }
-

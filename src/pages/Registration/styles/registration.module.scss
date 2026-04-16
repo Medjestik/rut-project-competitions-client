@@ -70,9 +70,10 @@
 		padding: 0;
 	}
 	.background {
-		top: 80px;
+		top: 0;
 		left: 50%;
 		height: 100vh;
 		object-fit: cover;
+		object-position: top;
 	}
 }

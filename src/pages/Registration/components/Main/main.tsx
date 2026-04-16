@@ -14,7 +14,7 @@ export const Main: FC = () => {
 	const { t } = useTranslation();
 
 	return (
-		<section id={ESECTION.MAIN} className={`${styles.main}`}>
+		<section id={ESECTION.MAIN} className={styles.main}>
 			<p className={styles.subtitle}>{t('registration-main-subtitle')}</p>
 			<h1 className={styles.title}>{t('registration-main-title')}</h1>
 			<p className={styles.text}>{t('registration-main-text')}</p>

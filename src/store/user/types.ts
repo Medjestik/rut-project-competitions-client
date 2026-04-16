@@ -1,22 +1,5 @@
-export interface ILoginRequest {
-	email: string;
-	password: string;
-}
-
-export interface IRegistrationRequest {
-	first_name: string;
-	last_name: string;
-	middle_name: string;
-	email: string;
-	phone: string;
-	comment: string;
-	department: number;
-}
-
 export interface IAuthResponse {
-	access: string;
-	refresh: string;
-	user: IUser;
+	key: string;
 }
 
 export interface IUser {
