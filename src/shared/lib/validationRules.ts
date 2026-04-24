@@ -53,6 +53,20 @@ export const phoneFormat = (
 	errorMessage,
 });
 
+export const linkFormat = (errorMessage = 'Введите корректную ссылку') => ({
+	validate: (value: string) => {
+		if (!value) return false;
+
+		try {
+			const url = new URL(value);
+			return url.protocol === 'http:' || url.protocol === 'https:';
+		} catch {
+			return false;
+		}
+	},
+	errorMessage,
+});
+
 export const selectRequired = (
 	errorMessage = 'Необходимо выбрать значение'
 ) => ({
@@ -96,5 +110,19 @@ export const maxLength = (
 	errorMessage = `Максимальная длина: ${length} символов`
 ) => ({
 	validate: (value: string) => value.length <= length,
+	errorMessage,
+});
+
+export const nameFormat = (
+	errorMessage = 'Допустимы только буквы, цифры и стандартные символы'
+) => ({
+	validate: (value: string) => {
+		if (!value) return false;
+
+		const pattern =
+			/^[A-Za-zА-Яа-яЁё0-9~!@#$%^&*()_+`"№;:?\-={}|'<>[\]\\,./\s]+$/;
+
+		return pattern.test(value);
+	},
 	errorMessage,
 });

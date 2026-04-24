@@ -10,6 +10,7 @@ import { GradientText } from '../../shared/GradientText/gradient-text';
 import { navLinks } from './data';
 import { getCurrentYear } from '../../../../shared/utils/getCurrentYear';
 import { ESECTION } from '../../lib/sections';
+import { SUPPORT_MAIL } from '../../../../shared/lib/lib';
 
 import styles from './footer.module.scss';
 
@@ -84,7 +85,12 @@ export const Footer: FC = () => {
 								className={`${styles.social__icon} ${styles.social__icon_type_max}`}></div>
 							<div
 								className={`${styles.social__icon} ${styles.social__icon_type_tg}`}></div>
-							<Button text={t('support-button')} color='arrow' />
+							<Button
+								text={t('support-button')}
+								color='arrow'
+								type='link'
+								href={SUPPORT_MAIL}
+							/>
 						</div>
 					</div>
 				</div>

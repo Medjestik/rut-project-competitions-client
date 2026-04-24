@@ -1,8 +1,11 @@
 import type { FC, ReactElement } from 'react';
 import { Navigate } from 'react-router-dom';
+
 import { useSelector } from '../../../store/store';
-import { getIsAuthChecked, getUser } from '../../../store/user/reducer';
+
 import { Preloader } from '../Preloader/ui/preloader';
+
+import { getIsAuthChecked, getUser } from '../../../store/user/reducer';
 
 interface IProtectedProps {
 	onlyUnAuth?: boolean;
@@ -12,8 +15,6 @@ interface IProtectedProps {
 const Protected: FC<IProtectedProps> = ({ onlyUnAuth = false, component }) => {
 	const isAuthChecked = useSelector(getIsAuthChecked);
 	const user = useSelector(getUser);
-
-	console.log('Auth checked:', isAuthChecked, 'User:', user);
 
 	if (!isAuthChecked) return <Preloader />;
 

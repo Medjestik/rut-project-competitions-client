@@ -4,6 +4,7 @@ import type { TFormValidationErrors } from '../../../shared/components/Form/type
 import {
 	required,
 	emailFormat,
+	nameFormat,
 	minLength,
 	maxLength,
 } from '../../../shared/lib/validationRules';
@@ -12,16 +13,19 @@ import { PARTICIPANTS_COUNT } from './lib';
 export const validationRegistrationSchema = {
 	name: [
 		required('validation.required'),
+		nameFormat('validation.name'),
 		minLength(3, 'validation.min.length.3'),
-		maxLength(25, 'validation.max.length.25'),
+		maxLength(25, 'validation.max.length.30'),
 	],
 	login: [
 		required('validation.required'),
+		nameFormat('validation.name'),
 		minLength(6, 'validation.min.length.6'),
 		maxLength(16, 'validation.max.length.16'),
 	],
 	password: [
 		required('validation.required'),
+		nameFormat('validation.name'),
 		minLength(6, 'validation.min.length.6'),
 		maxLength(16, 'validation.max.length.16'),
 	],

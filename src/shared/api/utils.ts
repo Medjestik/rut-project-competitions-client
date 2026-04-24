@@ -29,10 +29,6 @@ const checkResponse = async (res: Response) => {
 
 	if (res.ok) return data;
 
-	if (!res.ok) {
-		console.error('RESPONSE ERROR:', res.status, data);
-	}
-
 	const message = normalizeErrorToString(data);
 
 	throw new Error(message);

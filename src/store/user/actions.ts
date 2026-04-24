@@ -15,7 +15,16 @@ import { setIsAuthChecked } from './reducer';
 
 export const loginUser = createAsyncThunk<IAuthResponse, ILoginData>(
 	'user/login',
-	login
+	async (data, { dispatch }) => {
+		const res = await login(data);
+
+		if (res.key) {
+			const user = await getUser(res.key);
+			dispatch(setUser(user));
+		}
+
+		return res;
+	}
 );
 
 export const setUser = createAction<IUser | null>('auth/setUser');

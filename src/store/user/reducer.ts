@@ -1,6 +1,6 @@
 import type { IUserStore } from './types';
 
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import * as actions from './actions';
 
@@ -18,6 +18,11 @@ export const userSlice = createSlice({
 	reducers: {
 		setIsAuthChecked: (state, action) => {
 			state.isAuthChecked = action.payload;
+		},
+		setUserStage: (state, action: PayloadAction<number>) => {
+			if (state.user) {
+				state.user.current_stage = action.payload;
+			}
 		},
 	},
 	selectors: {
@@ -98,5 +103,5 @@ export const userSlice = createSlice({
 	},
 });
 
-export const { setIsAuthChecked } = userSlice.actions;
+export const { setIsAuthChecked, setUserStage } = userSlice.actions;
 export const { getIsAuthChecked, getUser } = userSlice.selectors;

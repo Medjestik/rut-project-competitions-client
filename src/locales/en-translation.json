@@ -4,10 +4,18 @@
 	"edit-button": "Edit",
 	"delete-button": "Delete",
 	"join-button": "Join now",
+	"join-light-button": "Join",
+  "subscribe-button": "Subscribe",
+  "link-button": "Link",
+  "file-button": "File",
+  "continue-button": "Continue",
 	"download-button": "Download",
+	"upload-button": "Upload",
+	"complete-button": "Complete stage",
 	"support-button": "Contact Support",
 	"detail-button": "Detail",
-		"login-button": "Log in\u00A0to\u00A0your account",
+	"login-button": "Log in\u00A0to\u00A0your account",
+	"logout-button": "Logout",
 	"registration-button": "Register",
 	"preloader": "Loading..",
 
@@ -19,12 +27,45 @@
 		"error-registration": {
 			"title": "Registration error!",
 			"text": ""
+		},
+		"error-login": {
+			"title": "Login error!",
+			"text": ""
+		},
+		"error-loading": {
+			"title": "Error loading data!",
+			"text": ""
+		},
+		"success-upload-link": {
+			"title": "Link successfully uploaded!",
+			"text": "You can proceed to\u00A0the\u00A0next step."
+		},
+		"error-upload-link": {
+			"title": "Error loading link!",
+			"text": ""
+		},
+		"success-upload-file": {
+			"title": "File successfully uploaded!",
+			"text": "You can proceed to\u00A0the\u00A0next step."
+		},
+		"error-upload-file": {
+			"title": "Error loading file!",
+			"text": ""
+		},
+		"error-complete": {
+			"title": "Error complete stages!",
+			"text": ""
 		}
 	},
 
 	"validation": {
 		"required": "Field is required",
 		"email": "Invalid email format",
+		"link": "Invalid link format",
+		"name": "Invalid character",
+		"file": {
+			"size": "The\u00A0file size exceeds 10\u00A0MB, please provide a\u00A0link instead"
+		},
 		"min": {
 			"length": {
 				"3": "Minimum length: 3 characters",
@@ -34,7 +75,8 @@
 		"max": {
 			"length": {
 				"16": "Maximum length: 16 characters",
-				"25": "Maximum length: 25 characters"
+				"25": "Maximum length: 25 characters",
+				"30": "Maximum length: 30 characters"
 			}
 		}
 	},
@@ -433,6 +475,27 @@
 		}
 	},
 
+ 	"upload-link-form-title": "Upload Link",
+  "upload-link-form-subtitle": "Enter a\u00A0title and attach a\u00A0link",
+  "upload-link-form-input-title-title": "Title",
+  "upload-link-form-input-placeholder-title": "Enter a\u00A0title",
+  "upload-link-form-input-title-link": "Link",
+  "upload-link-form-input-placeholder-link": "Enter a\u00A0link",
+  "upload-link-form-checkbox": "I confirm that the\u00A0file is\u00A0accessible to\u00A0any users without\u00A0authorization",
+
+	"upload-file-form-title": "Upload File",
+	"upload-file-form-subtitle": "Enter a\u00A0title and attach a\u00A0file",
+	"upload-file-form-input-title-title": "Title",
+	"upload-file-form-input-placeholder-title": "Enter a\u00A0title",
+	"upload-file-form-input-title-file": "File",
+	"upload-file-form-input-placeholder-file": "Enter a\u00A0file",
+
+	"upload-video-form-title": "Upload Link",
+	"upload-video-form-subtitle": "Attach a\u00A0link to\u00A0the\u00A0video recording of\u00A0your project defense",
+	"upload-video-form-input-title-link": "Link",
+	"upload-video-form-input-placeholder-link": "Enter the\u00A0link",
+	"upload-video-form-checkbox": "I confirm that the\u00A0video is\u00A0accessible to\u00A0any users without\u00A0authorization",
+
 	"participant-form-title": "New participant",
 	"participant-form-subtitle": "Add details for\u00A0the\u00A0new participant",
 	"participant-form-edit-title": "Edit",
@@ -500,6 +563,114 @@
 
 	"registration-footer-text": "If you experience issues with\u00A0registration, please contact",
 	"registration-footer-support": "technical support",
+
+
+	"main-stages-title": "Competition Stages",
+	"main-stages": {
+		"0": {
+			"title": "Problem",
+			"text": "Study the\u00A0problem"
+		},
+		"1": {
+			"title": "Situation",
+			"text": "Analyze the\u00A0situation"
+		},
+		"2": {
+			"title": "Interview",
+			"text": "Conduct interviews"
+		},
+		"3": {
+			"title": "Idea",
+			"text": "Formulate an\u00A0idea"
+		},
+		"4": {
+			"title": "Prototype",
+			"text": "Create a\u00A0prototype"
+		},
+		"5": {
+			"title": "Presentation",
+			"text": "Present your solution"
+		}
+	},
+
+  "main-stages-data": {
+    "1": {
+      "title": "Situation Analysis",
+      "subtitle": "Study the current situation to\u00A0understand the problem, identify key factors, and determine who should be involved in\u00A0solving it.",
+      "text": "At\u00A0the\u00A0first stage of\u00A0the\u00A0competition, you will use several useful tools. They will help you better understand the\u00A0current situation, identify the\u00A0key factors influencing it, and determine who else should be involved in\u00A0the\u00A0project."
+    },
+    "2": {
+      "title": "Problem Interview",
+      "subtitle": "Conduct interviews with\u00A0stakeholders to\u00A0identify real problems, needs, and barriers affecting the\u00A0solution.",
+      "text": "A\u00A0problem interview is\u00A0a\u00A0research method used to\u00A0better understand the\u00A0target audience, including their needs, pains, fears, and objections. In project work, it helps avoid building irrelevant products, uncover real user problems, and find effective solutions."
+    },
+    "3": {
+      "title": "Solution Idea",
+      "subtitle": "Formulate a\u00A0solution idea based on\u00A0your analysis and interviews, taking into\u00A0account key problems and user needs.",
+      "text": "At\u00A0this\u00A0stage, you need to\u00A0develop a\u00A0solution to\u00A0the\u00A0identified problem based on\u00A0the\u00A0information gathered earlier. Structuring the\u00A0information helps organize insights and highlight the\u00A0most promising areas for\u00A0solution development. It is important to\u00A0stay focused on the\u00A0core problem and not deviate from it. As\u00A0a\u00A0result, you will form a\u00A0clear concept of\u00A0your solution that considers all key factors and proposes a\u00A0concrete way to\u00A0improve the\u00A0situation."
+    },
+    "4": {
+      "title": "Prototyping",
+      "subtitle": "Create a\u00A0prototype of\u00A0your solution to\u00A0clearly demonstrate how it works and the\u00A0value it provides.",
+      "text": "At\u00A0this stage, you will refine and implement your solution. First, define all requirements for\u00A0the\u00A0future product—they should be clearly formulated and measurable to\u00A0support building a working prototype. The\u00A0final step is\u00A0practical implementation. Create a\u00A0prototype, mockup, or\u00A0concept of\u00A0your solution. It is important to\u00A0clearly demonstrate the\u00A0current level of\u00A0development. The\u00A0more detailed and well-defined your work is, the\u00A0higher it will be evaluated by the\u00A0jury."
+    },
+    "5": {
+      "title": "Video Presentation",
+      "subtitle": "Present your solution in\u00A0a\u00A0video format: demonstrate the\u00A0results and justify your decisions.",
+      "text": "This is\u00A0the\u00A0final stage of\u00A0your project work. You need to\u00A0present your team’s results in\u00A0the\u00A0form of\u00A0a\u00A0video and a\u00A0final presentation. Your task is to\u00A0gather all materials developed during the\u00A0competition and present them in\u00A0a\u00A0clear and structured way. It is important to\u00A0demonstrate the\u00A0logic behind your decisions at\u00A0each stage and explain how your product solves the\u00A0identified problem and integrates into the\u00A0workflows of\u00A0key stakeholders."
+    }
+  },
+
+	"main-stage-initial-title": "Problem Overview",
+  "main-stage-initial-subtitle": "Study the\u00A0problem and subscribe to\u00A0chats and channels to\u00A0stay updated on the\u00A0competition and not\u00A0miss important announcements.",
+
+  "main-stage-initial-card-info": {
+    "title": "Welcome to\u00A0the\u00A0International Transport Project Competition!",
+    "text-1": "Project-based learning is\u00A0a\u00A0way to\u00A0develop skills and manage processes by\u00A0solving real-world problems. You will go through five stages: situation analysis, problem interviews, idea generation, prototyping, and final presentation. This sequence is\u00A0intentional: first, you need to\u00A0understand the\u00A0problem and its stakeholders, then propose a\u00A0realistic solution, design and test it, and finally present your results convincingly.",
+    "text-2": "Participants are provided with three toolkits: “Basic”, “Design” (based on design thinking), and “SML” (with schemes and models). Everyone can choose their preferred level of\u00A0depth, but the\u00A0project stages remain the\u00A0same for all."
+  },
+
+  "main-stage-initial-card-chat": {
+    "title": "Problem Chat",
+    "text": "Ask questions about the\u00A0problem to\u00A0company representatives and\u00A0organizers"
+  },
+  "main-stage-initial-card-channel": {
+    "title": "Competition Channel",
+    "text": "Follow updates on the\u00A0competition: deadlines, answers to\u00A0questions, details, and\u00A0tips"
+  },
+  "main-stage-initial-card-description": {
+    "title": "Problem Description",
+    "text": "Review the\u00A0full description of\u00A0the\u00A0problem provided by\u00A0the\u00A0partner company"
+  },
+  "main-stage-initial-card-problem": {
+    "title-1": "Situation",
+    "title-2": "Issue"
+  },
+	"main-stage-card-template": {
+    "title": "Template",
+    "text": "Download the\u00A0file to\u00A0get started"
+  },
+  "main-stage-card-task": {
+    "title": "Task",
+    "text": "Upload your solution. This can be\u00A0a\u00A0completed file no\u00A0larger than 10\u00A0MB or\u00A0a\u00A0link to\u00A0it.",
+		"caption": "Your solution has\u00A0been successfully uploaded"
+  },
+	"main-stage-card-presentation": {
+		"title": "Final Presentation",
+		"text": "Upload your final solution. This can be a\u00A0file up to\u00A010\u00A0MB or a\u00A0link to\u00A0it",
+		"caption": "Your solution has been successfully uploaded"
+	},
+	"main-stage-card-video": {
+		"title": "Video Defense",
+		"text": "Attach a\u00A0link to\u00A0the\u00A0video recording of\u00A0your project defense",
+		"caption": "The link has been successfully uploaded. Please wait for the\u00A0results"
+	},
+
+	"main-stage-paths": {
+    "path-1": "Path 1 “Basic”",
+    "path-2": "Path 2 “Design”",
+    "path-3": "Path 3 “SML”"
+  },
 
 
   "consent": {

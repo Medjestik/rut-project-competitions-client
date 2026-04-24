@@ -8,33 +8,6 @@ const setTokens = (accessToken: string) => {
 	localStorage.setItem('token', accessToken);
 };
 
-function handleResponse(res: Response) {
-	if (res.ok) {
-		return res.json();
-	} else {
-		return Promise.reject(res);
-	}
-}
-
-export const getTeam = (token: string) => {
-	return fetch('https://contest-api.emiit.ru/api/current-team', {
-		method: 'GET',
-		headers: {
-			Accept: 'application/json',
-			'Content-Type': 'application/json',
-			Authorization: `Token ${token}`,
-		},
-	}).then((res) => handleResponse(res));
-};
-
-function checkResponse(res: Response) {
-	if (res.status === 201) {
-		return res;
-	} else {
-		return Promise.reject(res);
-	}
-}
-
 export const login = (data: ILoginData) => {
 	return request('/auth/login/', {
 		method: 'POST',

@@ -42,8 +42,9 @@ export const LoginForm: FC = () => {
 			try {
 				await dispatch(loginUser(values)).unwrap();
 			} catch (err) {
+				console.error(err);
 				showToast({
-					title: 'Ошибка авторизации',
+					title: t('toasts.error-login.title'),
 					text: getErrorMessage(err),
 					type: 'error',
 				});

@@ -61,12 +61,22 @@ export function useForm<T>(
 		}));
 	};
 
+	const setFieldValue = <K extends keyof T>(name: K, value: string) => {
+		setValues((prev) => ({
+			...prev,
+			[name]: value,
+		}));
+
+		validateField(name, value);
+	};
+
 	return {
 		values,
 		handleChange,
 		handleSelectChange,
 		handleCheckboxToggle,
 		setValues,
+		setFieldValue,
 		errors,
 	};
 }

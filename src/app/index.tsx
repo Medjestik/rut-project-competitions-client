@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from '../store/store';
 
 import { Landing } from '../pages/Landing/ui/landing';
@@ -10,7 +10,6 @@ import { Main } from '../pages/Main/ui/main';
 import { Consent } from '../pages/Consent/ui/consent';
 import { Privacy } from '../pages/Privacy/ui/privacy';
 import { NotFound } from '../pages/NotFound/ui/not-found';
-import { Preloader } from '../shared/components/Preloader/ui/preloader';
 
 import {
 	OnlyAuth,
@@ -20,7 +19,6 @@ import { ToastProvider } from '../shared/components/ToastProvider/ui/ToastProvid
 import { ScrollToTop } from '../features/ScrollToTop/ui/scroll-to-top';
 import { EROUTES } from '../shared/utils/routes';
 
-import * as api from '../shared/api/user';
 import { checkUserAuth } from '../store/user/actions';
 
 import styles from './app.module.scss';
@@ -28,40 +26,9 @@ import styles from './app.module.scss';
 export const App = () => {
 	const dispatch = useDispatch();
 
-	const [loggedIn, setLoggedIn] = useState<boolean>(false);
-	const [isLoadingPage, setIsLoadingPage] = useState<boolean>(true);
-
-	const tokenCheck = () => {
-		const token = localStorage.getItem('token');
-		setIsLoadingPage(false);
-		console.log(token);
-		if (token) {
-			setIsLoadingPage(true);
-			api
-				.getTeam(token)
-				.then((res: any) => {
-					console.log(res);
-				})
-				.catch(() => {
-					setLoggedIn(false);
-				})
-				.finally(() => setIsLoadingPage(false));
-		}
-	};
-
 	useEffect(() => {
-		const token = localStorage.getItem('token');
-		if (token) {
-			tokenCheck();
-		} else {
-			setIsLoadingPage(false);
-		}
-		// dispatch(checkUserAuth());
+		dispatch(checkUserAuth());
 	}, [dispatch]);
-
-	if (isLoadingPage) {
-		<Preloader />;
-	}
 
 	return (
 		<ToastProvider>

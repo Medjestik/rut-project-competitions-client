@@ -1,19 +1,17 @@
-export const GetBase64File = (
-	file: File
-): Promise<string | ArrayBuffer | null> => {
-	return new Promise((resolve) => {
-		let baseURL: string | ArrayBuffer | null = '';
-		// Make new FileReader
+export const GetBase64File = (file: File): Promise<string> => {
+	return new Promise((resolve, reject) => {
 		const reader = new FileReader();
 
-		// Convert the file to base64 text
 		reader.readAsDataURL(file);
 
-		// on reader load something...
 		reader.onload = () => {
-			// Make a fileInfo Object
-			baseURL = reader.result;
-			resolve(baseURL);
+			if (typeof reader.result === 'string') {
+				resolve(reader.result);
+			} else {
+				reject(new Error('File conversion failed'));
+			}
 		};
+
+		reader.onerror = () => reject(new Error('File reading error'));
 	});
 };

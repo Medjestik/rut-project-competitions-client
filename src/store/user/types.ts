@@ -1,21 +1,18 @@
+import type { IUniversity, IProblem } from '../catalog/types';
+
 export interface IAuthResponse {
 	key: string;
 }
 
 export interface IUser {
 	id: number;
-	email: string;
-	first_name: string;
-	last_name: string;
-	middle_name: string;
+	name: string;
+	current_stage: number | null;
 	role: string;
-	phone: string;
-	department: {
-		id: number;
-		name: string;
-		short_name: string;
-	};
-	institute_code: string | null;
+	tutor_email: string;
+	tutor_fullname: string;
+	university: IUniversity;
+	case: IProblem;
 }
 
 export interface IUserStore {
