@@ -159,3 +159,33 @@
 		}
 	}
 }
+
+@media (max-width: 1000px) {
+	.invite {
+		padding: 40px 16px 40px;
+	}
+	.row {
+		margin: 0;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	.title {
+		font-size: 28px;
+	}
+	.cards {
+		margin: 24px 0 0 0;
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+	.card {
+		margin: 0;
+		padding: 32px 24px;
+		min-height: auto;
+		gap: 20px;
+		&__title {
+			font-size: 24px;
+		}
+	}
+}

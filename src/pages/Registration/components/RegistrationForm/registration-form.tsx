@@ -280,34 +280,6 @@ export const RegistrationForm: FC = () => {
 						titleSize='large'
 						subtitle={t('registration-form-section-participant-subtitle')}
 						id={ESECTION.PARTICIPANT}>
-						<div className={styles.form__row}>
-							<FormField
-								title={t(
-									'registration-form-section-participant-input-title-tutor-fullname'
-								)}>
-								<FormInput
-									name='tutor_fullname'
-									placeholder={t(
-										'registration-form-section-participant-input-placeholder-tutor-fullname'
-									)}
-									value={values.tutor_fullname}
-									onChange={handleChange}
-								/>
-							</FormField>
-							<FormField
-								title={t(
-									'registration-form-section-participant-input-title-tutor-email'
-								)}>
-								<FormInput
-									name='tutor_email'
-									placeholder={t(
-										'registration-form-section-participant-input-placeholder-tutor-email'
-									)}
-									value={values.tutor_email}
-									onChange={handleChange}
-								/>
-							</FormField>
-						</div>
 						<ul className={styles.participant__list}>
 							{values.participants.length < PARTICIPANTS_COUNT && (
 								<li className={styles.participant__item}>
@@ -347,6 +319,40 @@ export const RegistrationForm: FC = () => {
 								</li>
 							))}
 						</ul>
+					</Card>
+					<Card
+						title={t('registration-form-section-tutor-title')}
+						titleSize='large'
+						subtitle={t('registration-form-section-tutor-subtitle')}
+						id={ESECTION.TUTOR}>
+						<div className={styles.form__row}>
+							<FormField
+								title={t(
+									'registration-form-section-tutor-input-title-tutor-fullname'
+								)}>
+								<FormInput
+									name='tutor_fullname'
+									placeholder={t(
+										'registration-form-section-tutor-input-placeholder-tutor-fullname'
+									)}
+									value={values.tutor_fullname}
+									onChange={handleChange}
+								/>
+							</FormField>
+							<FormField
+								title={t(
+									'registration-form-section-tutor-input-title-tutor-email'
+								)}>
+								<FormInput
+									name='tutor_email'
+									placeholder={t(
+										'registration-form-section-tutor-input-placeholder-tutor-email'
+									)}
+									value={values.tutor_email}
+									onChange={handleChange}
+								/>
+							</FormField>
+						</div>
 					</Card>
 					<Card
 						title={t('registration-form-section-data-title')}

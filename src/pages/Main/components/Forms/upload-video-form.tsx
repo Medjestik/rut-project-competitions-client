@@ -49,7 +49,8 @@ export const UploadVideoForm: FC = () => {
 				await dispatch(uploadVideoAction(data)).unwrap();
 				showToast({
 					title: t('toasts.success-upload-link.title'),
-					text: t('toasts.success-upload-link.text'),
+					text:
+						currentStageId === 5 ? '' : t('toasts.success-upload-link.text'),
 					type: 'success',
 				});
 			} catch (err) {

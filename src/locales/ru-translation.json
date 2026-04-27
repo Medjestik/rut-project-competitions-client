@@ -164,7 +164,7 @@
 			"id": "2",
 			"title": "Работа",
 			"duration": "1 мая – 31 мая",
-			"content": "В течение двух недель участники анализируют ситуацию, проводят интервью, разрабатывают идею решения и\u00A0готовят базовый прототип."
+			"content": "В течение месяца участники анализируют ситуацию, проводят интервью, разрабатывают идею решения и\u00A0готовят базовый прототип."
 		},
 		"2": {
 			"id": "3",
@@ -385,21 +385,16 @@
     },
     {
       "id": "5",
-      "title": "Сколько времени займёт участие?",
-      "content": "Весь проектный трек длится около 2 месяцев: отборочный этап и регистрация займут месяц, затем у\u00A0вас будет около месяца, чтобы самостоятельно доработать решение, а\u00A0финал — три дня."
-    },
-    {
-      "id": "6",
       "title": "Что изменилось в\u00A0сезоне этого года?",
       "content": "В\u00A0этом году обновлена структура финала и добавлена экспозиция проектов — команды представляют решения в\u00A0формате инженерной ярмарки. Увеличено количество реальных задач от\u00A0компаний, добавлена техническая поддержка и новые инструменты. Усилено международное направление — участвуют команды из\u00A0других стран."
     },
     {
-      "id": "7",
+      "id": "6",
       "title": "Сколько проблем может решать команда?",
       "content": "Команда может решать только одну проблему. Каждый участник может состоять только в\u00A0одной команде. В\u00A0финал выйдут 3 лучшие российские команды и несколько иностранных по\u00A0каждой из\u00A06 проблем."
     },
     {
-      "id": "8",
+      "id": "7",
       "title": "Что получают победители?",
       "content": "Призовой фонд — 2 миллиона рублей, а\u00A0также подарки, дипломы и, главное — опыт, связи и новые возможности. Лучшие команды могут быть приглашены в\u00A0будущие сезоны и на\u00A0отраслевые мероприятия."
     }
@@ -446,16 +441,6 @@
 	"login-form-input-placeholder-password": "Введите пароль команды",
 
 
-	"registration-btn-back": "На\u00A0главную",
-	"registration-main-subtitle": "Международные транспортные проектные соревнования",
-	"registration-main-title": "Регистрация команды",
-	"registration-main-text": "Соберите команду, выберите кейс и\u00A0подайте заявку на\u00A0участие в\u00A0проектных соревнованиях. ",
-	"registration-main-tags": {
-		"0": "Регистрация занимает 3 минуты",
-		"1": "3 участника команды",
-		"2": "Начать регистрацию"
-	},
-
 	"upload-link-form-title": "Загрузка ссылки",
 	"upload-link-form-subtitle": "Введите наименование и\u00A0прикрепите ссылку",
 	"upload-link-form-input-title-title": "Наименование",
@@ -498,49 +483,15 @@
 	"participant-form-input-title-group-phone": "Телефон",
 	"participant-form-input-placeholder-group-phone": "Введите номер телефона",
 
-	"registration-form-section-team-title": "Создание команды",
-	"registration-form-section-team-subtitle": "Придумайте название команды, информацию об\u00A0образовательной организации, которую представляет команда и\u00A0данные для\u00A0входа.",
-	"registration-form-section-team-input-title-name": "Название команды",
-	"registration-form-section-team-input-placeholder-name": "Введите название команды",
-	"registration-form-section-team-input-caption-name": "Например: Транспортный импульс",
-	"registration-form-section-team-input-title-login": "Логин команды",
-	"registration-form-section-team-input-placeholder-login": "Введите логин команды",
-	"registration-form-section-team-input-title-password": "Пароль команды",
-	"registration-form-section-team-input-placeholder-password": "Введите пароль команды",
-	"registration-form-section-team-input-title-university": "Информация о\u00A0вузе",
-	"registration-form-section-team-input-placeholder-university": "Выберите вашу образовательную организацию",
-	"registration-form-section-team-input-caption-university": "Например: РУТ\u00A0(МИИТ)",
-
-	"registration-form-section-problem-title": "Выбор проблемы",
-	"registration-form-section-problem-subtitle": "Выберите проблему, с\u00A0которой будет работать команда.",
-	"registration-form-section-problem-active": "Выбрана",
-
-	"registration-form-section-participant-input-placeholder-tutor-fullname": "Введите ФИО наставника",
-	"registration-form-section-participant-input-title-tutor-fullname": "ФИО наставника (при наличии)",
-	"registration-form-section-participant-input-placeholder-tutor-email": "Введите почту наставника",
-	"registration-form-section-participant-input-title-tutor-email": "Почта наставника (при наличии)",
-	"registration-form-section-participant-title": "Участники команды",
-	"registration-form-section-participant-subtitle": "Сформируйте вашу команду. Добавьте 3 участников команды.",
-	"registration-form-section-participant-add-btn": "Добавить участника",
-	"registration-form-section-participant-add-text": "Откроется модальное окно с\u00A0персональными данными участника.",
-
-	"registration-form-section-data-title": "Подтверждение данных",
-	"registration-form-section-data-subtitle": "Введите промо-код подтверждения регистрации международных команд и\u00A0ознакомьтесь с\u00A0согласиями о\u00A0персональных данных.",
-	"registration-form-section-data-input-title-promo": "Промо-код регистрации",
-	"registration-form-section-data-input-placeholder-promo": "Введите промо-код",
-
-	"registration-form-section-data-checkbox-one-text": "Выражаю <link></link> персональных данных и подтверждаю получение согласия на передачу персональных данных третьих лиц на обработку.",
-	"registration-form-section-data-checkbox-one-link": "согласие на обработку",
-
-	"registration-form-section-data-checkbox-two-text": "Подтверждаю, что участники команды ознакомились с\u00A0<link></link> и\u00A0принимают его условия.",
-	"registration-form-section-data-checkbox-two-link": "Положением об\u00A0обработке персональных данных РУТ\u00A0(МИИТ)",
-
-	"registration-form-section-data-checkbox-three-text": "Выражаю <link></link> персональных данных в\u00A0целях освещения соревнований.",
-	"registration-form-section-data-checkbox-three-link": "согласие на\u00A0распространение",
-
-	"registration-form-section-data-checkbox-four-text": "Подтверждаю, что участники команды ознакомились с <link1></link1> и <link2></link2>",
-	"registration-form-section-data-checkbox-four-link1": "Положением",
-	"registration-form-section-data-checkbox-four-link2": "Регламентом соревнований.",
+	"registration-btn-back": "На\u00A0главную",
+	"registration-main-subtitle": "Международные транспортные проектные соревнования",
+	"registration-main-title": "Регистрация команды",
+	"registration-main-text": "Соберите команду, выберите проблему и\u00A0зарегистрируйтесь для\u00A0участия в\u00A0проектных соревнованиях. ",
+	"registration-main-tags": {
+		"0": "Регистрация занимает 3 минуты",
+		"1": "3 участника команды",
+		"2": "Начать регистрацию"
+	},
 
 	"registration-stages-title": "Этапы регистрации",
 	"registration-stages": {
@@ -561,6 +512,54 @@
 			"text": "Согласие и\u00A0отправка"
 		}
 	},
+
+	"registration-form-section-team-title": "Создание команды",
+	"registration-form-section-team-subtitle": "Придумайте название команды, данные для\u00A0входа и\u00A0введите информацию об\u00A0образовательной организации, которую представляете.",
+	"registration-form-section-team-input-title-name": "Название команды",
+	"registration-form-section-team-input-placeholder-name": "Введите название команды",
+	"registration-form-section-team-input-caption-name": "Например: Транспортный импульс",
+	"registration-form-section-team-input-title-login": "Логин команды",
+	"registration-form-section-team-input-placeholder-login": "Введите логин команды",
+	"registration-form-section-team-input-title-password": "Пароль команды",
+	"registration-form-section-team-input-placeholder-password": "Введите пароль команды",
+	"registration-form-section-team-input-title-university": "Информация о\u00A0вузе",
+	"registration-form-section-team-input-placeholder-university": "Выберите вашу образовательную организацию",
+	"registration-form-section-team-input-caption-university": "Например: РУТ\u00A0(МИИТ)",
+
+	"registration-form-section-problem-title": "Выбор проблемы",
+	"registration-form-section-problem-subtitle": "Выберите проблему, с\u00A0которой будет работать команда.",
+	"registration-form-section-problem-active": "Выбрана",
+
+	"registration-form-section-participant-title": "Участники команды",
+	"registration-form-section-participant-subtitle": "Сформируйте вашу команду. Добавьте 3 участников команды.",
+	"registration-form-section-participant-add-btn": "Добавить участника",
+	"registration-form-section-participant-add-text": "Откроется модальное окно с\u00A0персональными данными участника.",
+
+	"registration-form-section-tutor-title": "Наставник команды",
+	"registration-form-section-tutor-subtitle": "Добавьте наставника команды (при наличии).",
+	"registration-form-section-tutor-input-placeholder-tutor-fullname": "Введите ФИО наставника",
+	"registration-form-section-tutor-input-title-tutor-fullname": "ФИО наставника",
+	"registration-form-section-tutor-input-placeholder-tutor-email": "Введите почту наставника",
+	"registration-form-section-tutor-input-title-tutor-email": "Почта наставника",
+
+	"registration-form-section-data-title": "Подтверждение данных",
+	"registration-form-section-data-subtitle": "Введите промо-код для\u00A0подтверждения регистрации иностранной команды и\u00A0примите условия проектных соревнований.",
+	"registration-form-section-data-input-title-promo": "Промо-код регистрации",
+	"registration-form-section-data-input-placeholder-promo": "Введите промо-код",
+
+	"registration-form-section-data-checkbox-one-text": "Выражаю <link></link> персональных данных и подтверждаю получение согласия на передачу персональных данных третьих лиц на обработку.",
+	"registration-form-section-data-checkbox-one-link": "согласие на обработку",
+
+	"registration-form-section-data-checkbox-two-text": "Подтверждаю, что участники команды ознакомились с\u00A0<link></link> и\u00A0принимают его условия.",
+	"registration-form-section-data-checkbox-two-link": "Положением об\u00A0обработке персональных данных РУТ\u00A0(МИИТ)",
+
+	"registration-form-section-data-checkbox-three-text": "Выражаю <link></link> персональных данных в\u00A0целях освещения соревнований.",
+	"registration-form-section-data-checkbox-three-link": "согласие на\u00A0распространение",
+
+	"registration-form-section-data-checkbox-four-text": "Подтверждаю, что участники команды ознакомились с <link1></link1> и <link2></link2>",
+	"registration-form-section-data-checkbox-four-link1": "Положением",
+	"registration-form-section-data-checkbox-four-link2": "Регламентом соревнований.",
+
 
 	"registration-footer-text": "При проблемах с\u00A0регистрацией, обращайтесь в",
 	"registration-footer-support": "техническую поддержку",
@@ -601,8 +600,8 @@
 		},
 		"2": {
 				"title": "Проблемное интервью",
-				"subtitle": "Проведите интервью с\u00A0участниками, чтобы выявить реальные проблемы, потребности и барьеры, влияющие на\u00A0решение задачи.",
-				"text": "Проблемное интервью – это метод исследования целевой аудитории, который помогает глубже понять её потребности, боли, страхи и возражения. В проектной деятельности проблемное интервью используется для\u00A0того, чтобы избежать создания невостребованного продукта, выявить реальные проблемы аудитории и найти эффективные решения."
+				"subtitle": "Проведите интервью с\u00A0возможными участниками ситуации, чтобы выявить реальные проблемы, потребности и барьеры, влияющие на\u00A0решение задачи.",
+				"text": "Проблемное интервью –\u00A0это метод исследования целевой аудитории, который помогает глубже понять её потребности, боли, страхи и\u00A0возражения. В\u00A0проектной деятельности проблемное интервью используется для\u00A0того, чтобы избежать создания невостребованного продукта, выявить реальные проблемы аудитории и\u00A0найти эффективные решения. Вам предстоит определить круг лиц, которые могут сообщить дополнительную важную информацию о\u00A0сложившейся ситуации, самостоятельно связаться с ними и\u00A0зафиксировать результаты."
 		},
 		"3": {
 				"title": "Идея решения",
@@ -625,8 +624,9 @@
 	"main-stage-initial-subtitle": "Изучите проблему и\u00A0подпишитесь на\u00A0чаты и\u00A0каналы, чтобы получать актуальную информацию о соревнованиях и не\u00A0пропустить важные обновления.",
 	"main-stage-initial-card-info": {
 		"title": "Поздравляем с\u00A0участием в\u00A0Международных транспортных проектных соревнованиях!",
-		"text-1": "Проектная деятельность – это способ учиться и\u00A0управлять процессами через решение реальных проблем. Вам предстоит пройти пять этапов: анализ ситуации, проблемное интервью, поиск идей, создание прототипа и видеозащита. Такой порядок неслучаен: сначала важно понять проблему и её участников, затем предложить реалистичное решение, оформить и протестировать его, а\u00A0в\u00A0финале – убедительно представить результат.",
-		"text-2": "Для участников подготовлены три набора инструментов: «базовый», «дизайн» (по\u00A0дизайн-мышлению) и «SML» (со\u00A0схемами и моделями). Каждый сможет выбрать удобный уровень погружения, но\u00A0этапы проектной работы остаются одинаковыми для всех.,"
+		"text-1": "Проектная деятельность –\u00A0это последовательная работа с\u00A0реальной проблемой: вы проанализируете ситуацию, самостоятельно найдёте и\u00A0опросите специалистов, сформулируете идею, создадите минимальный прототип и\u00A0запишете видео с\u00A0разбором процесса работы и\u00A0результата. Этапы связаны между собой и\u00A0выстроены так, чтобы каждый следующий опирался на\u00A0предыдущий, поэтому важно использовать уже полученные ранее результаты.",
+		"text-2": "Вам будут доступны три подхода к\u00A0работе –\u00A0базовый, дизайн-мышление и\u00A0СМД (со\u00A0схемами и\u00A0моделями). Выберите один в\u00A0начале и\u00A0придерживайтесь его до\u00A0конца, переключаясь и\u00A0смешивая инструменты только в\u00A0случае реальной необходимости.",
+		"text-3": "Рассчитывайте время так, чтобы анализ, интервью и\u00A0идея решения заняли до\u00A0двух недель, чтобы оставить достаточно времени на\u00A0прототип и\u00A0видеозащиту."
 	},
 	"main-stage-initial-card-chat": {
 		"title": "Чат проблемы",
@@ -648,6 +648,10 @@
 		"title": "Шаблон",
 		"text": "Скачайте файл для\u00A0работы"
 	},
+	"main-stage-card-result": {
+		"title": "Ожидание результатов",
+		"text": "Спасибо за\u00A0участие в\u00A0соревнованиях! Ваши материалы успешно загружены. Пожалуйста, ожидайте объявления результатов."
+	},
 	"main-stage-card-task": {
 		"title": "Задание",
 		"text": "Загрузите ваше решение. Это может быть заполненный файл не\u00A0более 10\u00A0МБ или ссылка на\u00A0него",
@@ -661,7 +665,7 @@
 	"main-stage-card-video": {
 		"title": "Видеозащита",
 		"text": "Прикрепите ссылку на\u00A0видеозапись с\u00A0защитой вашей работы",
-		"caption": "Ссылка успешно загружена, ожидайте подведение итогов"
+		"caption": "Ссылка успешно загружена"
 	},
 
 	"main-stage-paths": {

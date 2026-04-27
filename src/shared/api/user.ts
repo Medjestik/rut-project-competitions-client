@@ -35,6 +35,20 @@ export const getUser = (token: string) => {
 			'Content-Type': 'application/json',
 			Authorization: `Token ${token}`,
 		},
+	}).catch((err) => {
+		let parsed;
+
+		try {
+			parsed = JSON.parse(err.message);
+		} catch {
+			parsed = null;
+		}
+
+		if (parsed?.detail === 'Недопустимый токен.') {
+			localStorage.removeItem('token');
+		}
+
+		throw err;
 	});
 };
 

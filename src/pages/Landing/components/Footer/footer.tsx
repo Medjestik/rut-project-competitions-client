@@ -10,7 +10,12 @@ import { GradientText } from '../../shared/GradientText/gradient-text';
 import { navLinks } from './data';
 import { getCurrentYear } from '../../../../shared/utils/getCurrentYear';
 import { ESECTION } from '../../lib/sections';
-import { SUPPORT_MAIL } from '../../../../shared/lib/lib';
+import {
+	SUPPORT_MAIL,
+	SOCIAL_TG,
+	SOCIAL_MAX,
+	SOCIAL_VK,
+} from '../../../../shared/lib/lib';
 
 import styles from './footer.module.scss';
 
@@ -79,12 +84,27 @@ export const Footer: FC = () => {
 							<GradientText text={t('footer-title.1')} />
 						</h2>
 						<div className={styles.social}>
-							<div
-								className={`${styles.social__icon} ${styles.social__icon_type_vk}`}></div>
-							<div
-								className={`${styles.social__icon} ${styles.social__icon_type_max}`}></div>
-							<div
-								className={`${styles.social__icon} ${styles.social__icon_type_tg}`}></div>
+							<a
+								className={`${styles.social__icon} ${styles.social__icon_type_vk}`}
+								href={SOCIAL_VK}
+								target='_blank'
+								rel='noreferrer'>
+								{' '}
+							</a>
+							<a
+								className={`${styles.social__icon} ${styles.social__icon_type_max}`}
+								href={SOCIAL_MAX}
+								target='_blank'
+								rel='noreferrer'>
+								{' '}
+							</a>
+							<a
+								className={`${styles.social__icon} ${styles.social__icon_type_tg}`}
+								href={SOCIAL_TG}
+								target='_blank'
+								rel='noreferrer'>
+								{' '}
+							</a>
 							<Button
 								text={t('support-button')}
 								color='arrow'

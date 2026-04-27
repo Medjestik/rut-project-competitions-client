@@ -59,7 +59,8 @@ export const UploadFileForm: FC = () => {
 				await dispatch(uploadFileAction(data)).unwrap();
 				showToast({
 					title: t('toasts.success-upload-file.title'),
-					text: t('toasts.success-upload-file.text'),
+					text:
+						currentStageId === 5 ? '' : t('toasts.success-upload-file.text'),
 					type: 'success',
 				});
 			} catch (err) {

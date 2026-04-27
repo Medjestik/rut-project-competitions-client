@@ -7,6 +7,7 @@ import { Caption } from '../../shared/Caption/caption';
 import { Button } from '../../../../shared/components/Button/ui/button';
 
 import { ESECTION } from '../../lib/sections';
+import { REGULATION_LINK, ORDER_LINK } from '../../../../shared/lib/lib';
 
 import styles from './document.module.scss';
 
@@ -53,6 +54,8 @@ export const Document: FC = () => {
 									text={t('download-button')}
 									color='arrow'
 									style={btnStyle}
+									type='link'
+									href={i === 0 ? ORDER_LINK : REGULATION_LINK}
 								/>
 							)}
 						</li>

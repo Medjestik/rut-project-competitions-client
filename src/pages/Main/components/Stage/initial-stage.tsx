@@ -34,7 +34,7 @@ export const InitialStage: FC = () => {
 					subtitle={t('main-stage-initial-subtitle')}
 					titleSize='large'>
 					<div className={styles.stage__row}>
-						<VideoStage url='https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/DkqqYrmoerzqAQ' />
+						<VideoStage url='https://runtime.video.cloud.yandex.net/player/video/vplvduonpuw7y7iz4tva?autoplay=0&mute=0' />
 						<div className={styles.card}>
 							<div className={styles.card__main}>
 								<h4 className={styles.card__title}>
@@ -45,6 +45,9 @@ export const InitialStage: FC = () => {
 								</p>
 								<p className={styles.card__text}>
 									{t('main-stage-initial-card-info.text-2')}
+								</p>
+								<p className={styles.card__text}>
+									{t('main-stage-initial-card-info.text-3')}
 								</p>
 							</div>
 						</div>

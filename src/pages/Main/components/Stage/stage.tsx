@@ -228,6 +228,20 @@ export const Stage: FC = () => {
 									)}
 								</div>
 							)}
+							{currentStageId === 5 &&
+								stage.team_videos.length > 0 &&
+								stage.team_file_count > 0 && (
+									<div className={styles.card}>
+										<div className={styles.card__main}>
+											<h4 className={styles.card__title}>
+												{t('main-stage-card-result.title')}
+											</h4>
+											<p className={styles.card__subtitle}>
+												{t('main-stage-card-result.text')}
+											</p>
+										</div>
+									</div>
+								)}
 							{currentStageId !== 5 &&
 								user.current_stage === currentStageId && (
 									<Button

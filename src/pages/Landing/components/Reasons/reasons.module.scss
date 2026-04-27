@@ -97,7 +97,7 @@
 		color: var(--main-white-color);
 		text-align: left;
 	}
-		&__number {
+	&__number {
 		margin: 0;
 		font-weight: 400;
 		font-size: 64px;
@@ -198,3 +198,33 @@
 		font-size: 40px;
 	}
 }
+
+@media (max-width: 1000px) {
+	.reasons {
+		padding: 40px 16px 40px;
+	}
+	.title {
+		margin: 20px 0 0 0;
+		font-size: 28px;
+	}
+	.cards {
+		margin: 24px 0 0 0;
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+	.card {
+		min-height: 270px;
+		padding: 24px;
+		&__stub {
+			display: none;
+		}
+		&__number {
+			font-size: 44px;
+		}
+		&__title {
+			margin: 24px 0 0 0;
+			font-size: 20px;
+		}
+	}
+}
+

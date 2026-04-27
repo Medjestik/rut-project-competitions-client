@@ -18,7 +18,7 @@ export const validationSchema = {
 		minLength(3, 'validation.min.length.3'),
 		maxLength(25, 'validation.max.length.25'),
 	],
-	link: [required('validation.required'), linkFormat('validation.email')],
+	link: [required('validation.required'), linkFormat('validation.link')],
 };
 
 export const initialUploadLinkFormValues: IUploadLinkForm = {
