@@ -679,6 +679,12 @@
     "path-3": "Path 3 “SMD”"
   },
 
+	"main-stage-paths-mobile": {
+    "path-1": "Path 1 “Basic”",
+    "path-2": "Path 2 “Design”",
+    "path-3": "Path 3 “SMD”"
+  },
+
 
   "consent": {
     "title": "CONSENT TO THE PROCESSING OF PERSONAL DATA",

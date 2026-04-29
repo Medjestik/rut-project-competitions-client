@@ -64,15 +64,28 @@ export const Stage: FC = () => {
 	};
 
 	const renderPathName = (position: number) => {
-		switch (position) {
-			case 1:
-				return t('main-stage-paths.path-1');
-			case 2:
-				return t('main-stage-paths.path-2');
-			case 3:
-				return t('main-stage-paths.path-3');
-			default:
-				return 'undefined';
+		if (width > 768) {
+			switch (position) {
+				case 1:
+					return t('main-stage-paths.path-1');
+				case 2:
+					return t('main-stage-paths.path-2');
+				case 3:
+					return t('main-stage-paths.path-3');
+				default:
+					return 'undefined';
+			}
+		} else {
+			switch (position) {
+				case 1:
+					return t('main-stage-paths-mobile.path-1');
+				case 2:
+					return t('main-stage-paths-mobile.path-2');
+				case 3:
+					return t('main-stage-paths-mobile.path-3');
+				default:
+					return 'undefined';
+			}
 		}
 	};
 
