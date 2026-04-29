@@ -5,6 +5,7 @@ import { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from '../../../../store/store';
 import { useToast } from '../../../../shared/components/ToastProvider/ui/ToastProvider';
 import { useTranslation } from 'react-i18next';
+import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 
 import { Preloader } from '../../../../shared/components/Preloader/ui/preloader';
 import { Button } from '../../../../shared/components/Button/ui/button';
@@ -25,6 +26,7 @@ import {
 } from '../../../../store/main/reducer';
 import { setUserStage } from '../../../../store/user/reducer';
 import { getErrorMessage } from '../../../../shared/lib/getErrorMessage';
+import { getTemplateLink } from './data';
 
 import styles from './stage.module.scss';
 
@@ -36,7 +38,6 @@ export const Stage: FC = () => {
 	const dispatch = useDispatch();
 	const {
 		stage,
-		stageTemplate,
 		stageVideo,
 		currentStageId,
 		currentPathPosition,
@@ -45,6 +46,8 @@ export const Stage: FC = () => {
 	const { user } = useSelector((state) => state.user);
 	const { showToast } = useToast();
 	const { t } = useTranslation();
+	const { i18n } = useTranslation();
+	const width = useWindowWidth();
 
 	const handleNextStage = async () => {
 		try {
@@ -122,7 +125,8 @@ export const Stage: FC = () => {
 				<Card
 					titleSize='large'
 					title={t(`main-stages-data.${stage.id}.title`)}
-					subtitle={t(`main-stages-data.${stage.id}.subtitle`)}>
+					subtitle={t(`main-stages-data.${stage.id}.subtitle`)}
+					withBackground={width >= 768}>
 					<ul className={styles.paths}>
 						{stage.stage_paths.map((path, i) =>
 							currentPathPosition === i + 1 ? (
@@ -164,7 +168,11 @@ export const Stage: FC = () => {
 									text={t('download-button')}
 									color='arrow'
 									type='link'
-									href={stageTemplate || ''}
+									href={getTemplateLink(
+										i18n.language,
+										currentStageId,
+										currentPathPosition
+									)}
 								/>
 							</div>
 							<div className={styles.card}>

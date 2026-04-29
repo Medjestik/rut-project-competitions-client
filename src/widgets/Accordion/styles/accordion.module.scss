@@ -179,3 +179,12 @@
 		height: 36px;
 	}
 }
+
+@media (max-width: 1000px) {
+	.accordion__item {
+		border-radius: 20px;
+	}
+	.accordion__text {
+		max-width: 100%;
+	}
+}

@@ -144,3 +144,31 @@
 		}
 	}
 }
+
+@media (max-width: 1000px) {
+	.description {
+		padding: 40px 16px 40px;
+	}
+	.row {
+		margin: 0;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	.title {
+		font-size: 28px;
+	}
+	.list {
+		margin: 20px 0 0 0;
+		display: flex;
+		flex-direction: column;
+	}
+	.item {
+		padding: 28px 24px 24px;
+		gap: 16px;
+		&__title {
+			font-size: 28px;
+		}
+	}
+}

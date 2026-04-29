@@ -5,6 +5,7 @@
 	width: 100%;
 	z-index: 1;
 	position: relative;
+	overflow: hidden;
 }
 
 .background {
@@ -239,5 +240,147 @@
 		&_number_3 {
 			margin: -400px 0 0 15%;
 		}
+	}
+}
+
+@media (max-width: 1000px) {
+	.background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 300%;
+		max-width: 300%;
+	}
+	.main {
+		padding: 20px 16px 40px;
+	}
+	.title {
+		margin: 5vh 0 0 0;
+		&__text {
+			margin: 8px 0 0 0;
+			max-width: 300px;
+			font-size: 28px;
+			line-height: 1;
+		}
+	}
+	.subtitle {
+		max-width: 210px;
+	}
+	.button {
+		margin: 32px 0 0 0;
+	}
+	.cards {
+		margin: auto 0 0 0;
+		flex-direction: column-reverse;
+		gap: 12px;
+	}
+	.card {
+		width: 100%;
+		max-width: 100%;
+		min-height: auto;
+		padding: 16px 20px;
+		border-radius: 20px;
+		&__row {
+			margin: 0;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+		&_number_3 {
+			margin: 0;
+		}
+		&_number_4 {
+			margin: 0;
+		}
+		&__count {
+			font-size: 32px;
+		}
+		&__caption {
+			display: none;
+		}
+		&__text {
+			margin: 4px 0 0 0;
+		}
+	}
+	.card_direction_right .card__count {
+		margin: 0;
+	}
+	.card_direction_right .card__caption {
+		margin: 8px 0;
+	}
+	.timer {
+		margin: 12px 0 40px 0;
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		padding: 16px 20px;
+		box-sizing: border-box;
+		background-color: #201A23;
+		border-radius: 20px;
+		&__count {
+			margin: 0;
+			font-size: 32px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 1;
+			color: #C109D7;
+		}
+		&__text {
+			margin: 0;
+			font-weight: 500;
+			font-size: 14px;
+			font-style: normal;
+			line-height: 1;
+			color: var(--main-white-color);
+		}
+	}
+}
+
+@media (max-width: 400px) {
+	.title {
+		margin: 3vh 0 0 0;
+		&__text {
+			margin: 0;
+			max-width: 300px;
+			font-size: 28px;
+			line-height: 1;
+		}
+	}
+	.subtitle {
+		max-width: 210px;
+	}
+	.button {
+		margin: 24px 0 12px 0;
+	}
+	.card {
+		width: 100%;
+		max-width: 100%;
+		min-height: auto;
+		padding: 8px 20px;
+		border-radius: 20px;
+		&__row {
+			margin: 0;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+		&_number_3 {
+			margin: 0;
+		}
+		&_number_4 {
+			margin: 0;
+		}
+		&__count {
+			font-size: 28px;
+		}
+		&__caption {
+			display: none;
+		}
+		&__text {
+			margin: 4px 0 0 0;
+		}
+	}
+	.timer {
+		margin: 12px 0 0 0;
 	}
 }

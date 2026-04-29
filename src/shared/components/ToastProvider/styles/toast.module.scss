@@ -117,3 +117,33 @@
     transform: translateX(0) translateY(0);
   }
 }
+
+
+@media (max-width: 768px) {
+  .container {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .toast {
+    width: 100%;
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .text {
+    font-size: 12px;
+  }
+
+  .close {
+    width: 18px;
+    height: 18px;
+    top: 6px;
+    right: 6px;
+  }
+}

@@ -36,7 +36,7 @@ export const Problems: FC = () => {
 	const [sliderRef, instanceRef] = useKeenSlider({
 		loop: false,
 		slides: {
-			perView: width > 1366 ? 3.2 : 2.2,
+			perView: width > 1366 ? 3.2 : width > 1000 ? 2.2 : 1,
 			spacing: 20,
 		},
 		slideChanged(slider) {
@@ -45,7 +45,8 @@ export const Problems: FC = () => {
 	});
 
 	const total = problemsCards.length;
-	const maxIndex = total - 3;
+	const perView = width > 1366 ? 3 : width > 1000 ? 2 : 1;
+	const maxIndex = total - perView;
 	const progress = (currentSlide / maxIndex) * 100;
 
 	const handlePrev = () => instanceRef.current?.prev();
@@ -63,45 +64,47 @@ export const Problems: FC = () => {
 					<GradientText text={t('problems-title.0')} /> {t('problems-title.1')}
 				</h2>
 				<div className={styles.row}>
-					<div className={styles.info}>
-						<p className={styles.text}>{t('problems-text')}</p>
-						<div className={styles.control}>
-							<div
-								onClick={handlePrev}
-								className={`${styles.arrow} ${styles.arrow_type_left}`}>
-								<svg
-									width='29'
-									height='22'
-									viewBox='0 0 29 22'
-									fill='none'
-									xmlns='http://www.w3.org/2000/svg'>
-									<path
-										d='M9.71445 0.750002L1.48222 8.98223C0.505907 9.95855 0.505906 11.5415 1.48222 12.5178L9.71445 20.75M2.21446 10.75L27.75 10.75'
-										stroke='#F1F1F1'
-										strokeWidth='1.5'
-										strokeLinecap='round'
-									/>
-								</svg>
-							</div>
-							<div
-								onClick={handleNext}
-								className={`${styles.arrow} ${styles.arrow_type_right}`}>
-								<svg
-									width='29'
-									height='22'
-									viewBox='0 0 29 22'
-									fill='none'
-									xmlns='http://www.w3.org/2000/svg'>
-									<path
-										d='M18.7856 20.75L27.0178 12.5178C27.9941 11.5415 27.9941 9.95854 27.0178 8.98223L18.7856 0.750002M26.2855 10.75L0.75 10.75'
-										stroke='#F1F1F1'
-										strokeWidth='1.5'
-										strokeLinecap='round'
-									/>
-								</svg>
+					{width > 1000 && (
+						<div className={styles.info}>
+							<p className={styles.text}>{t('problems-text')}</p>
+							<div className={styles.control}>
+								<div
+									onClick={handlePrev}
+									className={`${styles.arrow} ${styles.arrow_type_left}`}>
+									<svg
+										width='29'
+										height='22'
+										viewBox='0 0 29 22'
+										fill='none'
+										xmlns='http://www.w3.org/2000/svg'>
+										<path
+											d='M9.71445 0.750002L1.48222 8.98223C0.505907 9.95855 0.505906 11.5415 1.48222 12.5178L9.71445 20.75M2.21446 10.75L27.75 10.75'
+											stroke='#F1F1F1'
+											strokeWidth='1.5'
+											strokeLinecap='round'
+										/>
+									</svg>
+								</div>
+								<div
+									onClick={handleNext}
+									className={`${styles.arrow} ${styles.arrow_type_right}`}>
+									<svg
+										width='29'
+										height='22'
+										viewBox='0 0 29 22'
+										fill='none'
+										xmlns='http://www.w3.org/2000/svg'>
+										<path
+											d='M18.7856 20.75L27.0178 12.5178C27.9941 11.5415 27.9941 9.95854 27.0178 8.98223L18.7856 0.750002M26.2855 10.75L0.75 10.75'
+											stroke='#F1F1F1'
+											strokeWidth='1.5'
+											strokeLinecap='round'
+										/>
+									</svg>
+								</div>
 							</div>
 						</div>
-					</div>
+					)}
 					<div className={styles.carousel}>
 						<div ref={sliderRef} className='keen-slider'>
 							{problemsCards.map((elem: TProblemCard, index) => (
@@ -144,6 +147,19 @@ export const Problems: FC = () => {
 								style={{ width: `${progress}%` }}
 							/>
 						</div>
+						{width <= 1000 && (
+							<div className={styles.dots}>
+								{problemsCards.map((_, idx) => (
+									<div
+										key={idx}
+										onClick={() => instanceRef.current?.moveToIdx(idx)}
+										className={`${styles.dot} ${
+											currentSlide === idx ? styles.dot_active : ''
+										}`}
+									/>
+								))}
+							</div>
+						)}
 					</div>
 				</div>
 			</section>

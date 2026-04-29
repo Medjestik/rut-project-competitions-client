@@ -2,6 +2,7 @@ import type { FC } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 import { useInView } from '../../../../hooks/useInView';
 
 import { StageCard } from './stage-card';
@@ -16,6 +17,7 @@ import styles from './stages.module.scss';
 export const Stages: FC = () => {
 	const navigate = useNavigate();
 	const { t } = useTranslation();
+	const width = useWindowWidth();
 	const { ref, isVisible } = useInView({ threshold: 0.2 });
 
 	return (
@@ -55,20 +57,22 @@ export const Stages: FC = () => {
 					/>
 				</div>
 				<div className={`${styles.row} ${styles.row_bottom}`}>
-					<div className={styles.caption}>
-						<p className={styles.caption__text}>
-							{t('stages-stub.1.0')}{' '}
-							<span className={styles.caption__text_color}>
-								{t('stages-stub.1.1')}
-							</span>{' '}
-							{t('stages-stub.1.2')}
-						</p>
-						<Button
-							text={t('join-button')}
-							color='arrow'
-							onClick={() => navigate(EROUTES.REGISTRATION)}
-						/>
-					</div>
+					{width > 1000 && (
+						<div className={styles.caption}>
+							<p className={styles.caption__text}>
+								{t('stages-stub.1.0')}{' '}
+								<span className={styles.caption__text_color}>
+									{t('stages-stub.1.1')}
+								</span>{' '}
+								{t('stages-stub.1.2')}
+							</p>
+							<Button
+								text={t('join-button')}
+								color='arrow'
+								onClick={() => navigate(EROUTES.REGISTRATION)}
+							/>
+						</div>
+					)}
 					<StageCard
 						id={t('stages-cards.3.id')}
 						title={t('stages-cards.3.title')}
@@ -86,6 +90,23 @@ export const Stages: FC = () => {
 						transitionDelay='1'
 					/>
 				</div>
+				{width <= 1000 && (
+					<div className={styles.caption}>
+						<p className={styles.caption__text}>
+							{t('stages-stub.1.0')}{' '}
+							<span className={styles.caption__text_color}>
+								{t('stages-stub.1.1')}
+							</span>{' '}
+							{t('stages-stub.1.2')}
+						</p>
+						<Button
+							text={t('join-button')}
+							color='gradient'
+							width='full'
+							onClick={() => navigate(EROUTES.REGISTRATION)}
+						/>
+					</div>
+				)}
 			</section>
 		</div>
 	);

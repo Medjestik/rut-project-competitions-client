@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 import { useSelector, useDispatch } from '../../../../store/store';
 
 import { Button } from '../../../../shared/components/Button/ui/button';
@@ -12,6 +13,7 @@ import styles from './header.module.scss';
 
 export const Header: FC = () => {
 	const { t } = useTranslation();
+	const width = useWindowWidth();
 	const { user } = useSelector((state) => state.user);
 	const dispatch = useDispatch();
 
@@ -27,7 +29,7 @@ export const Header: FC = () => {
 			</div>
 			<div className={styles.control}>
 				<LanguageSwitcher />
-				{user && <Button text={user.name} color='cancel' />}
+				{user && width > 1000 && <Button text={user.name} color='cancel' />}
 
 				<Button
 					text={t('logout-button')}

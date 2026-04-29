@@ -6,6 +6,7 @@ export interface ICardProps {
 	subtitle?: string;
 	id?: string;
 	width?: 'default' | 'content' | 'full';
+	withBackground?: boolean;
 	children?: ReactNode;
 }
 

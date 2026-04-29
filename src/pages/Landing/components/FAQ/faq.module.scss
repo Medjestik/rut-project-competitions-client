@@ -114,3 +114,17 @@
 		max-width: 70vw;
 	}
 }
+
+@media (max-width: 1000px) {
+	.faq {
+		padding: 40px 16px 40px;
+	}
+	.title {
+		margin: 20px 0 0 0;
+		font-size: 28px;
+	}
+	.accordion {
+		width: 100%;
+		max-width: 100%;
+	}
+}

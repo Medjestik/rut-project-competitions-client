@@ -2,6 +2,7 @@ import type { FC } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { useInView } from '../../../../hooks/useInView';
+import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 
 import { Link } from 'react-scroll';
 import { Button } from '../../../../shared/components/Button/ui/button';
@@ -20,6 +21,7 @@ import {
 import styles from './footer.module.scss';
 
 export const Footer: FC = () => {
+	const width = useWindowWidth();
 	const { t } = useTranslation();
 
 	const { ref, isVisible } = useInView({ threshold: 0.2 });
@@ -78,7 +80,7 @@ export const Footer: FC = () => {
 						className={`${styles.contacts} ${styles.fadeUp} ${
 							isVisible ? styles.visible : ''
 						}`}
-						style={{ transitionDelay: '0.6s' }}>
+						style={{ transitionDelay: width > 1000 ? '0.6s' : '0.1s' }}>
 						<h2 className={styles.title}>
 							{t('footer-title.0')} <br />
 							<GradientText text={t('footer-title.1')} />
@@ -107,7 +109,7 @@ export const Footer: FC = () => {
 							</a>
 							<Button
 								text={t('support-button')}
-								color='arrow'
+								color={width > 1000 ? 'arrow' : 'gradient'}
 								type='link'
 								href={SUPPORT_MAIL}
 							/>

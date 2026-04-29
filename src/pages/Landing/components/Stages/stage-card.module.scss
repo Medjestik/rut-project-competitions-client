@@ -204,3 +204,34 @@
 		}
 	}
 }
+
+@media (max-width: 1000px) {
+	.card {
+		padding: 24px;
+		min-height: 300px;
+	}
+	.main {
+		&__number {
+			font-size: 32px;
+		}
+		&__title {
+			font-size: 32px;
+		}
+		&__duration {
+			font-size: 16px;
+		}
+	}
+	.hover {
+		padding: 80px 24px;
+		&__title {
+			font-size: 32px;
+		}
+		&__duration {
+			font-size: 16px;
+		}
+		&__text {
+			font-size: 16px;
+		}
+	}
+}
+

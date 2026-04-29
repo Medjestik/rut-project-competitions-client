@@ -9,10 +9,15 @@ export const Card: FC<ICardProps> = ({
 	subtitle,
 	id,
 	width = 'full',
+	withBackground = true,
 	children,
 }) => {
 	return (
-		<div id={id} className={`${styles.card} ${styles[`card_width_${width}`]}`}>
+		<div
+			id={id}
+			className={`${styles.card} ${
+				withBackground ? styles.card_background : ''
+			} ${styles[`card_width_${width}`]}`}>
 			{title && (
 				<h2 className={`${styles.title} ${styles[`title_size_${titleSize}`]}`}>
 					{title}

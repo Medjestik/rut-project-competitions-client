@@ -2,12 +2,14 @@ import type { FC } from 'react';
 
 import { useSelector, useDispatch } from '../../../../store/store';
 import { useTranslation } from 'react-i18next';
+import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 
 import { Card } from '../../../../shared/components/Card/ui';
 import { Button } from '../../../../shared/components/Button/ui/button';
 import { VideoStage } from './video-stage';
 
 import { setCurrentStage } from '../../../../store/main/reducer';
+import { SOCIAL_TG } from '../../../../shared/lib/lib';
 
 import styles from './stage.module.scss';
 
@@ -19,6 +21,7 @@ export const InitialStage: FC = () => {
 	const dispatch = useDispatch();
 	const { user } = useSelector((state) => state.user);
 	const { t } = useTranslation();
+	const width = useWindowWidth();
 
 	const handleContinueWork = () => {
 		if (user?.current_stage) {
@@ -32,7 +35,8 @@ export const InitialStage: FC = () => {
 				<Card
 					title={t('main-stage-initial-title')}
 					subtitle={t('main-stage-initial-subtitle')}
-					titleSize='large'>
+					titleSize='large'
+					withBackground={width >= 768}>
 					<div className={styles.stage__row}>
 						<VideoStage url='https://runtime.video.cloud.yandex.net/player/video/vplvduonpuw7y7iz4tva?autoplay=0&mute=0' />
 						<div className={styles.card}>
@@ -76,7 +80,12 @@ export const InitialStage: FC = () => {
 										{t('main-stage-initial-card-channel.text')}
 									</p>
 								</div>
-								<Button text={t('subscribe-button')} color='arrow' />
+								<Button
+									text={t('subscribe-button')}
+									color='arrow'
+									type='link'
+									href={SOCIAL_TG}
+								/>
 							</div>
 							<div className={styles.card}>
 								<div className={styles.card__main}>

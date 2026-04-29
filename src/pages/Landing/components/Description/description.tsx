@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 import { useInView } from '../../../../hooks/useInView';
 
 import { Link } from 'react-scroll';
@@ -14,6 +15,7 @@ import styles from './description.module.scss';
 
 export const Description: FC = () => {
 	const { t } = useTranslation();
+	const width = useWindowWidth();
 	const { ref, isVisible } = useInView({ threshold: 0.2 });
 
 	return (
@@ -26,7 +28,7 @@ export const Description: FC = () => {
 			<div className={styles.row}>
 				<Caption text={t('description-caption')} />
 				<h2 className={styles.title}>
-					{t('description-title.0')} <br></br>{' '}
+					{t('description-title.0')} {width > 1000 && <br></br>}{' '}
 					<GradientText text={t('description-title.1')} />{' '}
 					{t('description-title.2')}
 				</h2>

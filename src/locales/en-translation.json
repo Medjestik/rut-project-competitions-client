@@ -94,6 +94,7 @@
 	"main-title-caption": "From problem to implementation",
 	"main-reg-caption": "Registration open!",
 	"main-text": "A platform for\u00A0students and\u00A0young professionals where solutions for\u00A0the future of\u00A0transportation are created: digitalization, infrastructure, logistics, and\u00A0engineering innovation",
+	"main-mobile-text": "A\u00A0platform where students create solutions for\u00A0the\u00A0transport of\u00A0the\u00A0future.",
 	"main-title": {
 		"0": "International",
 		"1": "transport project",
@@ -119,6 +120,24 @@
 			"count": "2026-06-01T12:00:00",
 			"caption": "until the\u00A0end of\u00A0the\u00A0qualifying stage",
 			"text": "Join\u00A0us and\u00A0showcase your best solutions!"
+		}
+	},
+	"main-mobile-cards": {
+		"0": {
+			"count": "6",
+			"text": "practical cases"
+		},
+		"1": {
+			"count": "3000+",
+			"text": "students and specialists from different countries"
+		},
+		"2": {
+			"count": "2M ₽",
+			"text": "prize fund for\u00A0the\u00A0best solution"
+		},
+		"3": {
+			"count": "2026-06-01T12:00:00",
+			"caption": "until the\u00A0end of\u00A0the\u00A0qualifying stage"
 		}
 	},
 
@@ -244,22 +263,6 @@
 		},
 		{
 			"card-id": "6",
-			"card-title": "Company Name",
-			"card-situation-title": "Situation",
-			"card-situation-text": "There is no effective metro cooling system, and the temperature rises every year due to increased passenger flow and the average air temperature.",
-			"card-problem-title": "Problem",
-			"card-problem-text": "For testing, it is necessary to temporarily close a track branch, since the trolley is slower than regular and high-speed trains."
-		},
-		{
-			"card-id": "7",
-			"card-title": "Company Name",
-			"card-situation-title": "Situation",
-			"card-situation-text": "There is no effective metro cooling system, and the temperature rises every year due to increased passenger flow and the average air temperature.",
-			"card-problem-title": "Problem",
-			"card-problem-text": "For testing, it is necessary to temporarily close a track branch, since the trolley is slower than regular and high-speed trains."
-		},
-		{
-			"card-id": "8",
 			"card-title": "Company Name",
 			"card-situation-title": "Situation",
 			"card-situation-text": "There is no effective metro cooling system, and the temperature rises every year due to increased passenger flow and the average air temperature.",
