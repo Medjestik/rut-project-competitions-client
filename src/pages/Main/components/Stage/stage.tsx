@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import type { IPath } from '../../../../store/main/types';
+import type { IStageData, IPath } from '../../../../store/main/types';
 
 import { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from '../../../../store/store';
@@ -26,7 +26,6 @@ import {
 } from '../../../../store/main/reducer';
 import { setUserStage } from '../../../../store/user/reducer';
 import { getErrorMessage } from '../../../../shared/lib/getErrorMessage';
-import { getTemplateLink } from './data';
 
 import styles from './stage.module.scss';
 
@@ -39,14 +38,14 @@ export const Stage: FC = () => {
 	const {
 		stage,
 		stageVideo,
+		stageTemplate,
 		currentStageId,
 		currentPathPosition,
 		isLoadingStageData,
 	} = useSelector((state) => state.main);
 	const { user } = useSelector((state) => state.user);
 	const { showToast } = useToast();
-	const { t } = useTranslation();
-	const { i18n } = useTranslation();
+	const { i18n, t } = useTranslation();
 	const width = useWindowWidth();
 
 	const handleNextStage = async () => {
@@ -89,30 +88,48 @@ export const Stage: FC = () => {
 		}
 	};
 
+	const applyStageData = (
+		stage: IStageData,
+		position: number,
+		lang: string
+	) => {
+		const isEn = lang.startsWith('en');
+
+		if (stage.id < 5) {
+			const path = stage.stage_paths[position - 1];
+
+			dispatch(
+				setStageTemplate(isEn ? path.url_template_eng : path.url_template)
+			);
+			dispatch(setStageVideo(isEn ? path.url_video_eng : path.url_video));
+		} else {
+			dispatch(
+				setStageTemplate(isEn ? stage.url_template_eng : stage.url_template)
+			);
+			dispatch(setStageVideo(isEn ? stage.url_video_eng : stage.url_video));
+		}
+	};
+
 	const handleChangePath = (path: IPath, position: number) => {
 		localStorage.setItem('pathPosition', position.toString());
 		dispatch(setCurrentPath(position));
-		dispatch(setStageTemplate(path.url_template));
-		dispatch(setStageVideo(path.url_video));
+
+		if (stage) {
+			applyStageData(stage, position, i18n.language);
+		}
 	};
 
 	const getStageData = useCallback(async () => {
 		try {
 			const data = await dispatch(getStageAction(currentStageId)).unwrap();
 
-			const pathPosition = localStorage.getItem('pathPosition');
-			const position = pathPosition ? Number(pathPosition) : 1;
+			const saved = localStorage.getItem('pathPosition');
+			const position = saved ? Number(saved) : 1;
 
 			dispatch(setCurrentPath(position));
 
-			if (data.id < 5) {
-				dispatch(
-					setStageTemplate(data.stage_paths[position - 1]?.url_template)
-				);
-				dispatch(setStageVideo(data.stage_paths[position - 1]?.url_video));
-			} else if (data.id === 5) {
-				dispatch(setStageTemplate(data.url_template));
-				dispatch(setStageVideo(data.url_video));
+			if (data) {
+				applyStageData(data, position, i18n.language);
 			}
 		} catch (err) {
 			console.error(err);
@@ -122,7 +139,13 @@ export const Stage: FC = () => {
 				type: 'error',
 			});
 		}
-	}, [dispatch, currentStageId]);
+	}, [currentStageId]);
+
+	useEffect(() => {
+		if (stage) {
+			applyStageData(stage, currentPathPosition, i18n.language);
+		}
+	}, [stage, currentPathPosition, i18n.language]);
 
 	useEffect(() => {
 		getStageData();
@@ -177,16 +200,16 @@ export const Stage: FC = () => {
 										{t('main-stage-card-template.text')}
 									</p>
 								</div>
-								<Button
-									text={t('download-button')}
-									color='arrow'
-									type='link'
-									href={getTemplateLink(
-										i18n.language,
-										currentStageId,
-										currentPathPosition
-									)}
-								/>
+								{stageTemplate ? (
+									<Button
+										text={t('download-button')}
+										color='arrow'
+										type='link'
+										href={stageTemplate}
+									/>
+								) : (
+									<Button text={t('download-button')} isBlock />
+								)}
 							</div>
 							<div className={styles.card}>
 								<div className={styles.card__main}>

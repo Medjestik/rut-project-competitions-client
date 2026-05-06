@@ -34,15 +34,19 @@ export interface IStageData {
 	stage_paths: IPath[];
 	team_videos: IVideo[];
 	url_template: string | null;
+	url_template_eng: string | null;
 	url_video: string | null;
+	url_video_eng: string | null;
 	start_date: string | null;
 	end_date: string | null;
 }
 
 export interface IPath {
 	id: number;
-	url_template: string;
-	url_video: string;
+	url_template: string | null;
+	url_template_eng: string | null;
+	url_video: string | null;
+	url_video_eng: string | null;
 	path: {
 		id: number;
 		name: string;

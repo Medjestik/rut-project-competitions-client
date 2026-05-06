@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import { useState } from 'react';
+import { useSelector } from '../../../../store/store';
 import { useTranslation } from 'react-i18next';
 import { useKeenSlider } from 'keen-slider/react';
 import { useWindowWidth } from '../../../../hooks/useWindowWidth';
@@ -14,24 +15,13 @@ import { ESECTION } from '../../lib/sections';
 import 'keen-slider/keen-slider.min.css';
 import styles from './problems.module.scss';
 
-type TProblemCard = {
-	'card-id': string;
-	'card-title': string;
-	'card-situation-title': string;
-	'card-situation-text': string;
-	'card-problem-title': string;
-	'card-problem-text': string;
-};
-
 export const Problems: FC = () => {
-	const { t } = useTranslation();
-	const [currentSlide, setCurrentSlide] = useState(0);
+	const { problems } = useSelector((state) => state.catalog);
+	const { i18n, t } = useTranslation();
 	const width = useWindowWidth();
 	const { ref, isVisible } = useInView({ threshold: 0.2 });
 
-	const problemsCards = t('problems-cards', {
-		returnObjects: true,
-	}) as Array<TProblemCard>;
+	const [currentSlide, setCurrentSlide] = useState(0);
 
 	const [sliderRef, instanceRef] = useKeenSlider({
 		loop: false,
@@ -44,7 +34,7 @@ export const Problems: FC = () => {
 		},
 	});
 
-	const total = problemsCards.length;
+	const total = problems.length;
 	const perView = width > 1366 ? 3 : width > 1000 ? 2 : 1;
 	const maxIndex = total - perView;
 	const progress = (currentSlide / maxIndex) * 100;
@@ -107,9 +97,9 @@ export const Problems: FC = () => {
 					)}
 					<div className={styles.carousel}>
 						<div ref={sliderRef} className='keen-slider'>
-							{problemsCards.map((elem: TProblemCard, index) => (
+							{problems.map((elem, index) => (
 								<div
-									key={elem['card-id']}
+									key={elem.id}
 									className={`keen-slider__slide ${styles.item}`}>
 									<div
 										className={`${styles.item__container} ${styles.fadeCard} ${
@@ -119,22 +109,26 @@ export const Problems: FC = () => {
 										<div className={styles.item__main}>
 											<span className={styles.item__count}>0{index + 1}</span>
 											<h3 className={styles.item__title}>
-												{elem['card-title']}
+												{i18n.language === 'en' ? elem.title_eng : elem.title}
 											</h3>
 										</div>
 										<div className={styles.item__hover}>
 											<span className={styles.item__count}>0{index + 1}</span>
 											<h4 className={styles.item__subtitle}>
-												{elem['card-situation-title']}
+												{t('problems-card-situation-title')}
 											</h4>
 											<p className={styles.item__text}>
-												{elem['card-situation-text']}
+												{i18n.language === 'en'
+													? elem.situation_eng
+													: elem.situation}
 											</p>
 											<h4 className={styles.item__subtitle}>
-												{elem['card-problem-title']}
+												{t('problems-card-problem-title')}
 											</h4>
 											<p className={styles.item__text}>
-												{elem['card-problem-text']}
+												{i18n.language === 'en'
+													? elem.problem_eng
+													: elem.problem}
 											</p>
 										</div>
 									</div>
@@ -149,7 +143,7 @@ export const Problems: FC = () => {
 						</div>
 						{width <= 1000 && (
 							<div className={styles.dots}>
-								{problemsCards.map((_, idx) => (
+								{problems.map((_, idx) => (
 									<div
 										key={idx}
 										onClick={() => instanceRef.current?.moveToIdx(idx)}

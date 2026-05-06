@@ -53,11 +53,14 @@ export const RegistrationForm: FC = () => {
 	const { showToast } = useToast();
 	const { universities, problems } = useSelector((state) => state.catalog);
 	const { isLoading } = useSelector((state) => state.team);
-	const { t } = useTranslation();
+	const { i18n, t } = useTranslation();
 
 	const [currentParticipant, setCurrentParticipant] =
 		useState<IParticipantData | null>(null);
-	const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+	const [currentProblem, setCurrentProblem] = useState<IProblem | null>(null);
+	const [isOpenParticipantModal, setIsOpenParticipantModal] =
+		useState<boolean>(false);
+	const [isOpenDetailModal, setIsOpenDetailModal] = useState<boolean>(false);
 
 	const { values, handleChange, handleSelectChange, errors } =
 		useForm<IRegisterForm>(
@@ -72,22 +75,23 @@ export const RegistrationForm: FC = () => {
 		problem: IProblem
 	) => {
 		event.stopPropagation();
-		console.log(problem);
+		setCurrentProblem(problem);
+		setIsOpenDetailModal(true);
 	};
 
 	const openAddParticipantModal = () => {
-		setIsOpenModal(true);
+		setIsOpenParticipantModal(true);
 	};
 
 	const handleAddParticipant = (participant: IParticipantData) => {
 		handleSelectChange('participants', [...values.participants, participant]);
 
-		setIsOpenModal(false);
+		setIsOpenParticipantModal(false);
 	};
 
 	const openEditParticipantModal = (elem: IParticipantData) => {
 		setCurrentParticipant(elem);
-		setIsOpenModal(true);
+		setIsOpenParticipantModal(true);
 	};
 
 	const handleEditParticipant = (elem: IParticipantData) => {
@@ -97,7 +101,7 @@ export const RegistrationForm: FC = () => {
 		);
 
 		setCurrentParticipant(null);
-		setIsOpenModal(false);
+		setIsOpenParticipantModal(false);
 	};
 
 	const handleDeleteParticipant = (id: string) => {
@@ -108,8 +112,10 @@ export const RegistrationForm: FC = () => {
 	};
 
 	const closeModal = () => {
-		setIsOpenModal(false);
+		setIsOpenParticipantModal(false);
+		setIsOpenDetailModal(false);
 		setCurrentParticipant(null);
+		setCurrentProblem(null);
 	};
 
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -262,7 +268,9 @@ export const RegistrationForm: FC = () => {
 										)}
 									</div>
 									<div className={styles.problem__main}>
-										<h6 className={styles.problem__title}>{elem.title}</h6>
+										<h6 className={styles.problem__title}>
+											{i18n.language === 'en' ? elem.title_eng : elem.title}
+										</h6>
 										<Button
 											text={t('detail-button')}
 											color={
@@ -302,7 +310,9 @@ export const RegistrationForm: FC = () => {
 										{elem.first_name} {elem.last_name}
 									</h6>
 									<p className={styles.participant__subtitle}>
-										{`${elem.level} курс  ${elem.group_name}`}
+										{i18n.language === 'en'
+											? `${elem.level} course ${elem.group_name}`
+											: `${elem.level} курс  ${elem.group_name}`}
 									</p>
 									<div className={styles.participant__control}>
 										<Button
@@ -469,7 +479,7 @@ export const RegistrationForm: FC = () => {
 					</Card>
 				</div>
 			</Form>
-			{isOpenModal && (
+			{isOpenParticipantModal && (
 				<Modal
 					title={
 						currentParticipant
@@ -481,7 +491,7 @@ export const RegistrationForm: FC = () => {
 							? t('participant-form-edit-subtitle')
 							: t('participant-form-subtitle')
 					}
-					isOpen={isOpenModal}
+					isOpen={isOpenParticipantModal}
 					onClose={closeModal}>
 					<ParticipantForm
 						onSubmit={
@@ -489,6 +499,31 @@ export const RegistrationForm: FC = () => {
 						}
 						initialData={currentParticipant}
 					/>
+				</Modal>
+			)}
+			{isOpenDetailModal && currentProblem && (
+				<Modal
+					title={t('problems-detail-title')}
+					isOpen={isOpenDetailModal}
+					onClose={closeModal}>
+					<div className={styles.detail}>
+						<h4 className={styles.detail__title}>
+							{t('problems-card-situation-title')}
+						</h4>
+						<p className={styles.detail__text}>
+							{i18n.language === 'en'
+								? currentProblem.situation_eng
+								: currentProblem.situation}
+						</p>
+						<h4 className={styles.detail__title}>
+							{t('problems-card-problem-title')}
+						</h4>
+						<p className={styles.detail__text}>
+							{i18n.language === 'en'
+								? currentProblem.problem_eng
+								: currentProblem.problem}
+						</p>
+					</div>
 				</Modal>
 			)}
 		</section>

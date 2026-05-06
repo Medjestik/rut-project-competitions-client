@@ -18,10 +18,13 @@ export interface IUniversity {
 
 export interface IProblem {
 	id: string;
-	title: string;
+	title?: string;
+	title_eng?: string;
 	company?: string;
 	description?: string;
 	icon?: string;
 	problem?: string;
+	problem_eng?: string;
 	situation?: string;
+	situation_eng?: string;
 }

@@ -23,6 +23,10 @@ export const Main: FC = () => {
 	const width = useWindowWidth();
 	const { ref, isVisible } = useInView({ threshold: 0.2 });
 
+	const btnStyle = {
+		margin: width > 1000 ? '12px 0 0 0' : '0',
+	};
+
 	return (
 		<div className={styles.container}>
 			<img
@@ -76,6 +80,12 @@ export const Main: FC = () => {
 						/>
 					)}
 				</div>
+				<Button
+					text={t('login-button')}
+					color='gradient'
+					style={btnStyle}
+					onClick={() => navigate(EROUTES.LOGIN)}
+				/>
 				<ul className={styles.cards}>
 					<li
 						className={`${styles.card} ${styles.card_direction_right} ${

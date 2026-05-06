@@ -16,8 +16,8 @@
 
 .logo {
 	margin: 0;
-	width: 160px;
-	height: 48px;
+	width: 148px;
+	height: 44px;
 	&_min {
 		background-image: url('../../../../shared/images/logo-min.svg');
 		background-position: left;
@@ -34,7 +34,7 @@
 
 .nav {
 	margin: 0;
-	padding: 8px 16px;
+	padding: 8px 12px;
 	box-sizing: border-box;
 	background-color: inherit;
 	border-radius: var(--border-radius);
@@ -47,7 +47,7 @@
 
 .link {
 	margin: 0;
-	padding: 8px 12px;
+	padding: 8px;
 	box-sizing: border-box;
 	font-weight: 500;
 	font-size: 16px;
@@ -131,11 +131,6 @@
 }
 
 @media (max-width: 1600px) {
-	.logo {
-		margin: 0;
-		width: 148px;
-		height: 44px;
-	}
 }
 
 @media (max-width: 1536px) {
