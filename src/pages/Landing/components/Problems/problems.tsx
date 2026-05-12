@@ -108,6 +108,14 @@ export const Problems: FC = () => {
 										style={{ transitionDelay: `${index * 0.2}s` }}>
 										<div className={styles.item__main}>
 											<span className={styles.item__count}>0{index + 1}</span>
+											<img
+												className={`${styles.item__icon} ${
+													elem.id === '72523429-1873-45d3-bf05-59e1a01ea3e1'
+														? styles.item__icon_height_large
+														: ''
+												}`}
+												src={elem.icon}
+												alt='icon'></img>
 											<h3 className={styles.item__title}>
 												{i18n.language === 'en' ? elem.title_eng : elem.title}
 											</h3>
