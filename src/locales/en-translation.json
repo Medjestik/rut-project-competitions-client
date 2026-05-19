@@ -22,7 +22,7 @@
 	"toasts": {
 		"success-registration": {
 			"title": "Your team has successfully completed registration!",
-			"text": "Please wait for the\u00A0competition to\u00A0begin. You will receive your account login details via email."
+			"text": "Please wait for the\u00A0contest to\u00A0begin. You will receive your account login details via email."
 		},
 		"error-registration": {
 			"title": "Registration error!",
@@ -98,7 +98,7 @@
 	"main-title": {
 		"0": "International",
 		"1": "transport project",
-		"2": "competitions"
+		"2": "contest"
 	},
 	"main-cards": {
 		"0": {
@@ -145,15 +145,15 @@
 	"description-title": {
 		"0": "What are",
 		"1": "Project",
-		"2": "Competitions?"
+		"2": "Contest?"
 	},
-	"description-caption": "About competitions",
+	"description-caption": "About contest",
 	"description-cards": {
 		"0": {
 			"title": {
 				"0": "This is a",
 				"1": "new",
-				"2": "competition format"
+				"2": "contest format"
 			},
 			"text": "You will receive a\u00A0real transportation company problem and\u00A0go through the\u00A0entire process from\u00A0analyzing the\u00A0situation to\u00A0developing a\u00A0full solution. It's like a\u00A0startup, but in\u00A0an intensive team immersion format."
 		},
@@ -171,14 +171,14 @@
 	},
 	"description-card-btn": "Learn More",
 
-	"stages-title": "Competition stages",
-	"stages-caption": "How the competition works",
+	"stages-title": "Contest stages",
+	"stages-caption": "How the contest works",
 	"stages-cards": {
 		"0": {
 			"id": "1",
 			"title": "Registration",
 			"duration": "May 7 - June 7",
-			"content": "Register on\u00A0the\u00A0website to\u00A0become a\u00A0participant in\u00A0the\u00A0project competition."
+			"content": "Register on\u00A0the\u00A0website to\u00A0become a\u00A0participant in\u00A0the\u00A0project contest."
 		},
 		"1": {
 			"id": "2",
@@ -230,7 +230,7 @@
 		"1": "the Grand Prix"
 	},
 	"prize-caption": "For the\u00A0best team of\u00A0the\u00A0season",
-	"prize-text": "Prize fund of\u00A0the\u00A0International Transport Project Competition",
+	"prize-text": "Prize fund of\u00A0the\u00A0International Transport Project Contest",
 	"prize-cards": {
 		"0": {
 			"text": {
@@ -287,7 +287,7 @@
     "1": "Gain real team experience",
     "2": "Build a\u00A0portfolio you can show to\u00A0employers",
     "3": "Develop project and engineering thinking",
-    "4": "Reach the\u00A0international competition final",
+    "4": "Reach the\u00A0international contest final",
     "5": "Win up to\u00A01\u00A0000\u00A0000\u00A0₽ per\u00A0team",
 		"stub-1": "Opportunities that work for\u00A0your future.",
 		"stub-2": "Less theory\u00A0— more real challenges."
@@ -329,7 +329,7 @@
     {
       "id": "2",
       "title": "Do I need a\u00A0ready project to\u00A0participate?",
-      "content": "No. All teams start from the\u00A0same point — a\u00A0problem description. You will develop your solution step by step during the\u00A0competition."
+      "content": "No. All teams start from the\u00A0same point — a\u00A0problem description. You will develop your solution step by step during the\u00A0contest."
     },
     {
       "id": "3",
@@ -369,7 +369,7 @@
 	"document-cards": {
 		"0": {
 			"title": "Regulations",
-			"text": "Main goals, objectives, participation conditions, and\u00A0general rules of\u00A0the\u00A0competition."
+			"text": "Main goals, objectives, participation conditions, and\u00A0general rules of\u00A0the\u00A0contest."
 		},
 		"1": {
 			"title": "Rules",
@@ -377,7 +377,7 @@
 		},
 		"2": {
 			"title": "Protocol",
-			"text": "Official results, commission decisions, and\u00A0final competition documents."
+			"text": "Official results, commission decisions, and\u00A0final contest documents."
 		}
 	},
 
@@ -387,11 +387,11 @@
 	},
 	"footer-copy": "RUT (MIIT), All rights reserved",
 
-	"login-main-subtitle": "International Transport Engineering Competition",
+	"login-main-subtitle": "International Transport Engineering Contest",
 	"login-main-title": "Participant Account Login",
-	"login-main-text": "Access to\u00A0competition materials, problem statements, stages, and solution submissions within a\u00A0unified competition platform.",
+	"login-main-text": "Access to\u00A0contest materials, problem statements, stages, and solution submissions within a\u00A0unified contest platform.",
 	"login-form-title": "Login",
-	"login-form-subtitle": "Log in\u00A0to\u00A0your account to start participating in the\u00A0competition",
+	"login-form-subtitle": "Log in\u00A0to\u00A0your account to start participating in the\u00A0contest",
 	"login-form-input-title-login": "Team Login",
 	"login-form-input-placeholder-login": "Enter team login",
 	"login-form-input-title-password": "Team Password",
@@ -441,9 +441,9 @@
 
 
 	"registration-btn-back": "Home",
-  "registration-main-subtitle": "International transport project competitions",
+  "registration-main-subtitle": "International transport project contest",
   "registration-main-title": "Team registration",
-	"registration-main-text": "Form a\u00A0team, choose a\u00A0problem, and\u00A0register to\u00A0participate in\u00A0the\u00A0project competition.",
+	"registration-main-text": "Form a\u00A0team, choose a\u00A0problem, and\u00A0register to\u00A0participate in\u00A0the\u00A0project contest.",
   "registration-main-tags": {
     "0": "Registration takes 3 minutes",
     "1": "3 team members",
@@ -500,7 +500,7 @@
 	"registration-form-section-tutor-input-title-tutor-email": "Mentor’s email",
 
 	"registration-form-section-data-title": "Data Confirmation",
-	"registration-form-section-data-subtitle": "Enter the\u00A0promo code to\u00A0confirm the\u00A0registration of\u00A0an\u00A0international team and\u00A0accept the\u00A0terms of\u00A0the\u00A0project competition.",
+	"registration-form-section-data-subtitle": "Enter the\u00A0promo code to\u00A0confirm the\u00A0registration of\u00A0an\u00A0international team and\u00A0accept the\u00A0terms of\u00A0the\u00A0project contest.",
 	"registration-form-section-data-input-title-promo": "Registration Promo Code",
 	"registration-form-section-data-input-placeholder-promo": "Enter the\u00A0promo code",
 
@@ -510,18 +510,18 @@
 	"registration-form-section-data-checkbox-two-text": "I confirm that team members have read the\u00A0<link></link>  and\u00A0accept its terms.",
 	"registration-form-section-data-checkbox-two-link": "Personal Data Policy of RUT (MIIT)",
 
-	"registration-form-section-data-checkbox-three-text": "I agree to\u00A0<link></link> of\u00A0personal data for\u00A0the\u00A0purpose of\u00A0covering the\u00A0competition.",
+	"registration-form-section-data-checkbox-three-text": "I agree to\u00A0<link></link> of\u00A0personal data for\u00A0the\u00A0purpose of\u00A0covering the\u00A0contest.",
 	"registration-form-section-data-checkbox-three-link": "the dissemination",
 
 	"registration-form-section-data-checkbox-four-text": "I confirm that the\u00A0team members have read <link1></link1> and <link2></link2>",
 	"registration-form-section-data-checkbox-four-link1": "the\u00A0Policy",
-	"registration-form-section-data-checkbox-four-link2": "the\u00A0Competition Regulations.",
+	"registration-form-section-data-checkbox-four-link2": "the\u00A0Contest Regulations.",
 
 	"registration-footer-text": "If you experience issues with\u00A0registration, please contact",
 	"registration-footer-support": "technical support",
 
 
-	"main-stages-title": "Competition Stages",
+	"main-stages-title": "Contest Stages",
 	"main-stages": {
 		"0": {
 			"title": "Problem",
@@ -552,39 +552,39 @@
   "main-stages-data": {
     "1": {
       "title": "Situation Analysis",
-      "subtitle": "Study the current situation to\u00A0understand the problem, identify key factors, and determine who should be involved in\u00A0solving it.",
-      "text": "At\u00A0the\u00A0first stage of\u00A0the\u00A0competition, you will use several useful tools. They will help you better understand the\u00A0current situation, identify the\u00A0key factors influencing it, and determine who else should be involved in\u00A0the\u00A0project."
+      "subtitle": "Analyze the\u00A0current situation to\u00A0understand the\u00A0problem, identify key factors, and\u00A0determine the\u00A0stakeholders that should be\u00A0involved in\u00A0solution process. ",
+      "text": "At\u00A0the\u00A0first stage of\u00A0the\u00A0contest, you will use several tools. They will help you better understand the\u00A0current situation, identify the\u00A0key factors influencing it, and determine more stakeholders that should be involved in\u00A0the\u00A0project."
     },
     "2": {
       "title": "Problem Interview",
-      "subtitle": "Conduct interviews with\u00A0potential participants in\u00A0the\u00A0situation to\u00A0identify real problems, needs, and barriers affecting the\u00A0solution.",
-      "text": "A\u00A0problem interview is\u00A0a\u00A0research method used to\u00A0better understand the\u00A0target audience’s needs, pain points, fears, and objections. In\u00A0project work, it is\u00A0used to\u00A0avoid creating a\u00A0product that no\u00A0one needs, to\u00A0identify real audience problems, and to\u00A0find effective solutions. You will need to\u00A0identify people who can provide important additional insights about the\u00A0situation, contact them on your own, and record the\u00A0results."
+      "subtitle": "Conduct interviews with\u00A0potential parties involved in\u00A0the\u00A0situation to\u00A0identify problems, needs, and barriers that you should consider when developing the\u00A0solution.",
+      "text": "A\u00A0problem interview is\u00A0a\u00A0research method used to\u00A0better understand the\u00A0target audience’s needs, pain points, fears, and\u00A0objections. This step in\u00A0the\u00A0project helps avoiding the\u00A0creation of\u00A0a\u00A0product that nobody needs as\u00A0well as\u00A0it is used to\u00A0identify real problems of\u00A0the\u00A0audience, and to\u00A0find effective solutions. You will need to\u00A0find out the\u00A0people who can provide important additional insights about the\u00A0situation, contact them, and record the\u00A0results. "
 		},
     "3": {
       "title": "Solution Idea",
-      "subtitle": "Formulate a\u00A0solution idea based on\u00A0your analysis and interviews, taking into\u00A0account key problems and user needs.",
-      "text": "At\u00A0this\u00A0stage, you need to\u00A0develop a\u00A0solution to\u00A0the\u00A0identified problem based on\u00A0the\u00A0information gathered earlier. Structuring the\u00A0information helps organize insights and highlight the\u00A0most promising areas for\u00A0solution development. It is important to\u00A0stay focused on the\u00A0core problem and not deviate from it. As\u00A0a\u00A0result, you will form a\u00A0clear concept of\u00A0your solution that considers all key factors and proposes a\u00A0concrete way to\u00A0improve the\u00A0situation."
+      "subtitle": "Formulate an\u00A0idea of\u00A0your solution. Consider the\u00A0results of\u00A0analysis and\u00A0interviews you have already performed and\u00A0take into account key problems and\u00A0needs of\u00A0users of\u00A0your solution.",
+      "text": "At\u00A0this stage, you need to\u00A0develop a\u00A0solution to\u00A0the\u00A0problem you have identified that builds on\u00A0information from the\u00A0previous stages. Structure the\u00A0information as\u00A0this helps organize insights and highlight the\u00A0most promising areas for\u00A0solution development. It is important to\u00A0stay focused on\u00A0the\u00A0core problem and not\u00A0to\u00A0digress from it. As a\u00A0result, you will form a\u00A0clear concept of\u00A0your solution that takes into account all key factors and proposes concrete steps to\u00A0improve the\u00A0situation."
     },
     "4": {
       "title": "Prototyping",
-      "subtitle": "Create a\u00A0prototype of\u00A0your solution to\u00A0clearly demonstrate how it works and the\u00A0value it provides.",
-      "text": "At\u00A0this stage, you will refine and implement your solution. First, define all requirements for\u00A0the\u00A0future product—they should be clearly formulated and measurable to\u00A0support building a working prototype. The\u00A0final step is\u00A0practical implementation. Create a\u00A0prototype, mockup, or\u00A0concept of\u00A0your solution. It is important to\u00A0clearly demonstrate the\u00A0current level of\u00A0development. The\u00A0more detailed and well-defined your work is, the\u00A0higher it will be evaluated by the\u00A0jury."
+      "subtitle": "Create a\u00A0prototype of\u00A0your solution to\u00A0clearly demonstrate how it works and the\u00A0value it creates.",
+      "text": "At\u00A0this stage, you will refine and\u00A0implement your solution. Firstly, specify all requirements for\u00A0the\u00A0future product. They must be well-formulated and measurable, so that you can build a\u00A0prototype that works. The final step is\u00A0practical implementation. Create a\u00A0prototype, mockup, or\u00A0concept of\u00A0your solution. It is\u00A0important to\u00A0clearly demonstrate the\u00A0current level of\u00A0development of\u00A0the\u00A0project. The\u00A0more detailed and well-defined your work is, the\u00A0more points you get from the jury."
     },
     "5": {
       "title": "Video Presentation",
-      "subtitle": "Present your solution in\u00A0a\u00A0video format: demonstrate the\u00A0results and justify your decisions.",
-      "text": "This is\u00A0the\u00A0final stage of\u00A0your project work. You need to\u00A0present your team’s results in\u00A0the\u00A0form of\u00A0a\u00A0video and a\u00A0final presentation. Your task is to\u00A0gather all materials developed during the\u00A0competition and present them in\u00A0a\u00A0clear and structured way. It is important to\u00A0demonstrate the\u00A0logic behind your decisions at\u00A0each stage and explain how your product solves the\u00A0identified problem and integrates into the\u00A0workflows of\u00A0key stakeholders."
+      "subtitle": "Present your solution in\u00A0a\u00A0video format: demonstrate the\u00A0results and explain your decision-making process.",
+      "text": "This is\u00A0the\u00A0final stage of\u00A0your project work. You need to\u00A0present results of\u00A0your team in\u00A0a\u00A0video and in\u00A0a\u00A0final presentation. Your goal here is\u00A0to\u00A0review all materials you have elaborated during the\u00A0contest and\u00A0present them in\u00A0a\u00A0clear and structured way. It is\u00A0important to\u00A0demonstrate the\u00A0logic behind your decisions and\u00A0explain how your product solves the\u00A0identified problem and\u00A0integrates into the\u00A0workflows of\u00A0key stakeholders."
     }
   },
 
 	"main-stage-initial-title": "Problem Overview",
-  "main-stage-initial-subtitle": "Study the\u00A0problem and subscribe to\u00A0chats and channels to\u00A0stay updated on the\u00A0competition and not\u00A0miss important announcements.",
+  "main-stage-initial-subtitle": "Study the\u00A0problem and\u00A0subscribe to\u00A0the\u00A0chats and\u00A0channels to\u00A0stay tuned for\u00A0the\u00A0Contest news and\u00A0important announcements.",
 
   "main-stage-initial-card-info": {
-    "title": "Welcome to\u00A0the\u00A0International Transport Project Competition!",
-		"text-1": "Project-based work is\u00A0a\u00A0step-by-step process of\u00A0working with\u00A0a\u00A0real problem: you will analyze the\u00A0situation, independently find and interview experts, formulate an\u00A0idea, create a\u00A0minimal prototype, and\u00A0record a\u00A0video explaining the\u00A0workflow and\u00A0the\u00A0result. The\u00A0stages are\u00A0interconnected and\u00A0structured so that\u00A0each next step builds on the\u00A0previous one, so it is\u00A0important to\u00A0use the\u00A0results you have already obtained.",
-		"text-2": "You will have access to\u00A0three approaches to work — basic, design thinking, and SMD (Systems Thinking with\u00A0Diagrams and\u00A0Models). Choose one at\u00A0the\u00A0beginning and stick to\u00A0it until the\u00A0end, switching or combining tools only when truly necessary.",
-		"text-3": "Plan your time so that analysis, interviews, and solution ideation take up to\u00A0two weeks, leaving enough time for prototyping and the\u00A0final video defense."
+    "title": "Welcome to\u00A0the\u00A0International Transport Project Contest!",
+		"text-1": "Project work is\u00A0a\u00A0step-by-step process of\u00A0working with a\u00A0real problem: you are going to\u00A0analyze the\u00A0situation, independently find and\u00A0interview experts, formulate an\u00A0idea, create a\u00A0minimal prototype, and\u00A0record a\u00A0video explaining how your workflow is\u00A0organized and\u00A0what results you achieved. The stages form a\u00A0sequence of\u00A0steps and\u00A0each of\u00A0them builds on\u00A0the\u00A0previous one, and that is\u00A0why it\u00A0is\u00A0important to\u00A0use the\u00A0results from earlier stages.",
+		"text-2": "You will be able to\u00A0choose between three options to\u00A0approach the\u00A0task — basic, design thinking, and system thinking (with\u00A0diagrams and\u00A0models). Select one at\u00A0the\u00A0beginning, stick to\u00A0it until the end, and change or\u00A0combine tools only when necessary.",
+		"text-3": "Plan your time: analysis, interviews, and\u00A0formulation of\u00A0your solution idea should take up to\u00A0two weeks, so that there is\u00A0enough time for\u00A0prototyping and the\u00A0final video presentation."
     },
 
   "main-stage-initial-card-chat": {
@@ -592,16 +592,16 @@
     "text": "Ask questions about the\u00A0problem to\u00A0company representatives and\u00A0organizers"
   },
   "main-stage-initial-card-channel": {
-    "title": "Competition Channel",
-    "text": "Follow updates on the\u00A0competition: deadlines, answers to\u00A0questions, details, and\u00A0tips"
+    "title": "Contest Channel",
+    "text": "Follow the\u00A0Contest updates: deadlines, answers to\u00A0questions, details, and\u00A0tips"
   },
   "main-stage-initial-card-description": {
     "title": "Problem Description",
-    "text": "Review the\u00A0full description of\u00A0the\u00A0problem provided by\u00A0the\u00A0partner company"
+    "text": "See the\u00A0full description of\u00A0the\u00A0problem provided by\u00A0the\u00A0partner company"
   },
   "main-stage-initial-card-problem": {
     "title-1": "Situation",
-    "title-2": "Issue"
+    "title-2": "Failure"
   },
 	"main-stage-card-template": {
     "title": "Template",
@@ -609,34 +609,34 @@
   },
 	"main-stage-card-result": {
 		"title": "Waiting for\u00A0results",
-		"text": "Thank you for\u00A0participating in\u00A0the\u00A0competition! Your materials have been successfully uploaded. Please wait for\u00A0the\u00A0results to\u00A0be announced."
+		"text": "Thank you for\u00A0participating! Your have successfully submitted the\u00A0files. Please, wait for the\u00A0results announcement."
 	},
   "main-stage-card-task": {
     "title": "Task",
-    "text": "Upload your solution. This can be\u00A0a\u00A0completed file no\u00A0larger than 10\u00A0MB or\u00A0a\u00A0link to\u00A0it.",
+    "text": "Upload your solution. Requirements: a\u00A0file of\u00A0max of\u00A010\u00A0MB or a\u00A0link to\u00A0your file.",
 		"caption": "Your solution has\u00A0been successfully uploaded"
   },
 	"main-stage-card-presentation": {
 		"title": "Final Presentation",
-		"text": "Upload your final solution. This can be a\u00A0file up to\u00A010\u00A0MB or a\u00A0link to\u00A0it",
+		"text": "Upload your final solution. Requirements: a\u00A0file of\u00A0max. of 10\u00A0MB or a\u00A0link to\u00A0it",
 		"caption": "Your solution has been successfully uploaded"
 	},
 	"main-stage-card-video": {
-		"title": "Video Defense",
-		"text": "Attach a\u00A0link to\u00A0the\u00A0video recording of\u00A0your project defense",
+		"title": "Video Presentation",
+		"text": "Submit a\u00A0link to\u00A0the\u00A0video recording of\u00A0your project presentation",
 		"caption": "The\u00A0link has been successfully uploaded"
 	},
 
 	"main-stage-paths": {
-    "path-1": "Path 1 “Basic”",
-    "path-2": "Path 2 “Design”",
-    "path-3": "Path 3 “SMD”"
+    "path-1": "Approach 1 “Basic”",
+    "path-2": "Approach 2 “Design”",
+    "path-3": "Approach 3 “System Thinking”"
   },
 
 	"main-stage-paths-mobile": {
-    "path-1": "Path 1 “Basic”",
-    "path-2": "Path 2 “Design”",
-    "path-3": "Path 3 “SMD”"
+    "path-1": "1. “Basic”",
+    "path-2": "2. “Design”",
+    "path-3": "3. “System Thinking”"
   },
 
 
@@ -658,10 +658,10 @@
       "9": "insurance account number (SNILS);",
       "10": "bank account details in a Russian bank;",
       "11": "passport details (series and number) of a citizen of the Russian Federation or passport for traveling abroad or military ID or temporary identity documents or residence permit or temporary residence permit or refugee certificate or temporary asylum certificate in the Russian Federation;",
-      "12": "passport details (series and number) of a foreign citizen or any other document recognized under international treaties of the Russian Federation as an identity document of a foreign citizen (hereinafter referred to as “Personal Data”), including collection, recording, systematization, accumulation, storage, updating, retrieval, use, blocking, deletion, and destruction of Personal Data for the purpose of participation in the International Transport Project Competition (hereinafter referred to as the “Competition”)."
+      "12": "passport details (series and number) of a foreign citizen or any other document recognized under international treaties of the Russian Federation as an identity document of a foreign citizen (hereinafter referred to as “Personal Data”), including collection, recording, systematization, accumulation, storage, updating, retrieval, use, blocking, deletion, and destruction of Personal Data for the purpose of participation in the International Transport Project Contest (hereinafter referred to as the “Contest”)."
     },
 
-    "p2": "2. The purpose of processing Personal Data is to control access to the Competition web platform, inform participants, track individual progress, and transfer monetary rewards to winners in accordance with internal regulations of RUT (MIIT) and the legislation of the Russian Federation.",
+    "p2": "2. The purpose of processing Personal Data is to control access to the Contest web platform, inform participants, track individual progress, and transfer monetary rewards to winners in accordance with internal regulations of RUT (MIIT) and the legislation of the Russian Federation.",
     "p3": "3. The Operator has the right to process Personal Data both using automated means and without automation, including transmission via communication channels protected by legal, organizational, and technical measures in accordance with personal data protection legislation.",
     "p4": "4. Consent is given on the website of the Russian University of Transport on the Internet: https://contest.rut-miit.ru/ by marking the appropriate checkbox. This consent is specific, informed, and conscious, and is given in a form that allows confirmation of its receipt.",
     "p5": "5. I hereby confirm that I give my consent to the processing of my Personal Data by the Operator from the date of providing this consent until the date of its withdrawal.",
