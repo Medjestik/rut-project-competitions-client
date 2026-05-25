@@ -16,6 +16,15 @@ export interface IUniversity {
 	country?: string;
 }
 
+export interface IFile {
+	id: number;
+	position: number;
+	name: string;
+	case: string;
+	description: string;
+	url: string;
+}
+
 export interface IProblem {
 	id: string;
 	title?: string;
@@ -27,4 +36,5 @@ export interface IProblem {
 	problem_eng?: string;
 	situation?: string;
 	situation_eng?: string;
+	files: IFile[];
 }

@@ -33,41 +33,21 @@ export const InitialStage: FC = () => {
 	};
 
 	useEffect(() => {
-		if (i18n.language === 'en') {
-			setVideoLink(null);
-			setTemplateLink(null);
-			return;
-		}
-
-		let temp = null;
-
-		if (user && user.case) {
-			switch (user.case.id) {
-				case 'a6efcfe3-4d19-46ea-83fc-dde7734d2a68':
-					temp =
-						'https://storage.yandexcloud.net/files-competitions/case/ru/1.pdf';
-					break;
-				case '72523429-1873-45d3-bf05-59e1a01ea3e1':
-					temp =
-						'https://storage.yandexcloud.net/files-competitions/case/ru/2.pdf';
-					break;
-				case '55128557-c775-4527-ba51-8d3aa3640ee8':
-					temp =
-						'https://storage.yandexcloud.net/files-competitions/case/ru/3.pdf';
-					break;
-				case 'eb5956fd-400f-4b70-9d87-add3f60a4a12':
-					temp =
-						'https://storage.yandexcloud.net/files-competitions/case/ru/4.pdf';
-					break;
-				default:
-					temp = null;
+		if (user) {
+			if (i18n.language === 'en') {
+				setVideoLink(null);
+				if (user.case) {
+					setTemplateLink(user.case.files[1].url);
+				}
+			} else {
+				setVideoLink(
+					'https://storage.yandexcloud.net/files-competitions/video/ru/intro.mp4'
+				);
+				if (user.case) {
+					setTemplateLink(user.case.files[0].url);
+				}
 			}
 		}
-
-		setVideoLink(
-			'https://storage.yandexcloud.net/files-competitions/video/ru/intro.mp4'
-		);
-		setTemplateLink(temp);
 	}, [user, i18n.language]);
 
 	return (
