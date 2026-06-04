@@ -12,13 +12,19 @@ import styles from './public-header.module.scss';
 
 export const PublicHeader: FC = () => {
 	const navigate = useNavigate();
-	const { t } = useTranslation();
+	const { i18n, t } = useTranslation();
 
 	return (
 		<header id='header' className={styles.header}>
 			<div className={styles.logos}>
-				<div className={`${styles.logo} ${styles.logo_min}`}></div>
-				<div className={`${styles.logo} ${styles.logo_rut}`}></div>
+				<div
+					className={`${styles.logo} ${
+						i18n.language === 'en' ? styles.logo_min_en : styles.logo_min
+					}`}></div>
+				<div
+					className={`${styles.logo} ${
+						i18n.language === 'en' ? styles.logo_rut_en : styles.logo_rut
+					}`}></div>
 			</div>
 			<div className={styles.control}>
 				<LanguageSwitcher />

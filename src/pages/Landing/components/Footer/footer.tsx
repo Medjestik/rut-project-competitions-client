@@ -22,7 +22,7 @@ import styles from './footer.module.scss';
 
 export const Footer: FC = () => {
 	const width = useWindowWidth();
-	const { t } = useTranslation();
+	const { i18n, t } = useTranslation();
 
 	const { ref, isVisible } = useInView({ threshold: 0.2 });
 
@@ -39,8 +39,14 @@ export const Footer: FC = () => {
 							isVisible ? styles.visible : ''
 						}`}
 						style={{ transitionDelay: '0.2s' }}>
-						<div className={`${styles.logo} ${styles.logo_min}`}></div>
-						<div className={`${styles.logo} ${styles.logo_rut}`}></div>
+						<div
+							className={`${styles.logo} ${
+								i18n.language === 'en' ? styles.logo_min_en : styles.logo_min
+							}`}></div>
+						<div
+							className={`${styles.logo} ${
+								i18n.language === 'en' ? styles.logo_rut_en : styles.logo_rut
+							}`}></div>
 					</div>
 					<nav
 						className={`${styles.nav} ${styles.fadeUp} ${

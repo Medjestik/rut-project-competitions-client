@@ -18,7 +18,7 @@ import styles from './header.module.scss';
 export const Header: FC = () => {
 	const navigate = useNavigate();
 	const width = useWindowWidth();
-	const { t } = useTranslation();
+	const { i18n, t } = useTranslation();
 
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -29,8 +29,14 @@ export const Header: FC = () => {
 	return (
 		<header id={ESECTION.HEADER} className={styles.header}>
 			<div className={styles.logos}>
-				<div className={`${styles.logo} ${styles.logo_min}`}></div>
-				<div className={`${styles.logo} ${styles.logo_rut}`}></div>
+				<div
+					className={`${styles.logo} ${
+						i18n.language === 'en' ? styles.logo_min_en : styles.logo_min
+					}`}></div>
+				<div
+					className={`${styles.logo} ${
+						i18n.language === 'en' ? styles.logo_rut_en : styles.logo_rut
+					}`}></div>
 			</div>
 			<nav className={styles.nav}>
 				{navLinks.map((item) => (

@@ -30,6 +30,18 @@
 		background-repeat: no-repeat;
 		background-size: contain;
 	}
+	&_min_en {
+		background-image: url('../../../../shared/images/logo-min-en.svg');
+		background-position: left;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	&_rut_en {
+		background-image: url('../../../../shared/images/logo-rut-en.svg');
+		background-position: left;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 }
 
 .control {
