@@ -35,7 +35,9 @@ export const InitialStage: FC = () => {
 	useEffect(() => {
 		if (user) {
 			if (i18n.language === 'en') {
-				setVideoLink(null);
+				setVideoLink(
+					'https://storage.yandexcloud.net/files-competitions/video/en/intro.mp4'
+				);
 				if (user.case) {
 					setTemplateLink(user.case.files[1].url);
 				}
