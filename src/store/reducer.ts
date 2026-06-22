@@ -3,10 +3,12 @@ import { userSlice } from './user/reducer';
 import { mainSlice } from './main/reducer';
 import { teamSlice } from './team/reducer';
 import { catalogSlice } from './catalog/reducer';
+import { controlSlice } from './control/reducer';
 
 export const rootReducer = combineSlices(
 	userSlice,
 	mainSlice,
 	teamSlice,
-	catalogSlice
+	catalogSlice,
+	controlSlice
 );

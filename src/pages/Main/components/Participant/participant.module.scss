@@ -1,0 +1,21 @@
+.container {
+	margin: 0;
+	padding: 40px 0;
+	box-sizing: border-box;
+	width: 100%;
+	display: flex;
+	gap: 20px;
+}
+
+@media (max-width: 1366px) {
+	.container {
+		padding: 20px 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 0;
+		flex-direction: column;
+	}
+}
