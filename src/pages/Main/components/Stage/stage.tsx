@@ -12,19 +12,12 @@ import { Button } from '../../../../shared/components/Button/ui/button';
 import { Card } from '../../../../shared/components/Card/ui';
 import { VideoStage } from './video-stage';
 
-import {
-	getStageAction,
-	nextStageAction,
-} from '../../../../store/main/actions';
+import { getStageAction } from '../../../../store/main/actions';
 import {
 	setCurrentPath,
 	setStageTemplate,
 	setStageVideo,
-	setUploadLinkPopupOpen,
-	setUploadFilePopupOpen,
-	setUploadVideoPopupOpen,
 } from '../../../../store/main/reducer';
-import { setUserStage } from '../../../../store/user/reducer';
 import { getErrorMessage } from '../../../../shared/lib/getErrorMessage';
 
 import styles from './stage.module.scss';
@@ -47,20 +40,6 @@ export const Stage: FC = () => {
 	const { showToast } = useToast();
 	const { i18n, t } = useTranslation();
 	const width = useWindowWidth();
-
-	const handleNextStage = async () => {
-		try {
-			await dispatch(setUserStage(currentStageId + 1));
-			await dispatch(nextStageAction()).unwrap();
-		} catch (err) {
-			console.error(err);
-			showToast({
-				title: t('toasts.error-complete.title'),
-				text: getErrorMessage(err),
-				type: 'error',
-			});
-		}
-	};
 
 	const renderPathName = (position: number) => {
 		if (width > 768) {
@@ -236,12 +215,12 @@ export const Stage: FC = () => {
 										<Button
 											text={t('link-button')}
 											color='gradient'
-											onClick={() => dispatch(setUploadLinkPopupOpen(true))}
+											isBlock
 										/>
 										<Button
 											text={t('file-button')}
 											color='gradient'
-											onClick={() => dispatch(setUploadFilePopupOpen(true))}
+											isBlock
 										/>
 									</>
 								)}
@@ -266,7 +245,7 @@ export const Stage: FC = () => {
 											<Button
 												text={t('link-button')}
 												color='gradient'
-												onClick={() => dispatch(setUploadVideoPopupOpen(true))}
+												isBlock
 											/>
 										</>
 									)}
@@ -289,9 +268,8 @@ export const Stage: FC = () => {
 							{currentStageId !== 5 &&
 								user.current_stage === currentStageId && (
 									<Button
-										onClick={handleNextStage}
 										text={t('complete-button')}
-										isBlock={stage.team_file_count < 1}
+										isBlock
 										color='gradient'
 										style={btnStyle}
 									/>
