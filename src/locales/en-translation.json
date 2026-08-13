@@ -15,6 +15,7 @@
 	"support-button": "Contact Support",
 	"detail-button": "Detail",
 	"login-button": "Log in\u00A0to\u00A0your account",
+	"results-button": "Stage results",
 	"logout-button": "Logout",
 	"registration-button": "Register",
 	"preloader": "Loading..",
@@ -92,7 +93,7 @@
 	},
 	"main-registration": "Registration",
 	"main-title-caption": "From problem to implementation",
-	"main-reg-caption": "Registration open!",
+	"main-reg-caption": "Results are\u00A0available!",
 	"main-text": "A platform for\u00A0students and\u00A0young professionals where solutions for\u00A0the future of\u00A0transportation are created: digitalization, infrastructure, logistics, and\u00A0engineering innovation",
 	"main-mobile-text": "A\u00A0platform where students create solutions for\u00A0the\u00A0transport of\u00A0the\u00A0future.",
 	"main-title": {
@@ -638,6 +639,16 @@
     "path-2": "2. “Design”",
     "path-3": "3. “System Thinking”"
   },
+
+  "main-result": {
+    "title": "Preliminary round results",
+    "subtitle": "Thank you to your team for participating in the International Transport Project Contest. You took part in a new contest format based on solving real challenges from the transport industry. We sincerely appreciate your engagement, initiative, and the time your team dedicated to developing the project.",
+    "team-title": "Team results",
+    "team-subtitle": "Your team has advanced to the finals!",
+		"team-subtitle-false": "Your team did not advance to the final stage of the contest.",
+    "team-text": "Congratulations! Based on the evaluation of the expert committee, your team has successfully passed the preliminary round and advanced to the final stage of the contest. We will contact you shortly with further details. We have prepared a participation certificate for your team, which you can download below.",
+		"team-text-false": "Based on the evaluation of the expert committee, your team did not advance to the final stage of the contest. Thank you for your participation and the work you have done. Your team participation certificate is available for download below."
+	},
 
 
   "consent": {

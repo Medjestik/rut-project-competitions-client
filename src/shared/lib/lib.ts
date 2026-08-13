@@ -7,3 +7,4 @@ export const SOCIAL_VK = 'https://vk.com/contestmiit';
 
 export const REGULATION_LINK = 'https://cloud.mail.ru/public/Y4os/ap8ue7EfA';
 export const ORDER_LINK = 'https://cloud.mail.ru/public/4bsq/GoeQ1d8cx';
+export const PROTOCOL_LINK = 'https://cloud.mail.ru/public/tHFy/mMHNHJuz9';

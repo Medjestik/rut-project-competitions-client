@@ -54,16 +54,17 @@ export const Header: FC = () => {
 			</nav>
 			<div className={styles.control}>
 				<LanguageSwitcher />
-				{width > 1000 && (
+				{width > 1000 ? (
 					<Button
 						text={t('main-registration')}
 						color='gradient'
 						onClick={() => navigate(EROUTES.REGISTRATION)}
 					/>
+				) : (
+					<div
+						className={styles.menu_btn}
+						onClick={() => setIsOpen((prev) => !prev)}></div>
 				)}
-				<div
-					className={styles.menu_btn}
-					onClick={() => setIsOpen((prev) => !prev)}></div>
 			</div>
 			<div
 				className={`${styles.mobileMenu} ${

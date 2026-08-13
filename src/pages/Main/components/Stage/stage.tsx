@@ -212,16 +212,8 @@ export const Stage: FC = () => {
 								</div>
 								{stage.team_file_count < 1 && (
 									<>
-										<Button
-											text={t('link-button')}
-											color='gradient'
-											isBlock
-										/>
-										<Button
-											text={t('file-button')}
-											color='gradient'
-											isBlock
-										/>
+										<Button text={t('link-button')} color='gradient' isBlock />
+										<Button text={t('file-button')} color='gradient' isBlock />
 									</>
 								)}
 							</div>

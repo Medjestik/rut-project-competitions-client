@@ -9,6 +9,8 @@ import {
 	changePassword,
 	forgotPassword,
 	resetPassword,
+	getCertificateLink,
+	getGratitudeLink,
 } from '../../shared/api/user';
 
 import { setIsAuthChecked } from './reducer';
@@ -87,5 +89,19 @@ export const logoutUser = createAsyncThunk<IMessageResponse>(
 	async () => {
 		localStorage.removeItem('token');
 		return { message: 'Logged out' };
+	}
+);
+
+export const downloadCertificate = createAsyncThunk<{ url: string }>(
+	'user/downloadCertificate',
+	async () => {
+		return await getCertificateLink();
+	}
+);
+
+export const downloadGratitude = createAsyncThunk<{ url: string }>(
+	'user/downloadGratitude',
+	async () => {
+		return await getGratitudeLink();
 	}
 );

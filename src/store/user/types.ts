@@ -13,6 +13,7 @@ export interface IUser {
 	tutor_fullname: string;
 	university: IUniversity;
 	case: IProblem;
+	passed: boolean;
 }
 
 export interface IUserStore {

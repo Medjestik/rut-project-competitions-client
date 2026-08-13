@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from '../../../store/store';
 
 import { Header } from '../components/Header/header';
 import { Participant } from '../components/Participant/participant';
+import { Result } from '../components/Result/result';
 import { Control } from '../components/Control/control';
 import { PublicFooter } from '../../../shared/components/Layout/PublicLayout/ui';
 import { Preloader } from '../../../shared/components/Preloader/ui/preloader';
@@ -28,7 +29,7 @@ export const Main: FC = () => {
 	return (
 		<div className={styles.main}>
 			<Header />
-			{user && user.role === 'team' && <Participant />}
+			{user && user.role === 'team' && <Result />}
 			{user && user.role === 'admin' && <Control />}
 			<PublicFooter />
 		</div>

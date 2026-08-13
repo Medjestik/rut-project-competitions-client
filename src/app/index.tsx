@@ -10,6 +10,7 @@ import { Main } from '../pages/Main/ui/main';
 import { Consent } from '../pages/Consent/ui/consent';
 import { Privacy } from '../pages/Privacy/ui/privacy';
 import { NotFound } from '../pages/NotFound/ui/not-found';
+import { CertificateDownload } from '../features/CertificateDownload/ui/certificate-download';
 
 import {
 	OnlyAuth,
@@ -54,6 +55,8 @@ export const App = () => {
 
 					<Route path={EROUTES.CONSENT} element={<Consent />} />
 					<Route path={EROUTES.PRIVACY} element={<Privacy />} />
+
+					<Route path='/certificate/:token' element={<CertificateDownload />} />
 					<Route path='*' element={<NotFound />} />
 				</Routes>
 

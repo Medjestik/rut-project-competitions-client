@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 import { useInView } from '../../../../hooks/useInView';
 
+import { Link } from 'react-scroll';
 import { Header } from '../Header/header';
 import { Description } from '../Description/description';
 import { Caption } from '../../shared/Caption/caption';
@@ -65,19 +66,26 @@ export const Main: FC = () => {
 				<div className={styles.button}>
 					{width > 1000 ? (
 						<>
-							<Button
-								text={t('join-button')}
-								color='arrow'
-								onClick={() => navigate(EROUTES.REGISTRATION)}
-							/>
+							<Link
+								to={ESECTION.DOCUMENT}
+								smooth={true}
+								offset={0}
+								duration={2000}
+								spy={true}>
+								<Button text={t('results-button')} color='arrow' />
+							</Link>
+
 							<Caption text={t('main-reg-caption')} />
 						</>
 					) : (
-						<Button
-							text={t('join-button')}
-							color='gradient'
-							onClick={() => navigate(EROUTES.REGISTRATION)}
-						/>
+						<Link
+							to={ESECTION.DOCUMENT}
+							smooth={true}
+							offset={0}
+							duration={2000}
+							spy={true}>
+							<Button text={t('results-button')} color='gradient' />
+						</Link>
 					)}
 				</div>
 				<Button
@@ -138,7 +146,7 @@ export const Main: FC = () => {
 								: t('main-mobile-cards.2.text')}
 						</p>
 					</li>
-					{width > 1000 && (
+					{/*width > 1000 && (
 						<li
 							className={`${styles.card} ${styles.card_direction_left} ${
 								styles.card_number_4
@@ -153,9 +161,9 @@ export const Main: FC = () => {
 							</span>
 							<p className={styles.card__text}>{t('main-cards.3.text')}</p>
 						</li>
-					)}
+					)*/}
 				</ul>
-				{width <= 1000 && (
+				{/*width <= 1000 && (
 					<div
 						className={`${styles.timer} ${styles.fadeUp} ${
 							isVisible ? styles.visible : ''
@@ -168,7 +176,7 @@ export const Main: FC = () => {
 							{t('main-cards.3.caption')}
 						</span>
 					</div>
-				)}
+				) */}
 			</section>
 			<Description />
 		</div>

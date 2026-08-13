@@ -7,7 +7,11 @@ import { Caption } from '../../shared/Caption/caption';
 import { Button } from '../../../../shared/components/Button/ui/button';
 
 import { ESECTION } from '../../lib/sections';
-import { REGULATION_LINK, ORDER_LINK } from '../../../../shared/lib/lib';
+import {
+	REGULATION_LINK,
+	ORDER_LINK,
+	PROTOCOL_LINK,
+} from '../../../../shared/lib/lib';
 
 import styles from './document.module.scss';
 
@@ -45,19 +49,19 @@ export const Document: FC = () => {
 							<p className={styles.card__text}>
 								{t(`document-cards.${i}.text`)}
 							</p>
-							{i === 2 ? (
-								<span className={styles.card__caption}>
-									{t('document-card-caption')}
-								</span>
-							) : (
-								<Button
-									text={t('download-button')}
-									color='arrow'
-									style={btnStyle}
-									type='link'
-									href={i === 0 ? ORDER_LINK : REGULATION_LINK}
-								/>
-							)}
+							<Button
+								text={t('download-button')}
+								color='arrow'
+								style={btnStyle}
+								type='link'
+								href={
+									i === 0
+										? ORDER_LINK
+										: i === 1
+										? REGULATION_LINK
+										: PROTOCOL_LINK
+								}
+							/>
 						</li>
 					))}
 				</ul>

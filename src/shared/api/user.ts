@@ -52,6 +52,28 @@ export const getUser = (token: string) => {
 	});
 };
 
+export const getCertificateLink = () => {
+	return request('/certificates/international/link/', {
+		method: 'GET',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+			Authorization: `Token ${localStorage.getItem('token') || ''}`,
+		},
+	});
+};
+
+export const getGratitudeLink = () => {
+	return request('/certificates/appreciation/link/', {
+		method: 'GET',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+			Authorization: `Token ${localStorage.getItem('token') || ''}`,
+		},
+	});
+};
+
 export const changePassword = ({
 	current_password,
 	new_password,
