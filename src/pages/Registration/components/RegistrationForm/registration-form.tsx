@@ -482,6 +482,7 @@ export const RegistrationForm: FC = () => {
 							currentParticipant ? handleEditParticipant : handleAddParticipant
 						}
 						initialData={currentParticipant}
+						universityId={values.university?.id ?? null}
 					/>
 				</Modal>
 			)}

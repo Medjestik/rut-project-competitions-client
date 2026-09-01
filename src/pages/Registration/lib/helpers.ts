@@ -39,6 +39,7 @@ export const validationParticipantSchema = {
 	group_name: [required('validation.required')],
 	email: [required('validation.required'), emailFormat('validation.email')],
 	phone: [required('validation.required'), phoneFormat('validation.phone')],
+	subdivision: [required('validation.required')],
 };
 
 export const initialParticipantValues: IParticipantForm = {
@@ -49,6 +50,7 @@ export const initialParticipantValues: IParticipantForm = {
 	group_name: '',
 	email: '',
 	phone: '',
+	subdivision: null,
 };
 
 export const initialRegistrationValues: IRegisterForm = {
@@ -68,7 +70,8 @@ export const initialRegistrationValues: IRegisterForm = {
 
 export const shouldBlockParticipantSubmit = (
 	values: IParticipantForm,
-	errors: TFormValidationErrors
+	errors: TFormValidationErrors,
+	isRutUniversity: boolean
 ): boolean => {
 	return (
 		!values.last_name.trim() ||
@@ -82,7 +85,8 @@ export const shouldBlockParticipantSubmit = (
 		!values.email.trim() ||
 		!!errors.email ||
 		!values.phone.trim() ||
-		!!errors.phone
+		!!errors.phone ||
+		(isRutUniversity && (!values.subdivision || !!errors.subdivision))
 	);
 };
 

@@ -1,5 +1,10 @@
 import type { IUniversity, IProblem } from '../../../store/catalog/types';
 
+export interface ISubdivisionOption {
+	id: string;
+	name: string;
+}
+
 export interface IParticipantForm {
 	last_name: string;
 	first_name: string;
@@ -8,17 +13,19 @@ export interface IParticipantForm {
 	group_name: string;
 	email: string;
 	phone: string;
+	subdivision: ISubdivisionOption | null;
 }
 
 export interface IParticipantData {
 	id: string;
 	last_name: string;
 	first_name: string;
-	middle_name?: string;
+	middle_name: string;
 	level: number;
 	group_name: string;
 	email: string;
 	phone: string;
+	subdivision: string;
 }
 
 export interface IRegisterForm {
@@ -48,6 +55,7 @@ export interface IRegisterData {
 }
 
 export interface IParticipantFormProps {
-	onSubmit: (participant: IParticipantData) => void;
+	onSubmit: (data: IParticipantData) => void;
 	initialData?: IParticipantData | null;
+	universityId: number | null;
 }

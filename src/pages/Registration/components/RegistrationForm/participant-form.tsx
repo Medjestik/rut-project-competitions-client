@@ -16,6 +16,7 @@ import {
 	FormInputNumber,
 	FormButtons,
 } from '../../../../shared/components/Form/components';
+import { SelectWithSearch } from '../../../../shared/components/Select/ui/select-with-search';
 import { Button } from '../../../../shared/components/Button/ui/button';
 
 import {
@@ -23,17 +24,24 @@ import {
 	validationParticipantSchema,
 	shouldBlockParticipantSubmit,
 } from '../../lib/helpers';
+import { RUT_SUBDIVISIONS, RUT_UNIVERSITY_ID } from '../../lib/lib';
 
 export const ParticipantForm: FC<IParticipantFormProps> = ({
 	onSubmit,
 	initialData,
+	universityId,
 }) => {
-	const { values, handleChange, setValues, errors } = useForm<IParticipantForm>(
-		initialParticipantValues,
-		validationParticipantSchema
-	);
-	const [isBlockSubmit, setIsBlockSubmit] = useState<boolean>(true);
+	const { values, handleChange, setValues, handleSelectChange, errors } =
+		useForm<IParticipantForm>(
+			initialParticipantValues,
+			validationParticipantSchema
+		);
+
+	const [isBlockSubmit, setIsBlockSubmit] = useState(true);
+
 	const { t } = useTranslation();
+
+	const isRutUniversity = universityId === RUT_UNIVERSITY_ID;
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -47,14 +55,17 @@ export const ParticipantForm: FC<IParticipantFormProps> = ({
 			group_name: values.group_name,
 			email: values.email,
 			phone: values.phone,
+			subdivision: isRutUniversity ? values.subdivision?.name || '' : '',
 		};
 
 		onSubmit(data);
 	};
 
 	useEffect(() => {
-		setIsBlockSubmit(shouldBlockParticipantSubmit(values, errors));
-	}, [values, errors]);
+		setIsBlockSubmit(
+			shouldBlockParticipantSubmit(values, errors, isRutUniversity)
+		);
+	}, [values, errors, isRutUniversity]);
 
 	useEffect(() => {
 		if (initialData) {
@@ -66,9 +77,14 @@ export const ParticipantForm: FC<IParticipantFormProps> = ({
 				group_name: initialData.group_name,
 				email: initialData.email,
 				phone: initialData.phone,
+				subdivision: initialData.subdivision
+					? RUT_SUBDIVISIONS.find(
+							(item) => item.name === initialData.subdivision
+					  ) ?? null
+					: null,
 			});
 		}
-	}, [initialData]);
+	}, [initialData, setValues]);
 
 	return (
 		<Form name='form-participant' onSubmit={handleSubmit}>
@@ -134,6 +150,25 @@ export const ParticipantForm: FC<IParticipantFormProps> = ({
 					onChange={handleChange}
 				/>
 			</FormField>
+			{isRutUniversity && (
+				<FormField
+					title='Институт'
+					fieldError={{
+						text: errors.subdivision ? t(errors.subdivision) : '',
+						isShow: !!errors.subdivision,
+					}}>
+					<SelectWithSearch
+						options={RUT_SUBDIVISIONS}
+						currentOption={values.subdivision}
+						onChooseOption={(option) =>
+							handleSelectChange('subdivision', option)
+						}
+						placeholder='Выберите институт...'
+						valueKey='id'
+						labelKey='name'
+					/>
+				</FormField>
+			)}
 			<FormField
 				title={t('participant-form-input-title-group-email')}
 				fieldError={{
