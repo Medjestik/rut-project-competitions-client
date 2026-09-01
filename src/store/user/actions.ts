@@ -34,7 +34,7 @@ export const setUser = createAction<IUser | null>('auth/setUser');
 export const checkUserAuth = createAsyncThunk(
 	'user/checkUser',
 	async (_, { dispatch }) => {
-		const token = localStorage.getItem('token');
+		const token = localStorage.getItem('token1');
 		if (token) {
 			try {
 				const user = await getUser(token);

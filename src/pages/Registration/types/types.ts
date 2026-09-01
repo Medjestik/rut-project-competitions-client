@@ -27,7 +27,6 @@ export interface IRegisterForm {
 	password: string;
 	university: IUniversity | null;
 	case: IProblem | null;
-	code: string;
 	tutor_fullname: string;
 	tutor_email: string;
 	participants: IParticipantData[];
@@ -43,7 +42,6 @@ export interface IRegisterData {
 	password: string;
 	university: number;
 	case: string;
-	promocode: string;
 	tutor_fullname: string;
 	tutor_email: string;
 	participants: IParticipantData[];

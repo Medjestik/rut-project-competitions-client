@@ -4,6 +4,7 @@ import type { TFormValidationErrors } from '../../../shared/components/Form/type
 import {
 	required,
 	emailFormat,
+	phoneFormat,
 	nameFormat,
 	minLength,
 	maxLength,
@@ -29,7 +30,6 @@ export const validationRegistrationSchema = {
 		minLength(6, 'validation.min.length.6'),
 		maxLength(16, 'validation.max.length.16'),
 	],
-	code: [required('validation.required')],
 };
 
 export const validationParticipantSchema = {
@@ -38,7 +38,7 @@ export const validationParticipantSchema = {
 	level: [required('validation.required')],
 	group_name: [required('validation.required')],
 	email: [required('validation.required'), emailFormat('validation.email')],
-	phone: [required('validation.required')],
+	phone: [required('validation.required'), phoneFormat('validation.phone')],
 };
 
 export const initialParticipantValues: IParticipantForm = {
@@ -60,7 +60,6 @@ export const initialRegistrationValues: IRegisterForm = {
 	tutor_fullname: '',
 	tutor_email: '',
 	participants: [],
-	code: '',
 	isConfirmOne: false,
 	isConfirmTwo: false,
 	isConfirmThree: false,
@@ -98,8 +97,6 @@ export const shouldBlockRegistrationSubmit = (
 		!!errors.login ||
 		!values.password.trim() ||
 		!!errors.password ||
-		!values.code.trim() ||
-		!!errors.code ||
 		values.university === null ||
 		values.case === null ||
 		values.participants.length !== PARTICIPANTS_COUNT ||
@@ -130,7 +127,6 @@ export const getStagesValidation = (
 			values.participants.length === PARTICIPANTS_COUNT && !errors.participants,
 
 		personData:
-			values.code.trim().length > 0 &&
 			values.isConfirmOne &&
 			values.isConfirmTwo &&
 			values.isConfirmThree &&

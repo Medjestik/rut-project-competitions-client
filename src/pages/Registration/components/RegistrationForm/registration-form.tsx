@@ -128,7 +128,6 @@ export const RegistrationForm: FC = () => {
 				password: values.password,
 				university: values.university.id,
 				case: values.case.id,
-				promocode: values.code,
 				tutor_fullname: values.tutor_fullname,
 				tutor_email: values.tutor_email,
 				participants: values.participants,
@@ -369,21 +368,6 @@ export const RegistrationForm: FC = () => {
 						titleSize='large'
 						subtitle={t('registration-form-section-data-subtitle')}
 						id={ESECTION.PERSON_DATA}>
-						<FormField
-							title={t('registration-form-section-data-input-title-promo')}
-							fieldError={{
-								text: errors.code ? t(errors.code) : '',
-								isShow: !!errors.code,
-							}}>
-							<FormInput
-								name='code'
-								placeholder={t(
-									'registration-form-section-data-input-placeholder-promo'
-								)}
-								value={values.code}
-								onChange={handleChange}
-							/>
-						</FormField>
 						<Checkbox
 							checked={values.isConfirmOne}
 							onChange={() =>

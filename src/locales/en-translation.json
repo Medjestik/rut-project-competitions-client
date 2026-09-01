@@ -62,6 +62,7 @@
 	"validation": {
 		"required": "Field is required",
 		"email": "Invalid email format",
+		"phone": "Invalid phone format",
 		"link": "Invalid link format",
 		"name": "Invalid character",
 		"file": {
@@ -93,7 +94,7 @@
 	},
 	"main-registration": "Registration",
 	"main-title-caption": "From problem to implementation",
-	"main-reg-caption": "Results are\u00A0available!",
+	"main-reg-caption": "Registration has\u00A0already begun!",
 	"main-text": "A platform for\u00A0students and\u00A0young professionals where solutions for\u00A0the future of\u00A0transportation are created: digitalization, infrastructure, logistics, and\u00A0engineering innovation",
 	"main-mobile-text": "A\u00A0platform where students create solutions for\u00A0the\u00A0transport of\u00A0the\u00A0future.",
 	"main-title": {
@@ -118,8 +119,8 @@
 			"text": "Support for\u00A0top solutions and\u00A0expert evaluation of\u00A0projects"
 		},
 		"3": {
-			"count": "2026-07-12T23:59:00",
-			"caption": "until the\u00A0end of\u00A0the\u00A0qualifying stage",
+			"count": "2026-09-15T23:59:00",
+			"caption": "until registration closes",
 			"text": "Join\u00A0us and\u00A0showcase your best solutions!"
 		}
 	},
@@ -178,25 +179,25 @@
 		"0": {
 			"id": "1",
 			"title": "Registration",
-			"duration": "June 12 - July 19",
+			"duration": "September 1 - September 15",
 			"content": "Register on\u00A0the\u00A0website to\u00A0become a\u00A0participant in\u00A0the\u00A0project contest."
 		},
 		"1": {
 			"id": "2",
 			"title": "Work",
-			"duration": "June 12 - July 19",
+			"duration": "September 15 - September 30",
 			"content": "Over a month, participants analyze the situation, conduct interviews, develop a\u00A0solution idea, and prepare a\u00A0basic prototype."
 		},
 		"2": {
 			"id": "3",
 			"title": "Support",
-			"duration": "June 12 - July 19",
+			"duration": "September 15 - September 30",
 			"content": "Upload your stage results to\u00A0your personal account."
 		},
 		"3": {
 			"id": "4",
 			"title": "Results",
-			"duration": "July 20 - July 26",
+			"duration": "October 1 - October 7",
 			"content": "Wait for the\u00A0selection results."
 		},
 		"4": {
@@ -236,37 +237,37 @@
 		"0": {
 			"text": {
 				"0": "For solving the\u00A0problem",
-				"1": "Company name"
+				"1": "Gazprom Neft"
 			}
 		},
 		"1": {
 			"text": {
 				"0": "For solving the\u00A0problem",
-				"1": "Company name"
+				"1": "Marinet Infrastructure Center"
 			}
 		},
 		"2": {
 			"text": {
 				"0": "For solving the\u00A0problem",
-				"1": "Company name"
+				"1": "Rosatom Chargepoint Network"
 			}
 		},
 		"3": {
 			"text": {
 				"0": "For solving the\u00A0problem",
-				"1": "Company name"
+				"1": "Russian Road Research Institute"
 			}
 		},
 		"4": {
 			"text": {
 				"0": "For solving the\u00A0problem",
-				"1": "Company name"
+				"1": "Sibur PolyLab"
 			}
 		},
 		"5": {
 			"text": {
 				"0": "For solving the\u00A0problem",
-				"1": "Company name"
+				"1": "Sinara High‑Speed Train Service"
 			}
 		},
 		"grand-prix": {
@@ -488,20 +489,20 @@
 	"registration-form-section-problem-subtitle": "Select the\u00A0problem your team will work on.",
 	"registration-form-section-problem-active": "Selected",
 
-	"registration-form-section-participant-title": "Team Participant",
-	"registration-form-section-participant-subtitle": "Build your team. Add 3 team participant.",
+	"registration-form-section-participant-title": "Team Participants",
+	"registration-form-section-participant-subtitle": "Build your team. Add 4 team participant.",
 	"registration-form-section-participant-add-btn": "Add Participant",
 	"registration-form-section-participant-add-text": "A modal window with the\u00A0participant's personal data will open.",
 
 	"registration-form-section-tutor-title": "Team mentor",
-	"registration-form-section-tutor-subtitle": "Add a\u00A0team mentor (if\u00A0available).",
+	"registration-form-section-tutor-subtitle": "Add a\u00A0team mentor.",
 	"registration-form-section-tutor-input-placeholder-tutor-fullname": "Enter mentor’s full name",
 	"registration-form-section-tutor-input-title-tutor-fullname": "Mentor’s full name",
 	"registration-form-section-tutor-input-placeholder-tutor-email": "Enter mentor’s email",
 	"registration-form-section-tutor-input-title-tutor-email": "Mentor’s email",
 
-	"registration-form-section-data-title": "Data Confirmation",
-	"registration-form-section-data-subtitle": "Enter the\u00A0promo code to\u00A0confirm the\u00A0registration of\u00A0an\u00A0international team and\u00A0accept the\u00A0terms of\u00A0the\u00A0project contest.",
+	"registration-form-section-data-title": "Documents",
+	"registration-form-section-data-subtitle": "Accept the\u00A0terms of\u00A0the\u00A0project competition.",
 	"registration-form-section-data-input-title-promo": "Registration Promo Code",
 	"registration-form-section-data-input-placeholder-promo": "Enter the\u00A0promo code",
 

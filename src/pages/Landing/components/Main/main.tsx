@@ -66,34 +66,28 @@ export const Main: FC = () => {
 				<div className={styles.button}>
 					{width > 1000 ? (
 						<>
-							<Link
-								to={ESECTION.DOCUMENT}
-								smooth={true}
-								offset={0}
-								duration={2000}
-								spy={true}>
-								<Button text={t('results-button')} color='arrow' />
-							</Link>
-
+							<Button
+								text={t('registration-button')}
+								color='arrow'
+								onClick={() => navigate(EROUTES.REGISTRATION)}
+							/>
 							<Caption text={t('main-reg-caption')} />
 						</>
 					) : (
-						<Link
-							to={ESECTION.DOCUMENT}
-							smooth={true}
-							offset={0}
-							duration={2000}
-							spy={true}>
-							<Button text={t('results-button')} color='gradient' />
-						</Link>
+						<Button
+							text={t('registration-button')}
+							color='gradient'
+							onClick={() => navigate(EROUTES.REGISTRATION)}
+						/>
 					)}
 				</div>
-				<Button
+				{/*<Button
 					text={t('login-button')}
 					color='gradient'
 					style={btnStyle}
 					onClick={() => navigate(EROUTES.LOGIN)}
 				/>
+				*/}
 				<ul className={styles.cards}>
 					<li
 						className={`${styles.card} ${styles.card_direction_right} ${
@@ -146,7 +140,7 @@ export const Main: FC = () => {
 								: t('main-mobile-cards.2.text')}
 						</p>
 					</li>
-					{/*width > 1000 && (
+					{width > 1000 && (
 						<li
 							className={`${styles.card} ${styles.card_direction_left} ${
 								styles.card_number_4
@@ -161,9 +155,9 @@ export const Main: FC = () => {
 							</span>
 							<p className={styles.card__text}>{t('main-cards.3.text')}</p>
 						</li>
-					)*/}
+					)}
 				</ul>
-				{/*width <= 1000 && (
+				{width <= 1000 && (
 					<div
 						className={`${styles.timer} ${styles.fadeUp} ${
 							isVisible ? styles.visible : ''
@@ -176,7 +170,7 @@ export const Main: FC = () => {
 							{t('main-cards.3.caption')}
 						</span>
 					</div>
-				) */}
+				)}
 			</section>
 			<Description />
 		</div>

@@ -1,6 +1,6 @@
 import { REGULATION_LINK, ORDER_LINK } from '../../../shared/lib/lib';
 
-export const PARTICIPANTS_COUNT = 3;
+export const PARTICIPANTS_COUNT = 4;
 
 export const CONFIRM_LINKS = [
 	'https://contest.miit.ru/consent',

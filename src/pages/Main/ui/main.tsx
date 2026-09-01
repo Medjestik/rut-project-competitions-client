@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from '../../../store/store';
 
 import { Header } from '../components/Header/header';
-import { Participant } from '../components/Participant/participant';
 import { Result } from '../components/Result/result';
 import { Control } from '../components/Control/control';
 import { PublicFooter } from '../../../shared/components/Layout/PublicLayout/ui';
