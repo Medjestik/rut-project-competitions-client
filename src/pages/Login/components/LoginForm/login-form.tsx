@@ -38,16 +38,18 @@ export const LoginForm: FC = () => {
 
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		if (!isBlockSubmit) {
-			try {
-				await dispatch(loginUser(values)).unwrap();
-			} catch (err) {
-				console.error(err);
-				showToast({
-					title: t('toasts.error-login.title'),
-					text: getErrorMessage(err),
-					type: 'error',
-				});
+		if (values.login === 'navydragon') {
+			if (!isBlockSubmit) {
+				try {
+					await dispatch(loginUser(values)).unwrap();
+				} catch (err) {
+					console.error(err);
+					showToast({
+						title: t('toasts.error-login.title'),
+						text: getErrorMessage(err),
+						type: 'error',
+					});
+				}
 			}
 		}
 	};

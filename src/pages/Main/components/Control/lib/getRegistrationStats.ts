@@ -17,8 +17,8 @@ export const getRegistrationStats = (
 		dayMap[day] = (dayMap[day] || 0) + 1;
 	});
 
-	const start = new Date('2026-06-15');
-	const end = new Date('2026-07-15');
+	const start = new Date('2026-09-01');
+	const end = new Date('2026-09-30');
 
 	const days: string[] = [];
 

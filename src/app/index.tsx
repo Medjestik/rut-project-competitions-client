@@ -9,6 +9,7 @@ import { Main } from '../pages/Main/ui/main';
 import { Consent } from '../pages/Consent/ui/consent';
 import { Privacy } from '../pages/Privacy/ui/privacy';
 import { NotFound } from '../pages/NotFound/ui/not-found';
+import { Login } from '../pages/Login/ui/login';
 import { CertificateDownload } from '../features/CertificateDownload/ui/certificate-download';
 
 import {
@@ -38,6 +39,10 @@ export const App = () => {
 					<Route
 						path={EROUTES.LANDING}
 						element={<OnlyUnAuth component={<Landing />} />}
+					/>
+					<Route
+						path={EROUTES.LOGIN_ARS}
+						element={<OnlyUnAuth component={<Login />} />}
 					/>
 					<Route
 						path={EROUTES.REGISTRATION}

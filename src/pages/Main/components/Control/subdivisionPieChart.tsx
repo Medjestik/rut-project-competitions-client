@@ -16,18 +16,18 @@ interface IUniversityPieChartsProps {
 }
 
 const pastelPieColors = [
-	'#CBB4F1', // мягкий фиолетовый
-	'#A8A4F3', // пастельный синий
-	'#9BCFE1', // голубой
-	'#8DE0C7', // пастельный зеленый
-	'#ABE2C6', // мягкий мятный
-	'#F7D1C0', // пастельный персиковый
-	'#F2B5B0', // светлый коралловый
-	'#E8D8B0', // песочный
-	'#D6C8E5', // лавандовый
-	'#C5D6E8', // очень светлый голубой
-	'#D9D9D9', // нейтральный серый
-	'#BFBFBF', // темно-серый
+	'#B8A1E8',
+	'#8F8BE8',
+	'#7DBDD1',
+	'#72D0B4',
+	'#91D4B2',
+	'#E7B7A1',
+	'#E49A98',
+	'#D6C28F',
+	'#B9A6D6',
+	'#9FBBD6',
+	'#8F919B',
+	'#6F717B',
 ];
 
 export const SubdivisionPieChart: React.FC<IUniversityPieChartsProps> = ({
@@ -46,26 +46,28 @@ export const SubdivisionPieChart: React.FC<IUniversityPieChartsProps> = ({
 	const commonProps = {
 		margin: { top: 40, right: 40, bottom: 40, left: 40 },
 		innerRadius: 0.4,
-		padAngle: 2, // увеличено расстояние между секторами
+		padAngle: 2,
 		cornerRadius: 8,
 		activeOuterRadiusOffset: 8,
 		colors: pastelPieColors,
 		borderWidth: 1,
 		borderColor: { from: 'color' },
 		arcLinkLabelsSkipAngle: 10,
-		arcLinkLabelsTextColor: '#333',
 		arcLinkLabelsThickness: 2,
 		arcLinkLabelsColor: { from: 'color' },
-		arcLabelsSkipAngle: 0, // показывать подписи для всех секторов
-		arcLabelsTextColor: () => '#333', // контрастный цвет подписей
+		arcLabelsSkipAngle: 10,
+		arcLabelsTextColor: '#201a23',
+		arcLinkLabelsTextColor: '#ffffff',
 		animate: true,
 		motionConfig: 'gentle' as const,
 		tooltip: ({ datum }: { datum: ComputedDatum<IPieData> }) => (
 			<div
 				style={{
-					padding: '6px 10px',
-					background: '#fff',
-					border: '1px solid #ccc',
+					padding: '8px 12px',
+					background: '#2A232E',
+					border: '1px solid #403745',
+					borderRadius: '8px',
+					color: '#E8E4EA',
 				}}>
 				<strong>{datum.id}</strong>:&nbsp;{datum.value}
 			</div>
@@ -74,7 +76,13 @@ export const SubdivisionPieChart: React.FC<IUniversityPieChartsProps> = ({
 
 	return (
 		<div
-			style={{ display: 'flex', gap: '40px', width: '100%', flexWrap: 'wrap' }}>
+			style={{
+				display: 'flex',
+				gap: '40px',
+				width: '100%',
+				height: '400px',
+				flexWrap: 'wrap',
+			}}>
 			<div style={{ flex: '1 1 400px', height: 300 }}>
 				<h3 style={{ textAlign: 'center' }}>Распределение по подразделениям</h3>
 				<ResponsivePie data={subdivisionData} {...commonProps} />

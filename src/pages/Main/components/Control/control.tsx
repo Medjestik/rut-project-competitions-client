@@ -8,6 +8,7 @@ import { Button } from '../../../../shared/components/Button/ui/button';
 import { Table } from '../../../../shared/components/Table/ui/table';
 import { Card } from '../../../../shared/components/Card/ui';
 import { RegistrationChart } from './lib/registrationChart';
+import { SubdivisionPieChart } from './subdivisionPieChart';
 
 import {
 	getTeamsAction,
@@ -528,6 +529,10 @@ export const Control: FC = () => {
 						</div>
 					</div>
 				</Table>
+			</Card>
+
+			<Card>
+				<SubdivisionPieChart teams={teams} universityId={763} />
 			</Card>
 		</div>
 	);
