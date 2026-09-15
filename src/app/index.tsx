@@ -41,7 +41,7 @@ export const App = () => {
 						element={<OnlyUnAuth component={<Landing />} />}
 					/>
 					<Route
-						path={EROUTES.LOGIN_ARS}
+						path={EROUTES.LOGIN}
 						element={<OnlyUnAuth component={<Login />} />}
 					/>
 					<Route

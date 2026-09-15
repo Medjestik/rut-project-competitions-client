@@ -81,7 +81,6 @@ export const InitialStage: FC = () => {
 					</div>
 					<div className={styles.stage__row}>
 						<div className={styles.stage__column}>
-							{/*
 							<div className={styles.card}>
 								<div className={styles.card__main}>
 									<h4 className={styles.card__title}>
@@ -91,9 +90,13 @@ export const InitialStage: FC = () => {
 										{t('main-stage-initial-card-chat.text')}
 									</p>
 								</div>
-								<Button text={t('join-light-button')} color='arrow' />
+								<Button
+									text={t('join-light-button')}
+									color='arrow'
+									type='link'
+									href={user.case.telegram_url}
+								/>
 							</div>
-							*/}
 							<div className={styles.card}>
 								<div className={styles.card__main}>
 									<h4 className={styles.card__title}>

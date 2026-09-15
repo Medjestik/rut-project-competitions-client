@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 import { useInView } from '../../../../hooks/useInView';
 
-import { Link } from 'react-scroll';
 import { Header } from '../Header/header';
 import { Description } from '../Description/description';
 import { Caption } from '../../shared/Caption/caption';
@@ -81,13 +80,14 @@ export const Main: FC = () => {
 						/>
 					)}
 				</div>
-				{/*<Button
-					text={t('login-button')}
-					color='gradient'
-					style={btnStyle}
-					onClick={() => navigate(EROUTES.LOGIN)}
-				/>
-				*/}
+				{
+					<Button
+						text={t('login-button')}
+						color='gradient'
+						style={btnStyle}
+						onClick={() => navigate(EROUTES.LOGIN)}
+					/>
+				}
 				<ul className={styles.cards}>
 					<li
 						className={`${styles.card} ${styles.card_direction_right} ${

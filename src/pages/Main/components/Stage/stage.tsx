@@ -12,12 +12,19 @@ import { Button } from '../../../../shared/components/Button/ui/button';
 import { Card } from '../../../../shared/components/Card/ui';
 import { VideoStage } from './video-stage';
 
-import { getStageAction } from '../../../../store/main/actions';
+import {
+	getStageAction,
+	nextStageAction,
+} from '../../../../store/main/actions';
 import {
 	setCurrentPath,
 	setStageTemplate,
 	setStageVideo,
+	setUploadLinkPopupOpen,
+	setUploadFilePopupOpen,
+	setUploadVideoPopupOpen,
 } from '../../../../store/main/reducer';
+import { setUserStage } from '../../../../store/user/reducer';
 import { getErrorMessage } from '../../../../shared/lib/getErrorMessage';
 
 import styles from './stage.module.scss';
@@ -35,6 +42,7 @@ export const Stage: FC = () => {
 		currentStageId,
 		currentPathPosition,
 		isLoadingStageData,
+		isLoading,
 	} = useSelector((state) => state.main);
 	const { user } = useSelector((state) => state.user);
 	const { showToast } = useToast();
@@ -86,6 +94,22 @@ export const Stage: FC = () => {
 				setStageTemplate(isEn ? stage.url_template_eng : stage.url_template)
 			);
 			dispatch(setStageVideo(isEn ? stage.url_video_eng : stage.url_video));
+		}
+	};
+
+	const handleCompleteStage = async () => {
+		try {
+			const nextStage = await dispatch(nextStageAction()).unwrap();
+
+			dispatch(setUserStage(nextStage.current_stage.id));
+		} catch (err) {
+			console.error(err);
+
+			showToast({
+				title: t('toasts.error-loading.title'),
+				text: getErrorMessage(err),
+				type: 'error',
+			});
 		}
 	};
 
@@ -212,8 +236,16 @@ export const Stage: FC = () => {
 								</div>
 								{stage.team_file_count < 1 && (
 									<>
-										<Button text={t('link-button')} color='gradient' isBlock />
-										<Button text={t('file-button')} color='gradient' isBlock />
+										<Button
+											text={t('link-button')}
+											color='gradient'
+											onClick={() => dispatch(setUploadLinkPopupOpen(true))}
+										/>
+										<Button
+											text={t('file-button')}
+											color='gradient'
+											onClick={() => dispatch(setUploadFilePopupOpen(true))}
+										/>
 									</>
 								)}
 							</div>
@@ -237,7 +269,7 @@ export const Stage: FC = () => {
 											<Button
 												text={t('link-button')}
 												color='gradient'
-												isBlock
+												onClick={() => dispatch(setUploadVideoPopupOpen(true))}
 											/>
 										</>
 									)}
@@ -261,9 +293,10 @@ export const Stage: FC = () => {
 								user.current_stage === currentStageId && (
 									<Button
 										text={t('complete-button')}
-										isBlock
 										color='gradient'
 										style={btnStyle}
+										onClick={handleCompleteStage}
+										isBlock={isLoading || stage.team_file_count < 1}
 									/>
 								)}
 						</div>

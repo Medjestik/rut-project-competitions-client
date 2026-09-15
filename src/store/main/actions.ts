@@ -1,4 +1,10 @@
-import type { IStage, IStageData, IVideo, IMessageResponse } from './types';
+import type {
+	IStage,
+	IStageData,
+	IVideo,
+	INextStageResponse,
+	IMessageResponse,
+} from './types';
 import type {
 	IUploadLinkData,
 	IUploadFileData,
@@ -26,7 +32,7 @@ export const getStageAction = createAsyncThunk<IStageData, number>(
 	getStage
 );
 
-export const nextStageAction = createAsyncThunk<IMessageResponse>(
+export const nextStageAction = createAsyncThunk<INextStageResponse>(
 	'main/nextStage',
 	nextStage
 );

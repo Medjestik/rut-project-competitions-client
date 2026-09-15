@@ -77,17 +77,9 @@ export const mainSlice = createSlice({
 				state.isLoading = true;
 				state.error = null;
 			})
-			.addCase(actions.nextStageAction.fulfilled, (state) => {
+			.addCase(actions.nextStageAction.fulfilled, (state, action) => {
 				state.isLoading = false;
-
-				state.currentStageId += 1;
-
-				console.log(state.currentStageId);
-
-				state.stages = state.stages.map((stage) => ({
-					...stage,
-					is_active: stage.id <= state.currentStageId,
-				}));
+				state.currentStageId = action.payload.current_stage.id;
 			})
 			.addCase(actions.nextStageAction.rejected, (state, action) => {
 				state.isLoading = false;

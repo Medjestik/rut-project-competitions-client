@@ -66,3 +66,7 @@ export interface IMessageResponse {
 	id?: number;
 	message: string;
 }
+
+export interface INextStageResponse {
+	current_stage: IStageData;
+}

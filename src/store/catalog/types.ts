@@ -36,5 +36,6 @@ export interface IProblem {
 	problem_eng?: string;
 	situation?: string;
 	situation_eng?: string;
+	telegram_url?: string;
 	files: IFile[];
 }
