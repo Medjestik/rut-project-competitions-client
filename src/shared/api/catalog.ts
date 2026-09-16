@@ -1,7 +1,7 @@
 import { request } from './utils';
 
 export const getUniversitiesCatalog = (scope: string) => {
-	return request(`/universities/`, {
+	return request(`/universities/?scope=ru`, {
 		method: 'GET',
 		headers: {
 			Accept: 'application/json',
