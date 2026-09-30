@@ -179,19 +179,20 @@
 		"0": {
 			"id": "1",
 			"title": "Registration",
-			"duration": "September 1 - September 30",
+			"duration": "September 1 - October 1",
 			"content": "Register on\u00A0the\u00A0website to\u00A0become a\u00A0participant in\u00A0the\u00A0project contest."
 		},
 		"1": {
 			"id": "2",
 			"title": "Work",
-			"duration": "September 15 - September 30",
-			"content": "Over a month, participants analyze the situation, conduct interviews, develop a\u00A0solution idea, and prepare a\u00A0basic prototype."
+			"duration": "September 15 - October 1",
+			"content": "Over a month, participants analyze the situation, conduct interviews, develop a\u00A0solution idea, and prepare a\u00A0basic prototype.",
+			"caption": "*until October 2 for the issue of «Availability of Gas Refuelling Infrastructure»"
 		},
 		"2": {
 			"id": "3",
 			"title": "Support",
-			"duration": "September 15 - September 30",
+			"duration": "September 15 - October 1",
 			"content": "Upload your stage results to\u00A0your personal account."
 		},
 		"3": {

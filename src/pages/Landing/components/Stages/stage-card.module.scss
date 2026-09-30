@@ -95,6 +95,15 @@
 		line-height: 1;
 		color: var(--main-white-color);
 	}
+	&__caption {
+		margin: 8px 0 0 0;
+		font-weight: 400;
+		font-size: 12px;
+		font-style: normal;
+		line-height: 1;
+		color: var(--main-white-color);
+		text-align: center;
+	}
 }
 
 .hover {
@@ -133,6 +142,15 @@
 		margin: auto 0 0 0;
 		font-weight: 400;
 		font-size: 16px;
+		font-style: normal;
+		line-height: 1;
+		color: var(--main-black-color);
+		text-align: center;
+	}
+	&__caption {
+		margin: 8px 0 0 0;
+		font-weight: 400;
+		font-size: 12px;
 		font-style: normal;
 		line-height: 1;
 		color: var(--main-black-color);

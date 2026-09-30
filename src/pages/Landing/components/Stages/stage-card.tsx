@@ -11,6 +11,7 @@ interface IStageCard {
 	title: string;
 	duration: string;
 	content: string;
+	caption?: string;
 	isVisible: boolean;
 	transitionDelay: string;
 }
@@ -20,6 +21,7 @@ export const StageCard: FC<IStageCard> = ({
 	title,
 	duration,
 	content,
+	caption,
 	isVisible,
 	transitionDelay,
 }) => {
@@ -45,6 +47,7 @@ export const StageCard: FC<IStageCard> = ({
 				<span className={styles.main__number}>0{id}</span>
 				<h4 className={styles.main__title}>{title}</h4>
 				<span className={styles.main__duration}>{duration}</span>
+				{caption && <span className={styles.main__caption}>{caption}</span>}
 			</div>
 
 			<div className={styles.hover}>
@@ -53,6 +56,7 @@ export const StageCard: FC<IStageCard> = ({
 				</h4>
 				<span className={styles.hover__duration}>{duration}</span>
 				<p className={styles.hover__text}>{content}</p>
+				{caption && <span className={styles.hover__caption}>{caption}</span>}
 			</div>
 		</div>
 	);

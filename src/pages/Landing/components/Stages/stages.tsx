@@ -43,6 +43,7 @@ export const Stages: FC = () => {
 						title={t('stages-cards.1.title')}
 						duration={t('stages-cards.1.duration')}
 						content={t('stages-cards.1.content')}
+						caption={t('stages-cards.1.caption')}
 						isVisible={isVisible}
 						transitionDelay='0.4'
 					/>
