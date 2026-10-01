@@ -13,6 +13,8 @@ import { UploadLinkForm } from '../../components/Forms/upload-link-form';
 import { UploadFileForm } from '../../components/Forms/upload-file-form';
 import { UploadVideoForm } from '../../components/Forms/upload-video-form';
 
+import { Card } from '../../../../shared/components/Card/ui';
+
 import { getStagesAction } from '../../../../store/main/actions';
 import {
 	setUploadLinkPopupOpen,
@@ -31,11 +33,30 @@ export const Participant: FC = () => {
 		isOpenUploadVideoPopup,
 		isLoadingStages,
 	} = useSelector((state) => state.main);
+	const { user } = useSelector((state) => state.user);
 	const { t } = useTranslation();
+	const isCaseClosed = Boolean(user?.case?.is_closed);
 
 	useEffect(() => {
-		dispatch(getStagesAction());
-	}, [dispatch]);
+		if (!isCaseClosed) {
+			dispatch(getStagesAction());
+		}
+	}, [dispatch, isCaseClosed]);
+
+	if (isCaseClosed) {
+		return (
+			<div className={styles.container}>
+				<div className={styles.waiting}>
+					<Card
+						title={t('main-stage-card-result.title')}
+						subtitle={t('main-stage-card-result.text')}
+						titleSize='large'
+						width='full'
+					/>
+				</div>
+			</div>
+		);
+	}
 
 	if (isLoadingStages) {
 		return <Preloader />;

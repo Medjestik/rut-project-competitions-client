@@ -38,4 +38,6 @@ export interface IProblem {
 	situation_eng?: string;
 	telegram_url?: string;
 	files: IFile[];
+	is_closed?: boolean;
+	results_ready?: boolean;
 }
