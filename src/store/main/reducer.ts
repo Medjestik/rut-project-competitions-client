@@ -2,6 +2,8 @@ import type { IMainStore } from './types';
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { loginUser, logoutUser } from '../user/actions';
+
 import * as actions from './actions';
 
 const initialState: IMainStore = {
@@ -135,7 +137,9 @@ export const mainSlice = createSlice({
 			.addCase(actions.uploadVideoAction.rejected, (state, action) => {
 				state.isLoadingUpload = false;
 				state.error = action.error?.message || 'Не загрузить ссылку';
-			});
+			})
+			.addCase(logoutUser.fulfilled, () => initialState)
+			.addCase(loginUser.fulfilled, () => initialState);
 	},
 });
 

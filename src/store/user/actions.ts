@@ -21,6 +21,7 @@ export const loginUser = createAsyncThunk<IAuthResponse, ILoginData>(
 		const res = await login(data);
 
 		if (res.key) {
+			localStorage.removeItem('pathPosition');
 			const user = await getUser(res.key);
 			dispatch(setUser(user));
 		}
@@ -88,6 +89,7 @@ export const logoutUser = createAsyncThunk<IMessageResponse>(
 	'auth/logout',
 	async () => {
 		localStorage.removeItem('token');
+		localStorage.removeItem('pathPosition');
 		return { message: 'Logged out' };
 	}
 );
