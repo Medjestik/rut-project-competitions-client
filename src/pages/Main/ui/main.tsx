@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from '../../../store/store';
 import { Header } from '../components/Header/header';
 import { Participant } from '../components/Participant/participant';
 import { Control } from '../components/Control/control';
+import { Expert } from '../components/Expert/ui/expert';
 import { PublicFooter } from '../../../shared/components/Layout/PublicLayout/ui';
 import { Preloader } from '../../../shared/components/Preloader/ui/preloader';
 
@@ -18,8 +19,10 @@ export const Main: FC = () => {
 	const { user, isLoading } = useSelector((state) => state.user);
 
 	useEffect(() => {
-		dispatch(getStagesAction());
-	}, [dispatch]);
+		if (user?.role === 'team') {
+			dispatch(getStagesAction());
+		}
+	}, [dispatch, user?.role]);
 
 	if (isLoading) {
 		return <Preloader />;
@@ -30,6 +33,7 @@ export const Main: FC = () => {
 			<Header />
 			{user && user.role === 'team' && <Participant />}
 			{user && user.role === 'admin' && <Control />}
+			{user && user.role === 'expert' && <Expert />}
 			<PublicFooter />
 		</div>
 	);

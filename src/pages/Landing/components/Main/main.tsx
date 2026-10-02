@@ -62,24 +62,6 @@ export const Main: FC = () => {
 				<p className={styles.subtitle}>
 					{width > 1000 ? t('main-text') : t('main-mobile-text')}
 				</p>
-				<div className={styles.button}>
-					{width > 1000 ? (
-						<>
-							<Button
-								text={t('registration-button')}
-								color='arrow'
-								onClick={() => navigate(EROUTES.REGISTRATION)}
-							/>
-							<Caption text={t('main-reg-caption')} />
-						</>
-					) : (
-						<Button
-							text={t('registration-button')}
-							color='gradient'
-							onClick={() => navigate(EROUTES.REGISTRATION)}
-						/>
-					)}
-				</div>
 				{
 					<Button
 						text={t('login-button')}

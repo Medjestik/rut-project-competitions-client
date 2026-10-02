@@ -1,22 +1,18 @@
 import type { FC } from 'react';
 
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 import { useTranslation } from 'react-i18next';
 
 import { Link } from 'react-scroll';
-import { Button } from '../../../../shared/components/Button/ui/button';
 import { LanguageSwitcher } from '../../../../widgets/LanguageSwitcher/ui/language-switcher';
 
 import { navLinks } from './data';
-import { EROUTES } from '../../../../shared/utils/routes';
 import { ESECTION } from '../../lib/sections';
 
 import styles from './header.module.scss';
 
 export const Header: FC = () => {
-	const navigate = useNavigate();
 	const width = useWindowWidth();
 	const { i18n, t } = useTranslation();
 
@@ -54,13 +50,7 @@ export const Header: FC = () => {
 			</nav>
 			<div className={styles.control}>
 				<LanguageSwitcher />
-				{width > 1000 ? (
-					<Button
-						text={t('main-registration')}
-						color='gradient'
-						onClick={() => navigate(EROUTES.REGISTRATION)}
-					/>
-				) : (
+				{width <= 1000 && (
 					<div
 						className={styles.menu_btn}
 						onClick={() => setIsOpen((prev) => !prev)}></div>
@@ -86,15 +76,6 @@ export const Header: FC = () => {
 							{t(`nav.${item.position}`)}
 						</Link>
 					))}
-					<Button
-						text={t('join-button')}
-						color='gradient'
-						width='full'
-						onClick={() => {
-							navigate(EROUTES.REGISTRATION);
-							setIsOpen(false);
-						}}
-					/>
 				</div>
 			</div>
 		</header>

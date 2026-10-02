@@ -6,9 +6,4 @@ export const links = [
 		text: 'Восстановить',
 		url: EROUTES.FORGOT_PASSWORD,
 	},
-	{
-		label: 'Новый пользователь?',
-		text: 'Регистрация',
-		url: EROUTES.REGISTRATION,
-	},
 ];

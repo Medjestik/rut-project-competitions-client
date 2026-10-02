@@ -1,7 +1,6 @@
 export enum EROUTES {
 	LANDING = '/',
 	LOGIN = '/login',
-	REGISTRATION = '/registration',
 	FORGOT_PASSWORD = '/forgot_password',
 	MAIN = '/main',
 	APPLY = '/apply',

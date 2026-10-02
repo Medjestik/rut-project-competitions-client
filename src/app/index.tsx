@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { useDispatch } from '../store/store';
 
 import { Landing } from '../pages/Landing/ui/landing';
-import { Registration } from '../pages/Registration/ui/registration';
 import { Main } from '../pages/Main/ui/main';
 import { Consent } from '../pages/Consent/ui/consent';
 import { Privacy } from '../pages/Privacy/ui/privacy';
@@ -45,11 +44,7 @@ export const App = () => {
 						element={<OnlyUnAuth component={<Login />} />}
 					/>
 					<Route
-						path={EROUTES.REGISTRATION}
-						element={<OnlyUnAuth component={<Registration />} />}
-					/>
-					<Route
-						path={EROUTES.MAIN}
+						path={`${EROUTES.MAIN}/*`}
 						element={<OnlyAuth component={<Main />} />}
 					/>
 
