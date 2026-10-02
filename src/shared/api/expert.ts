@@ -9,7 +9,7 @@ const authHeaders = () => ({
 });
 
 export const getExpertTeams = (caseId: string) => {
-	return request(`/expert/teams?case_id=${caseId}`, {
+	return request(`/expert/teams?case_id=${caseId}&scope=ru`, {
 		method: 'GET',
 		headers: authHeaders(),
 	});
