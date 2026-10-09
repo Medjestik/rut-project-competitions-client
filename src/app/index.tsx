@@ -1,40 +1,43 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { useEffect } from 'react';
-import { useDispatch } from '../store/store';
+// import { useEffect } from 'react';
+// import { useDispatch } from '../store/store';
 
 import { Landing } from '../pages/Landing/ui/landing';
-import { Main } from '../pages/Main/ui/main';
-import { Consent } from '../pages/Consent/ui/consent';
-import { Privacy } from '../pages/Privacy/ui/privacy';
-import { NotFound } from '../pages/NotFound/ui/not-found';
-import { Login } from '../pages/Login/ui/login';
-import { CertificateDownload } from '../features/CertificateDownload/ui/certificate-download';
+// import { Main } from '../pages/Main/ui/main';
+// import { Consent } from '../pages/Consent/ui/consent';
+// import { Privacy } from '../pages/Privacy/ui/privacy';
+// import { NotFound } from '../pages/NotFound/ui/not-found';
+// import { Login } from '../pages/Login/ui/login';
+// import { CertificateDownload } from '../features/CertificateDownload/ui/certificate-download';
 
-import {
-	OnlyAuth,
-	OnlyUnAuth,
-} from '../shared/components/ProtectedRoute/protected-route';
+// import {
+// 	OnlyAuth,
+// 	OnlyUnAuth,
+// } from '../shared/components/ProtectedRoute/protected-route';
 import { ToastProvider } from '../shared/components/ToastProvider/ui/ToastProvider';
 import { ScrollToTop } from '../features/ScrollToTop/ui/scroll-to-top';
 import { EROUTES } from '../shared/utils/routes';
 
-import { checkUserAuth } from '../store/user/actions';
+// import { checkUserAuth } from '../store/user/actions';
 
 import styles from './app.module.scss';
 
 export const App = () => {
-	const dispatch = useDispatch();
+	// const dispatch = useDispatch();
 
-	useEffect(() => {
-		dispatch(checkUserAuth());
-	}, [dispatch]);
+	// useEffect(() => {
+	// 	dispatch(checkUserAuth());
+	// }, [dispatch]);
 
 	return (
 		<ToastProvider>
 			<div className={styles.page}>
 				<ScrollToTop />
 				<Routes>
+					<Route path={EROUTES.LANDING} element={<Landing />} />
+					<Route path='*' element={<Landing />} />
+					{/*
 					<Route
 						path={EROUTES.LANDING}
 						element={<OnlyUnAuth component={<Landing />} />}
@@ -53,6 +56,7 @@ export const App = () => {
 
 					<Route path='/certificate/:token' element={<CertificateDownload />} />
 					<Route path='*' element={<NotFound />} />
+					*/}
 				</Routes>
 
 				<div id='modal-root'></div>

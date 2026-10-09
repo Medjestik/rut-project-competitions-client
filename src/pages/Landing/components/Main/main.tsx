@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 import { useInView } from '../../../../hooks/useInView';
@@ -8,24 +8,24 @@ import { useInView } from '../../../../hooks/useInView';
 import { Header } from '../Header/header';
 import { Description } from '../Description/description';
 import { Caption } from '../../shared/Caption/caption';
-import { Button } from '../../../../shared/components/Button/ui/button';
+// import { Button } from '../../../../shared/components/Button/ui/button';
 import { CountdownTimer } from '../../../../widgets/CountdownTimer/ui/CountdownTimer';
 
-import { EROUTES } from '../../../../shared/utils/routes';
+// import { EROUTES } from '../../../../shared/utils/routes';
 import { ESECTION } from '../../lib/sections';
 
 import backgroundImg from '../../../../shared/images/main-background.png';
 import styles from './main.module.scss';
 
 export const Main: FC = () => {
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 	const { t } = useTranslation();
 	const width = useWindowWidth();
 	const { ref, isVisible } = useInView({ threshold: 0.2 });
 
-	const btnStyle = {
-		margin: width > 1000 ? '12px 0 0 0' : '0',
-	};
+	// const btnStyle = {
+	// 	margin: width > 1000 ? '12px 0 0 0' : '0',
+	// };
 
 	return (
 		<div className={styles.container}>
@@ -62,14 +62,14 @@ export const Main: FC = () => {
 				<p className={styles.subtitle}>
 					{width > 1000 ? t('main-text') : t('main-mobile-text')}
 				</p>
-				{
+				{/*
 					<Button
 						text={t('login-button')}
 						color='gradient'
 						style={btnStyle}
 						onClick={() => navigate(EROUTES.LOGIN)}
 					/>
-				}
+				*/}
 				<ul className={styles.cards}>
 					<li
 						className={`${styles.card} ${styles.card_direction_right} ${
@@ -133,9 +133,9 @@ export const Main: FC = () => {
 								<CountdownTimer targetDate={t('main-cards.3.count')} />
 							</span>
 							<span className={styles.card__caption}>
-								{t('main-cards.3.caption')}
+								{t('main-cards.3.finishedCaption')}
 							</span>
-							<p className={styles.card__text}>{t('main-cards.3.text')}</p>
+							<p className={styles.card__text}>{t('main-cards.3.finishedText')}</p>
 						</li>
 					)}
 				</ul>
@@ -149,7 +149,10 @@ export const Main: FC = () => {
 							<CountdownTimer targetDate={t('main-cards.3.count')} />
 						</span>
 						<span className={styles.timer__text}>
-							{t('main-cards.3.caption')}
+							{t('main-cards.3.finishedCaption')}
+						</span>
+						<span className={styles.timer__text}>
+							{t('main-cards.3.finishedText')}
 						</span>
 					</div>
 				)}

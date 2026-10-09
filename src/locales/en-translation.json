@@ -121,7 +121,9 @@
 		"3": {
 			"count": "2026-09-30T23:59:00",
 			"caption": "until the\u00A0end of\u00A0the\u00A0qualifying stages",
-			"text": "Join\u00A0us and\u00A0showcase your best solutions!"
+			"text": "Join\u00A0us and\u00A0showcase your best solutions!",
+			"finishedCaption": "qualifying competitions are over",
+			"finishedText": "Thank you for taking part. The results protocol will be published soon."
 		}
 	},
 	"main-mobile-cards": {

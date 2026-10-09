@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from '../../../store/store';
+// import { useEffect } from 'react';
+import { useSelector } from '../../../store/store';
+// import { useDispatch, useSelector } from '../../../store/store';
 
 import { Main } from '../components/Main/main';
 import { Stages } from '../components/Stages/stages';
@@ -15,17 +16,17 @@ import { Document } from '../components/Document/document';
 import { Footer } from '../components/Footer/footer';
 import { Preloader } from '../../../shared/components/Preloader/ui/preloader';
 
-import { getProblemsAction } from '../../../store/catalog/actions';
+// import { getProblemsAction } from '../../../store/catalog/actions';
 
 import styles from '../styles/landing.module.scss';
 
 export const Landing: FC = () => {
-	const dispatch = useDispatch();
+	// const dispatch = useDispatch();
 	const { isLoadingCatalog } = useSelector((state) => state.catalog);
 
-	useEffect(() => {
-		dispatch(getProblemsAction());
-	}, [dispatch]);
+	// useEffect(() => {
+	// 	dispatch(getProblemsAction());
+	// }, [dispatch]);
 
 	if (isLoadingCatalog) {
 		return <Preloader />;
@@ -35,7 +36,7 @@ export const Landing: FC = () => {
 		<div className={styles.landing}>
 			<Main />
 			<Stages />
-			<Problems />
+			{/*<Problems /> */}
 			<Prize />
 			<Reasons />
 			<Invite />
