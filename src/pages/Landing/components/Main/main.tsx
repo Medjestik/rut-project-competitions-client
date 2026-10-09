@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 // import { useNavigate } from 'react-router-dom';
+import { scroller } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 import { useInView } from '../../../../hooks/useInView';
@@ -8,8 +9,7 @@ import { useInView } from '../../../../hooks/useInView';
 import { Header } from '../Header/header';
 import { Description } from '../Description/description';
 import { Caption } from '../../shared/Caption/caption';
-// import { Button } from '../../../../shared/components/Button/ui/button';
-import { CountdownTimer } from '../../../../widgets/CountdownTimer/ui/CountdownTimer';
+import { Button } from '../../../../shared/components/Button/ui/button';
 
 // import { EROUTES } from '../../../../shared/utils/routes';
 import { ESECTION } from '../../lib/sections';
@@ -23,9 +23,9 @@ export const Main: FC = () => {
 	const width = useWindowWidth();
 	const { ref, isVisible } = useInView({ threshold: 0.2 });
 
-	// const btnStyle = {
-	// 	margin: width > 1000 ? '12px 0 0 0' : '0',
-	// };
+	const btnStyle = {
+		margin: width > 1000 ? '12px 0 0 0' : '20px 0 0 0',
+	};
 
 	return (
 		<div className={styles.container}>
@@ -62,6 +62,17 @@ export const Main: FC = () => {
 				<p className={styles.subtitle}>
 					{width > 1000 ? t('main-text') : t('main-mobile-text')}
 				</p>
+				<Button
+					text={t('results-button')}
+					color='gradient'
+					style={btnStyle}
+					onClick={() =>
+						scroller.scrollTo(ESECTION.RESULTS, {
+							smooth: true,
+							duration: 800,
+						})
+					}
+				/>
 				{/*
 					<Button
 						text={t('login-button')}
@@ -122,40 +133,7 @@ export const Main: FC = () => {
 								: t('main-mobile-cards.2.text')}
 						</p>
 					</li>
-					{width > 1000 && (
-						<li
-							className={`${styles.card} ${styles.card_direction_left} ${
-								styles.card_number_4
-							} ${styles.fadeUp} ${isVisible ? styles.visible : ''}`}
-							style={{ transitionDelay: '0.8s' }}>
-							<span
-								className={`${styles.card__count} ${styles.card__count_timer}`}>
-								<CountdownTimer targetDate={t('main-cards.3.count')} />
-							</span>
-							<span className={styles.card__caption}>
-								{t('main-cards.3.finishedCaption')}
-							</span>
-							<p className={styles.card__text}>{t('main-cards.3.finishedText')}</p>
-						</li>
-					)}
 				</ul>
-				{width <= 1000 && (
-					<div
-						className={`${styles.timer} ${styles.fadeUp} ${
-							isVisible ? styles.visible : ''
-						}`}
-						style={{ transitionDelay: '0.8s' }}>
-						<span className={`${styles.timer__count}`}>
-							<CountdownTimer targetDate={t('main-cards.3.count')} />
-						</span>
-						<span className={styles.timer__text}>
-							{t('main-cards.3.finishedCaption')}
-						</span>
-						<span className={styles.timer__text}>
-							{t('main-cards.3.finishedText')}
-						</span>
-					</div>
-				)}
 			</section>
 			<Description />
 		</div>

@@ -3,6 +3,7 @@ export enum ESECTION {
 	MAIN = 'main',
 	DESCRIPTION = 'description',
 	STAGES = 'stages',
+	RESULTS = 'results',
 	PROBLEMS = 'problems',
 	PRIZE = 'prize',
 	REASONS = 'reasons',

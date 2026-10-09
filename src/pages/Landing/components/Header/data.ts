@@ -16,6 +16,13 @@ export const navLinks = [
 		duration: 1000,
 	},
 	{
+		position: 7,
+		id: ESECTION.RESULTS,
+		text: 'Итоги',
+		offset: 0,
+		duration: 1200,
+	},
+	{
 		position: 2,
 		id: ESECTION.PROBLEMS,
 		text: 'Проблемы',

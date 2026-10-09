@@ -6,6 +6,7 @@ import { useSelector } from '../../../store/store';
 
 import { Main } from '../components/Main/main';
 import { Stages } from '../components/Stages/stages';
+import { Results } from '../components/Results/results';
 import { Problems } from '../components/Problems/problems';
 import { Prize } from '../components/Prize/prize';
 import { Reasons } from '../components/Reasons/reasons';
@@ -36,6 +37,7 @@ export const Landing: FC = () => {
 		<div className={styles.landing}>
 			<Main />
 			<Stages />
+			<Results />
 			{/*<Problems /> */}
 			<Prize />
 			<Reasons />

@@ -15,7 +15,7 @@
   "support-button": "Связаться с поддержкой",
 	"detail-button": "Подробнее",
 	"login-button": "Войти в\u00A0личный кабинет",
-	"results-button": "Итоги этапа",
+	"results-button": "Результаты отборочного этапа",
 	"logout-button": "Выход",
 	"registration-button": "Зарегистрироваться",
 	"preloader": "Идёт загрузка..",
@@ -90,7 +90,22 @@
 		"3": "Призы",
 		"4": "Кого ждем",
 		"5": "Ответы на вопросы",
-		"6": "Документы"
+		"6": "Документы",
+		"7": "Итоги"
+	},
+	"results-caption": "Отборочный этап",
+	"results-title": {
+		"0": "Итоги",
+		"1": "отборочного этапа"
+	},
+	"results-finalist": "Финалист",
+	"results-download": "Скачать протокол",
+	"results-nomination": "Номинация",
+	"results-columns": {
+		"place": "Место",
+		"team": "Команда",
+		"university": "Вуз",
+		"score": "Итоговый балл"
 	},
 	"main-registration": "Зарегистрироваться",
 	"main-title-caption": "От проблемы к внедрению",

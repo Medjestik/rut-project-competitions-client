@@ -15,7 +15,7 @@
 	"support-button": "Contact Support",
 	"detail-button": "Detail",
 	"login-button": "Log in\u00A0to\u00A0your account",
-	"results-button": "Stage results",
+	"results-button": "Qualifying stage results",
 	"logout-button": "Logout",
 	"registration-button": "Register",
 	"preloader": "Loading..",
@@ -90,7 +90,22 @@
 		"3": "Prizes",
 		"4": "Participants",
 		"5": "FAQ",
-		"6": "Documents"
+		"6": "Documents",
+		"7": "Results"
+	},
+	"results-caption": "Qualifying stage",
+	"results-title": {
+		"0": "Results",
+		"1": "of the qualifying stage"
+	},
+	"results-finalist": "Finalist",
+	"results-download": "Download the protocol",
+	"results-nomination": "Nomination",
+	"results-columns": {
+		"place": "Place",
+		"team": "Team",
+		"university": "University",
+		"score": "Total score"
 	},
 	"main-registration": "Registration",
 	"main-title-caption": "From problem to implementation",
